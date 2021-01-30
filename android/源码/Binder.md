@@ -1,0 +1,832 @@
+---
+layout:     post
+title:      "Binder实现"
+subtitle:   " 使用AIDL实现原理"
+date:       2020-02-16 23:14:00
+author:     "hzy"
+//header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - Binder
+---
+
+
+### Binder使用AIDL实现
+
+##### 1.新建aidl包、新建需要传输的自定义类（实现Parcelable）
+```
+package com.example.aidltest.aidl;
+/**
+* Created by joel.
+* Date: 2019/6/7
+* Time: 15:56
+* Description:
+*/
+import android.os.Parcel;
+import android.os.Parcelable;
+/**
+* Created by 胡泽宇 on 2019/1/21.
+*/
+public class Book implements Parcelable {
+    public int id;
+    public String name;
+    public double price;
+    protected Book(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        price = in.readDouble();
+    }
+    public Book (){
+    }
+    public double getPrice() {
+        return price;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        //序列化过程，将属性写成序列
+        dest.writeInt(id);
+        dest.writeString(name);
+        dest.writeDouble(price);
+    }
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+    public void readFromParcel(Parcel in){
+        id = in.readInt();
+        name = in.readString();
+        price = in.readDouble();
+    }
+    public static final Creator<Book> CREATOR = new Creator<Book>() {
+        @Override
+        public Book createFromParcel(Parcel in) {
+            return new Book(in);
+        }
+        @Override
+        public Book[] newArray(int size) {
+            return new Book[size];
+        }
+    };
+}
+```
+##### 2.在aidl的包右键新建aidl接口文件，创建一个用于定义需要给客户端调用的方法（系统自动生成了一个aidl目录，这个目录和aidl的包名一样）
+**引入自定义的类用于传输时（如Book类），需要再定义一个Book.aidl类声明。**
+```
+// Book.aidl
+package com.example.aidltest.aidl;
+parcelable Book;
+```
+给远程接口调用的方法
+```
+// IMyAidlInterface.aidl
+package com.example.aidltest.aidl;
+import com.example.aidltest.aidl.Book;
+// Declare any non-default types here with import statements
+interface IMyAidlInterface {
+    /**
+     * Demonstrates some basic types that you can use as parameters
+     * and return values in AIDL.
+     */
+     void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
+                double aDouble, String aString);
+      String connect(String mes);
+      void disConnect(String mes);
+      Book GetBook();
+      void SetBook(int id,String name,double price);
+}
+```
+此时目录结构应该是这样的：
+![目录结构](https://hzy-joel.github.io/img/post/post_aidl.jpg)
+##### 3. 新建一个Service子类，用于给外界连接、在其中的onBind方法中返回一个IBinder类（这个类实例是使用上面的接口文件的Stub方法创建的）。
+```
+package com.sg.hzy.aidltest;
+import android.app.Service;
+import android.content.Intent;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.util.Log;
+import com.sg.hzy.aidltest.aidl.Book;
+import com.sg.hzy.aidltest.aidl.IMyAidlInterface;
+/**
+* Created by hzy on 2019/1/21.
+*/
+public class Bservice extends Service {
+    private static final String TAG = "ConnectService";
+    public Bservice() {
+    }
+    String State="没有连接";
+    Book book=new Book();
+    //这里是我们定义的服务器的实例，当客户端调用相应的接口方法时调用的实际是这个对象。
+    IMyAidlInterface.Stub mIBinder=new IMyAidlInterface.Stub() {
+        @Override
+        public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
+        }
+        @Override
+        public String connect(String mes) throws RemoteException {
+            return mes;
+        }
+        @Override
+        public void disConnect(String mes) throws RemoteException {
+            Log.i(TAG, "disconnect: ");
+        }
+        @Override
+        public Book GetBook() throws RemoteException {
+            return book;
+        }
+        @Override
+        public void SetBook(int id, String name, double price) throws RemoteException {
+            book.setId(id);
+            book.setName(name);
+            book.setPrice(price);
+            Log.i(TAG, "SetBook:设置数据为"+id + name+ price);
+        }
+    };
+    @Override
+    public IBinder onBind(Intent intent) {
+        return mIBinder;
+    }
+    @Override
+    public boolean onUnbind(Intent intent) {
+        return super.onUnbind(intent);
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+}
+```
+##### 4. 配置Service属性 android:exported设置允许外部调用，android:process=":remote"单独进程。
+```
+<service android:name=".Bservice"
+    android:exported="true"
+    android:process=":remote">
+    <intent-filter>
+        <action android:name="com.sg.hzy.aidltest.Bservice"/>
+    </intent-filter>
+</service>
+
+```
+##### 5. 客户端使用，即另一个进程调用数据
+```
+private IMyAidlInterface myAidlInterface;
+String TAG="client";
+ServiceConnection bservice = new ServiceConnection() {
+    @Override
+    public void onServiceConnected(ComponentName name, IBinder service) {
+        //获得实例
+        myAidlInterface = IMyAidlInterface.Stub.asInterface(service);
+        try {
+            //调用接口方法
+            myAidlInterface.SetBook(1,"书本",1f);
+            Book book=myAidlInterface.GetBook();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+    @Override
+    public void onServiceDisconnected(ComponentName name) {
+    }
+};
+@Override
+protected void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.aty1);
+    bindService();
+}
+/**
+* 绑定服务
+*
+*/
+public void bindService() {
+        //启动Service
+    Intent intent = new Intent();
+    intent.setAction("com.sg.hzy.aidltest.Bservice");
+    intent.setPackage("com.sg.hzy.aidltest");
+    startService(intent);
+    bindService(intent, bservice, BIND_AUTO_CREATE);
+    Log.i("client", "bindService: 绑定服务");
+}
+```
+
+### AIDL解析：
+
+1. 首先AIDL只是对Binder的一种简易化实现，实质是对我们的aidl文件进行了解析封装出一个真正的接口类、该类在gen下的输出文件下可以找到、如上面的就是IMyAidlInterface这个接口,看到客户端调用实例的方法：
+查看生成的aidl文件
+```
+public interface IBookManger extends android.os.IInterface
+{
+
+    //Stub内部类
+  public static abstract class Stub extends android.os.Binder implements com.example.test.aidl.IBookManger{
+    //Binder修饰符，唯一能确定binder的Id
+    private static final java.lang.String DESCRIPTOR = "com.example.test.aidl.IBookManger";
+
+    public Stub()
+    {
+      this.attachInterface(this, DESCRIPTOR);
+    }
+
+    public static com.example.test.aidl.IBookManger asInterface(android.os.IBinder obj)
+    {
+      if ((obj==null)) {
+        return null;
+      }
+      //判断调用者是不是在同一进程是的话就返回本地的接口实现类
+      android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
+      if (((iin!=null)&&(iin instanceof com.example.test.aidl.IBookManger))) {
+        return ((com.example.test.aidl.IBookManger)iin);
+      }
+      return new com.example.test.aidl.IBookManger.Stub.Proxy(obj);
+    }
+    //否则返回一个代理类
+    @Override public android.os.IBinder asBinder()
+    {
+      return this;
+    }
+    @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+    {
+       //通过code可以判断调用了哪个方法，data为输入参数、reply为返回参数
+      java.lang.String descriptor = DESCRIPTOR;
+      switch (code)
+      {
+        case INTERFACE_TRANSACTION:
+        {
+          reply.writeString(descriptor);
+          return true;
+        }
+        case TRANSACTION_GetBook:
+        {
+          data.enforceInterface(descriptor);
+          com.example.test.aidl.Book _result = this.GetBook();
+          reply.writeNoException();
+          if ((_result!=null)) {
+            reply.writeInt(1);
+            _result.writeToParcel(reply, android.os.Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
+          }
+          else {
+            reply.writeInt(0);
+          }
+          return true;
+        }
+        case TRANSACTION_SetBook:
+        {
+          data.enforceInterface(descriptor);
+          int _arg0;
+          _arg0 = data.readInt();
+          java.lang.String _arg1;
+          _arg1 = data.readString();
+          double _arg2;
+          _arg2 = data.readDouble();
+          this.SetBook(_arg0, _arg1, _arg2);
+          reply.writeNoException();
+          return true;
+        }
+        default:
+        {
+          return super.onTransact(code, data, reply, flags);
+        }
+      }
+    }
+    
+    Proxy内部代理类
+    private static class Proxy implements com.example.test.aidl.IBookManger
+    {
+      private android.os.IBinder mRemote;
+      Proxy(android.os.IBinder remote)
+      {
+        mRemote = remote;
+      }
+      @Override public android.os.IBinder asBinder()
+      {
+        return mRemote;
+      }
+       //在远程调用方法时实际会调用到这里
+      @Override public com.example.test.aidl.Book GetBook() throws android.os.RemoteException
+      {
+        //将调用参数写入
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        com.example.test.aidl.Book _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          //调用Binder的transact方法、返回true代表调用成功
+          boolean _status = mRemote.transact(Stub.TRANSACTION_GetBook, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            //返回结果
+            return getDefaultImpl().GetBook();
+          }
+          _reply.readException();
+          if ((0!=_reply.readInt())) {
+            _result = com.example.test.aidl.Book.CREATOR.createFromParcel(_reply);
+          }
+          else {
+            _result = null;
+          }
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+      @Override public void SetBook(int id, java.lang.String name, double price) throws android.os.RemoteException
+      {
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          _data.writeInt(id);
+          _data.writeString(name);
+          _data.writeDouble(price);
+          boolean _status = mRemote.transact(Stub.TRANSACTION_SetBook, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            getDefaultImpl().SetBook(id, name, price);
+            return;
+          }
+          _reply.readException();
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+      }
+      public static com.example.test.aidl.IBookManger sDefaultImpl;
+    }
+    static final int TRANSACTION_basicTypes = (android.os.IBinder.FIRST_CALL_TRANSACTION + 0);
+    static final int TRANSACTION_connect = (android.os.IBinder.FIRST_CALL_TRANSACTION + 1);
+    static final int TRANSACTION_disConnect = (android.os.IBinder.FIRST_CALL_TRANSACTION + 2);
+    static final int TRANSACTION_GetBook = (android.os.IBinder.FIRST_CALL_TRANSACTION + 3);
+    static final int TRANSACTION_SetBook = (android.os.IBinder.FIRST_CALL_TRANSACTION + 4);
+    public static boolean setDefaultImpl(com.example.test.aidl.IBookManger impl) {
+      if (Stub.Proxy.sDefaultImpl == null && impl != null) {
+        Stub.Proxy.sDefaultImpl = impl;
+        return true;
+      }
+      return false;
+    }
+    public static com.example.test.aidl.IBookManger getDefaultImpl() {
+      return Stub.Proxy.sDefaultImpl;
+    }
+  }
+}
+```
+2. 首先通过 IMyAidlInterface.Stub.asInterface(IBinder obj )这方法得到的接口方法，在首先会判断调用者是不是和obj这个实际的Binder类为同一个进程，是的话会直接返回Binder本身，否则会返回一个代理类Proxy。
+3. 那么实际在远程调用的时Proxy的相应方法，例如：
+```
+  //在远程调用方法时实际会调用到这里
+      @Override public com.example.test.aidl.Book GetBook() throws android.os.RemoteException
+      {
+        //将调用参数写入
+        android.os.Parcel _data = android.os.Parcel.obtain();
+        android.os.Parcel _reply = android.os.Parcel.obtain();
+        com.example.test.aidl.Book _result;
+        try {
+          _data.writeInterfaceToken(DESCRIPTOR);
+          //调用Binder的transact方法、返回true代表调用成功
+          boolean _status = mRemote.transact(Stub.TRANSACTION_GetBook, _data, _reply, 0);
+          if (!_status && getDefaultImpl() != null) {
+            //返回结果
+            return getDefaultImpl().GetBook();
+          }
+          _reply.readException();
+          if ((0!=_reply.readInt())) {
+            _result = com.example.test.aidl.Book.CREATOR.createFromParcel(_reply);
+          }
+          else {
+            _result = null;
+          }
+        }
+        finally {
+          _reply.recycle();
+          _data.recycle();
+        }
+        return _result;
+      }
+```
+mRemot这个参数是由构造函数传入的Binder对象，即是我们在服务端创建的Binder对象，可以看到最后调用了服务端创建的Binder对象的transact方法，该方法底层处理后会调用onTransact
+方法：
+```
+@Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
+    {
+      java.lang.String descriptor = DESCRIPTOR;
+      switch (code)
+      {
+        case INTERFACE_TRANSACTION:
+        {
+          reply.writeString(descriptor);
+          return true;
+        }
+       ...
+        case TRANSACTION_GetBook:
+        {
+          data.enforceInterface(descriptor);
+          com.example.test.aidl.Book _result = this.GetBook();
+          reply.writeNoException();
+          if ((_result!=null)) {
+            reply.writeInt(1);
+            _result.writeToParcel(reply, android.os.Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
+          }
+          else {
+            reply.writeInt(0);
+          }
+          return true;
+        }
+       ...
+      }
+    }
+```
+首先会通过code判断调用是哪个方法，然后调用自身的对应方法，也就是在服务器端Service返回的Binder实例,因为stub这个接口也实现定义的给客服端调用的接口方法，所以这时其实调用的就是在实现时的方法返回，将服务端返回的数据写入到reply中，并返回true，表示远程调用成功，再回到Proxy的相应方法中，在transact方法返回true后，会调用_result = 
+com.example.test.aidl.Book.CREATOR.createFromParcel(_reply)，将数据从内存中再解析出来返回给调用者。
+
+
+#### 总结：
+1. 远程调用asInterface方法时根据进程相同返回实例，否则返回一个代理类Proxy。
+2. 该代理类在调用Binder的transact通过底层调用写入内存数据，再回调onTransact方法，解析传入参数从data中获得然后调用服务器本地的Binder的设置方法设置数据（即在服务端实现的Binder和IBookManger类实例），通过向reply写入数据，然后通过com.example.test.aidl.Book.CREATOR.createFromParcel(_reply)解析出数据之后返回客户端，由于返回的是一个序列化后的数据所以不受存储空间的影响，会在客户端通过序列化方法重新生成。该返回的对象和服务端对象不是同一个，只是数据相同，客户端传参数也同理。
+3. 客户端调用方法时处于客户端进程，直到调用了transact方法会在底层切换到服务进程的onTransact方法，再返回调用transact返回值成功与否给客户端进程。
+
+
+
+
+### 使用Messenger实现Binder：
+
+##### 1. 定义一个Messenger 类，传入一个处理的handler,并在Service的onBind方法中调用Messenger的getBinder方法回调给客户端。
+```
+public class MessengerTest extends Service {
+    public final  static int MSG_FROM_CLIENT = 1;
+    public final  static int MSG_FROM_SERVICE = 2;
+    private static class MessengerHandler extends Handler{
+
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            switch (msg.what){
+                //根据获得的message的what属性判断客户端行为
+                case MSG_FROM_CLIENT:
+                    Messenger messenger = msg.replyTo;
+                    Message message = Message.obtain();
+                    message.what = MSG_FROM_SERVICE;
+                    message.replyTo = messenger;
+                    try {
+                        messenger.send(message);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                default:
+                    super.handleMessage(msg);
+            }
+        }
+    }
+    //生成一个Messenger对象，处理方法为上面的Handel
+    private Messenger messenger = new Messenger(new MessengerHandler());
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        //返回Messenger的Binder对象
+        return messenger.getBinder();
+    }
+}
+```
+最后别忘了添加进程调用属性：
+```
+ <service android:name=".aidl.MessengerTest"
+            android:process=":remote"
+            android:exported="true"/>
+```
+##### 2.客户端调用时，使用bindService方法返回的Binder转换为Messenger对象，向这个Messenger中发送信息，服务端就能收到消息，还可以传入message的replyto属性传入回调处理的Messenger。
+```
+private Handler receviceHandler = new Handler() {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+             //当向服务端发送信息时传入replyto字段设置当前处理的的message后，服务端可以获得该messenger发送信息回调到这里
+            switch (msg.what) {
+                case MSG_FROM_SERVICE:
+                    break;
+                default:
+                    super.handleMessage(msg);
+                    break;
+            }
+        }
+    };
+    private Messenger receviceMessenger = new Messenger(receviceHandler);
+    private ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            //获得Binder后包装成Messenger
+            Messenger messenger = new Messenger(service);
+            Message message = Message.obtain();
+            //设置发送的code
+            message.what = MSG_FROM_CLIENT;
+            //设置回调处理的messenger
+            message.replyTo = receviceMessenger;
+            try {
+                messenger.send(message);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        //启动Service
+        Intent intent = new Intent(this, MessengerTest.class);
+        bindService(intent, serviceConnection, BIND_AUTO_CREATE);
+    }
+```
+
+### 使用RemoteCallbackList注册客户端回调：
+**平常定义回调接口时通过List保存客户端回调，该回调实现aidl实现，Binder连接池会保存对应的映射，服务端调用回调中的方法时实际要先从Binder中找到对应的映射再调用实际的对象（这是在Linux底层实现的），这样可以实现服务器调用客户端回调从而实现下发通知，但由于服务端序列化后得出的对象是不同的，因此无法在保存的回调列表中调用解除回调的方法将回调移除，这时需要使用RemoteCallbackList注册。**
+##### 原理：由于使用客户端唯一不变的就是连接的binder，因此RemoteCallbackList采用binder作为键值保存对象，这也意味着一个binder只能对应一个值对象，因此注册的回调只能有一个。
+
+##### 实现:
+
+
+1. 定义一个回调接口类aidl文件
+```
+	// IMListener.aidl
+	package com.example.test.aidl;
+
+	// Declare any non-default types here with import statements
+
+	interface IMListener {
+		 void newMessage(in String str);
+	}
+```
+2. 定义一个Service服务端接口给客户端调用:
+```
+	// IMManger.aidl
+	package com.example.test.aidl;
+	import com.example.test.aidl.IMListener;
+	// Declare any non-default types here with import statements
+	interface IMManger {
+		void registerListener(IMListener listener);
+		void unregisterListener(IMListener listener);
+		void createNewMessage(String str);
+	}
+```
+添加之后要添加进程选项:
+```
+	 <service android:name=".testListener.testService"
+				android:process=":remote"
+				android:exported="true"/>
+```
+3. Rebulid一下工程可以得到自动生成的aidl辅助类，这里上面已经讲到。
+4. 实现一个Service子类：
+```
+	public class testService extends Service {
+
+		//保存所有回调接口列表
+		private RemoteCallbackList<IMListener> imListeners = new RemoteCallbackList<>();
+
+		private Binder imManger = new IMManger.Stub() {
+			@Override
+			public void registerListener(IMListener listener) {
+				//添加保存对象
+				imListeners.register(listener);
+			}
+
+			@Override
+			public void unregisterListener(IMListener listener) {
+				//解除保存对象
+				imListeners.unregister(listener);
+			}
+
+			@Override
+			public void createNewMessage(String str) throws RemoteException {
+				//遍历列表调用回调方法
+				int n = imListeners.beginBroadcast();
+				for (int i = 0; i < n; i++) {
+					imListeners.getBroadcastItem(i).newMessage(str);
+				}
+				imListeners.finishBroadcast();
+			}
+		};
+
+		@Nullable
+		@Override
+		public IBinder onBind(Intent intent) {
+			return imManger;
+		}
+	}
+```
+5. 客户端调用：
+```
+	public class ListenerActivity extends AppCompatActivity implements View.OnClickListener {
+
+		IMManger imManger;
+		private IMListener listener = new IMListener.Stub() {
+
+			@Override
+			public void newMessage(String str) throws RemoteException {
+
+				//在这里可以接收到服务端回调后的数据
+				//这里不是UI线程，因此要想刷新UI需要Handler
+			}
+		};
+		private ServiceConnection serviceConnection = new ServiceConnection() {
+			@Override
+			public void onServiceConnected(ComponentName name, IBinder service) {
+			
+				//获取连接Binder 该值是由Service的OnBind返回的实例
+				imManger = IMManger.Stub.asInterface(service);
+			 
+			}
+
+			@Override
+			public void onServiceDisconnected(ComponentName name) {
+				imManger = null;
+			}
+		};
+
+
+		@Override
+		protected void onCreate(@Nullable Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.activity_main);
+			findViewById(R.id.button).setOnClickListener(this);
+			findViewById(R.id.button2).setOnClickListener(this);
+			findViewById(R.id.button3).setOnClickListener(this
+			
+			//启动服务
+			Intent intent = new Intent(this, testService.class);
+			bindService(intent, serviceConnection, BIND_AUTO_CREATE);
+		}
+
+
+		int i = 0;
+
+		@Override
+		public void onClick(View v) {
+			try {
+				switch (v.getId()) {
+					case R.id.button:
+					
+						 //注册回调
+						imManger.registerListener(listener);
+						break;
+					case R.id.button2:
+						//解除回调
+						imManger.unregisterListener(listener);
+						break;
+					case R.id.button3:
+						//创建一个新数据，该数据会被通知到服务端再回调给客户端
+						imManger.createNewMessage("123" + i++);
+						break;
+
+				}
+			} catch (RemoteException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+```
+
+### Binder连接池：
+**在使用AIDL时，每次实现一个AIDL接口都需要一个Service来提供服务，难以维护，可以提供一个中转的AIDL接口，专门用于获取其他接口binder，因此可以叫做binder连接池。**
+
+##### 实现：
+1. 实现一个BinderPool接口，其中提供一个方法用于获取服务：
+```
+     interface IBinderPool {
+       IBinder queryBinder(int id);
+    } 
+```
+2. 两个提供的服务接口：
+```
+    //计算加法服务
+    interface IAddCompute {
+        int add(int a,int b);
+    }
+```
+```
+    //计算减法服务
+    interface ISubCompute {
+        int sub(int a,int b);
+    }
+```
+3. 实现连接池的Service：
+```
+    public class BindPoolService extends Service {
+
+        //定义不同的ID区分不同的请求服务
+        
+        //请求加法服务
+        public final static int ADD_COMPUTE_SERVICE = 1;
+        //请求减法服务
+        public final static int SUB_COMPUTE_SERVICE = 2;
+        private Binder binderPool = new IBinderPool.Stub() {
+
+            @Override
+            public IBinder queryBinder(int id) throws RemoteException {
+                //根据不同的id返回不同的bind实例
+                switch (id) {
+                    case ADD_COMPUTE_SERVICE:
+                        return new IAddCompute.Stub() {
+                            @Override
+                            public int add(int a, int b) throws RemoteException {
+                                return a + b;
+                            }
+                        };
+                    case SUB_COMPUTE_SERVICE:
+                        return new ISubCompute.Stub() {
+                            @Override
+                            public int sub(int a, int b) throws RemoteException {
+                                return a - b;
+                            }
+                        };
+                    default:
+                        return null;
+                }
+            }
+        };
+
+        @Nullable
+        @Override
+        public IBinder onBind(Intent intent) {
+            return binderPool;
+        }
+    }
+```
+别忘了要设置进程参数和外部调用
+4. 客户端调用：
+```
+    public class BindPoolAty extends AppCompatActivity implements View.OnClickListener {
+        IBinderPool bindPoolService;
+        ServiceConnection serviceConnection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                bindPoolService = IBinderPool.Stub.asInterface(service);
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+
+            }
+        };
+
+        @Override
+        protected void onCreate(@Nullable Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+            Intent intent = new Intent(this, BindPoolService.class);
+            bindService(intent, serviceConnection, BIND_AUTO_CREATE);
+
+            findViewById(R.id.button).setOnClickListener(this);
+            findViewById(R.id.button2).setOnClickListener(this);
+
+        }
+	
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.button:
+                    //获得加法服务
+                    try {
+                        IAddCompute addComputeService = IAddCompute.Stub.asInterface( bindPoolService.queryBinder(ADD_COMPUTE_SERVICE));
+                        Log.i("tag", "" + addComputeService.add(1, 2));
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case R.id.button2:
+                    //获得减法服务
+                    try {
+                        ISubCompute subComputeService = ISubCompute.Stub.asInterface( bindPoolService.queryBinder(SUB_COMPUTE_SERVICE));
+                        Log.i("tag", "" + subComputeService.sub(8, 2));
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+            }
+        }
+    }
+```
+前面都是正常使用，直到需要使用真正的服务时调用IBindPool的Binder类的queryBinder返回不同的实例并转化为接口调用。
+
+
+
+
+

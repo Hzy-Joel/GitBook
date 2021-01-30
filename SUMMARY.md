@@ -2,8 +2,35 @@
 
 * [前言](README.md)
 * [Android](android/README.md)
-    * [触摸事件](android/触摸事件.md)
+    * 框架
+      * [BlockCanary](android/框架/BlockCanary.md)
+      * [Fresco](android/框架/fresco.md)
+      * [Glide](android/框架/Glide源码.md)
+      * [LeakCanary](android/框架/LeakCanary原理.md)
+      * [Retrofit源码](android/框架/Retrofit源码.md)
+    * 源码解析
+      * [Binder](android/源码/Binder.md)
+      * [Dialog源码](android/源码/Dialog源码.md)
+      * [RecycleView缓存机制](android/源码/RecycleView缓存机制.md)
+      * [WMS源码](android/源码/WMS源码.md)
+    * 自定义View及效果
+      * [触摸事件](android/自定义View及效果/触摸事件.md)
+      * [自定义ItemDecoration](android/自定义View及效果/自定义ItemDecoration.md)
+      * [ItemTouchHelper](android/自定义View及效果/ItemTouchHelper使用.md)
+      * [MaterilaDesign布局使用](android/自定义View及效果/MaterilaDesign布局使用.md)
+    * Gradle
+      * [Gradle编译流程](android/Gradle/Gradle编译流程梳理.md)
+      * [Transform使用](android/Gradle/Transform使用.md)
+    * kotlin实践
+      * [协程初步使用](android/Kotlin/协程使用.md)
 * [Java](java/README.md)
     * [多线程同步](java/多线程同步.md)
+    * [垃圾回收机制](java/垃圾回收机制.md)
 * [计算机网络](计算机网络/README.md)
+    * [编码加密算法](计算机网络/编码加密.md)
+    * [登陆认证流程](计算机网络/登陆认证.md)
+    * [http协议](计算机网络/http协议.md)
 * [操作系统](操作系统/README.md)
+* 设计模式
+    * [单例模式](设计模式/单例模式.md)
+    * [建造者模式](设计模式/建造者模式.md)
