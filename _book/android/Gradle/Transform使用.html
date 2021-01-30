@@ -1,0 +1,956 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Transform使用 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Gradle编译流程梳理.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../框架/BlockCanary.html">
+            
+                <a href="../框架/BlockCanary.html">
+            
+                    
+                    BlockCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../框架/fresco.html">
+            
+                <a href="../框架/fresco.html">
+            
+                    
+                    Fresco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../框架/Glide源码.html">
+            
+                <a href="../框架/Glide源码.html">
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../框架/LeakCanary原理.html">
+            
+                <a href="../框架/LeakCanary原理.html">
+            
+                    
+                    LeakCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../框架/Retrofit源码.html">
+            
+                <a href="../框架/Retrofit源码.html">
+            
+                    
+                    Retrofit源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../源码/Binder.html">
+            
+                <a href="../源码/Binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../源码/Dialog源码.html">
+            
+                <a href="../源码/Dialog源码.html">
+            
+                    
+                    Dialog源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../源码/RecycleView缓存机制.html">
+            
+                <a href="../源码/RecycleView缓存机制.html">
+            
+                    
+                    RecycleView缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../源码/WMS源码.html">
+            
+                <a href="../源码/WMS源码.html">
+            
+                    
+                    WMS源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    自定义View及效果
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../自定义View及效果/触摸事件.html">
+            
+                <a href="../自定义View及效果/触摸事件.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../自定义View及效果/自定义ItemDecoration.html">
+            
+                <a href="../自定义View及效果/自定义ItemDecoration.html">
+            
+                    
+                    自定义ItemDecoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                <a href="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                    
+                    ItemTouchHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                <a href="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                    
+                    MaterilaDesign布局使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Gradle
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="Gradle编译流程梳理.html">
+            
+                <a href="Gradle编译流程梳理.html">
+            
+                    
+                    Gradle编译流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4.2" data-path="Transform使用.html">
+            
+                <a href="Transform使用.html">
+            
+                    
+                    Transform使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    kotlin实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../Kotlin/协程使用.html">
+            
+                <a href="../Kotlin/协程使用.html">
+            
+                    
+                    协程初步使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../java/多线程同步.html">
+            
+                <a href="../../java/多线程同步.html">
+            
+                    
+                    多线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../java/垃圾回收机制.html">
+            
+                <a href="../../java/垃圾回收机制.html">
+            
+                    
+                    垃圾回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../计算机网络/">
+            
+                <a href="../../计算机网络/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../计算机网络/编码加密.html">
+            
+                <a href="../../计算机网络/编码加密.html">
+            
+                    
+                    编码加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../计算机网络/登陆认证.html">
+            
+                <a href="../../计算机网络/登陆认证.html">
+            
+                    
+                    登陆认证流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../计算机网络/http协议.html">
+            
+                <a href="../../计算机网络/http协议.html">
+            
+                    
+                    http协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../操作系统/">
+            
+                <a href="../../操作系统/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../设计模式/建造者模式.html">
+            
+                <a href="../../设计模式/建造者模式.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Transform使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="transform&#x4F7F;&#x7528;&#x5F00;&#x53D1;">Transform&#x4F7F;&#x7528;&#x5F00;&#x53D1;</h2>
+<ul>
+<li><p>build.gradle.kts&#x5BFC;&#x5165;&#x76F8;&#x5173;&#x4F9D;&#x8D56;</p>
+<pre><code class="lang-kotlin">plugins {
+    `kotlin-dsl`
+}
+repositories {
+    jcenter()
+    google()
+}
+
+dependencies{
+    <span class="hljs-comment">//&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;&#x5BFC;&#x5165;jar &#x81EA;&#x5B9A;&#x4E49;Plugin&#x9700;&#x8981;</span>
+    gradleApi()
+    <span class="hljs-comment">//&#x81EA;&#x5B9A;&#x4E49;Transfrom&#x5DE5;&#x5177;&#x5305; &#x81EA;&#x5B9A;&#x4E49;Transform&#x9700;&#x8981;</span>
+    implementation(<span class="hljs-string">&quot;com.android.tools.build:gradle:3.6.1&quot;</span>)
+}
+</code></pre>
+<ul>
+<li>&#x81EA;&#x5B9A;&#x4E49;Transform&#x7C7B; </li>
+</ul>
+<p>```kotlin
+import com.android.build.api.transform.*
+import org.objectweb.asm.ClassReader
+import org.objectweb.asm.ClassWriter
+import java.io.File
+import java.io.FileOutputStream</p>
+</li>
+</ul>
+<p>   /**</p>
+<pre><code>* User: hzy
+* Date: 2020/7/19
+* Time: 3:41 PM
+* Description: &#x81EA;&#x5B9A;&#x4E49;&#x6CE8;&#x5165;&#x6D41;&#x7A0B;
+*/
+</code></pre><p>   class ClickTransform : Transform() {
+       //Transform&#x7684;&#x540D;&#x79F0;
+       override fun getName(): String {
+           return this.javaClass.name
+       }</p>
+<pre><code>   //&#x5904;&#x7406;&#x6587;&#x4EF6;&#x7C7B;&#x578B;--&gt; class&#x6587;&#x4EF6;
+   override fun getInputTypes(): MutableSet&lt;QualifiedContent.ContentType&gt; {
+       return mutableSetOf(QualifiedContent.DefaultContentType.CLASSES)
+   }
+
+   //&#x662F;&#x5426;&#x589E;&#x91CF;&#x66F4;&#x65B0;
+   // &#x8FD4;&#x56DE;true&#x7684;&#x8BDD;&#x8868;&#x793A;&#x652F;&#x6301;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x6839;&#x636E; com.android.build.api.transform.TransformInput &#x6765;&#x83B7;&#x5F97;&#x66F4;&#x6539;&#x3001;&#x79FB;&#x9664;&#x6216;&#x8005;&#x6DFB;&#x52A0;&#x7684;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x6216;&#x8005;jar&#x5305;&#xFF0C;&#x53C2;&#x8003;CustomClassTransform
+   override fun isIncremental(): Boolean {
+       return false
+   }
+
+   //&#x5904;&#x7406;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x8303;&#x56F4;&#xFF0C;&#x8303;&#x56F4;&#x8D8A;&#x5C0F;&#x901F;&#x5EA6;&#x8D8A;&#x5FEB;
+   override fun getScopes(): MutableSet&lt;in QualifiedContent.Scope&gt; {
+       return mutableSetOf(QualifiedContent.Scope.PROJECT)
+   }
+
+   //&#x5904;&#x7406;&#x8FC7;&#x7A0B;
+   override fun transform(transformInvocation: TransformInvocation) {
+       //&#x83B7;&#x53D6;&#x5230;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x4FEE;&#x6539;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#xFF0C;&#x8FD9;&#x4E00;&#x6B65;&#x5FC5;&#x987B;&#x505A;&#x4E0D;&#x7136;&#x7F16;&#x8BD1;&#x4F1A;&#x62A5;&#x9519;
+       val outputProvider = transformInvocation?.outputProvider
+       if (!isIncremental) outputProvider.deleteAll() //&#x5168;&#x91CF;&#x66F4;&#x65B0;&#x65F6;&#x5220;&#x9664;&#x6240;&#x6709;&#x8F93;&#x51FA;&#x4EE3;&#x7801;
+       //&#x904D;&#x5386;&#x8F93;&#x5165;&#x7684;&#x6587;&#x4EF6;
+       transformInvocation.inputs?.forEach { inputs -&gt;
+           inputs.directoryInputs.forEach { dir -&gt;
+               traverseDir(dir, outputProvider)
+           }
+           //&#x5904;&#x7406;jar&#x6587;&#x4EF6;
+           inputs.jarInputs.forEach { jar -&gt;
+               traverseJar(jar, outputProvider)
+           }
+
+       }
+
+   }
+
+
+   private fun traverseJar(jarInput: JarInput, outputProvider: TransformOutputProvider) {
+       //&#x4F20;&#x9012;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;Transform&#x5904;&#x7406;  &#x8FD9;&#x91CC;&#x4E0D;&#x5904;&#x7406;jar&#x5305;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x5230;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;Transform&#x4F7F;&#x7528;
+       val outputJar = outputProvider.getContentLocation(
+               jarInput.name,
+               jarInput.contentTypes,
+               jarInput.scopes,
+               Format.JAR)
+       //&#x590D;&#x5236;&#x4FEE;&#x6539;&#x6587;&#x4EF6;
+       outputJar?.let { jarInput.file.copyRecursively(File(it.path), true) }
+
+   }
+
+   private fun traverseDir(dirInput: DirectoryInput, outputProvider: TransformOutputProvider?) {
+       if (dirInput.file.isDirectory) {
+           dirInput.file.walk().forEach {
+               if (it.isFile) transformFile(it, dirInput, outputProvider)
+           }
+       } else {
+           transformFile(dirInput.file, dirInput, outputProvider)
+       }
+       //&#x4F20;&#x9012;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;Transform&#x5904;&#x7406;
+       val dest = outputProvider?.getContentLocation(
+               dirInput.name,
+               dirInput.contentTypes,
+               dirInput.scopes,
+               Format.DIRECTORY)
+       //&#x590D;&#x5236;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x5230;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x4E0B;
+       dest?.let { dirInput.file.copyRecursively(File(it.path), true) }
+
+   }
+
+   /***
+    *
+    */
+   private fun transformFile(file: File, dirInput: DirectoryInput, outputProvider: TransformOutputProvider?) {
+       //&#x53EA;&#x62E6;&#x622A;&#x5177;&#x4F53;&#x7C7B;&#x540D; MainAdapter  &#x901A;&#x8FC7;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x914D;&#x7F6E;
+       if (file.name != &quot;MainAdapter.class&quot;) return
+       println(&quot;ClickTransform transformFile:${file.path}&quot;)
+       val reader = ClassReader(file.readBytes())
+       val writer = ClassWriter(reader, ClassWriter.COMPUTE_MAXS)
+         //&#x4F20;&#x5165;&#x81EA;&#x5B9A;&#x4E49;&#x7684;ClassVisitor&#x5230;&#x62E6;&#x622A;&#x5668;&#x94FE;&#x4E2D;
+       val visitor = ClickVisitor(writer)
+       reader.accept(visitor, ClassReader.EXPAND_FRAMES)
+       //&#x539F;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x5B8C;&#x4E4B;&#x540E;&#x9700;&#x8981;&#xFF0C;&#x8986;&#x76D6;&#x539F;&#x6765;&#x7684;&#x6587;&#x4EF6;
+       val code = writer.toByteArray()
+       val outputStream = FileOutputStream(file.path)
+
+       outputStream.use {
+           it.write(code)
+       }
+   }
+</code></pre><p>   }</p>
+<pre><code>
+- &#x81EA;&#x5B9A;&#x4E49;Plugin&#x7C7B;&#xFF0C;&#x6DFB;&#x52A0;
+
+  ```kotlin
+  package com.hzy.buildsrc
+
+  import org.gradle.api.Plugin
+  import org.gradle.api.Project
+
+  /**
+   * User: hzy
+   * Date: 2020/7/15
+   * Time: 12:23 PM
+   * Description: &#x81EA;&#x5B9A;&#x4E49;Plugin
+   */
+  class ConsumePlugin : Plugin&lt;Project&gt; {
+      override fun apply(pro: Project) {
+          //&#x6CE8;&#x5165;&#x8F6C;&#x5316;
+          val appExtension = pro.extensions.getByType(AppExtension::class.java)
+          appExtension.registerTransform(ClickTransform())
+      }
+  }
+</code></pre><ul>
+<li><p>&#x6839;&#x636E;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x5904;&#x7406;&#x8F93;&#x5165;&#x6587;&#x4EF6;</p>
+<p><img src="https://hzy-joel.github.io/img/post/transfrom.jpg" alt="&#x8F93;&#x51FA;&#x5904;&#x7406;&#x6D41;&#x7A0B;"></p>
+</li>
+<li><p>&#x81EA;&#x5B9A;&#x4E49;&#x7684;C lassVisitor&#x7C7B;&#xFF1A;&#x8FD9;&#x4E2A;&#x7C7B;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x7C7B;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x5C31;&#x5728;visitMethod&#x4E2D;&#x5305;&#x88F9;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;MethodVisitor&#x5BF9;&#x8C61;&#x5728;MethodVisitor&#x4E2D;&#x8FDB;&#x884C;&#x63D2;&#x6869;&#xFF0C;&#x76F8;&#x5E94;&#x7684;&#x5982;&#x679C;&#x9700;&#x8981;&#x9488;&#x5BF9;&#x7C7B;&#x7684;&#x6CE8;&#x89E3;&#x89E3;&#x6790;&#x53EF;&#x4EE5;&#x5728;visitAnnotation&#x4E2D;&#x8FD4;&#x56DE;&#x81EA;&#x5B9A;&#x4E49;&#x7684;AnnotationVisitor&#x5BF9;&#x8C61;</p>
+<p>```kotlin
+package com.hzy.buildsrc.ClickTrack</p>
+<p>import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.MethodVisitor
+import org.objectweb.asm.Opcodes.ASM7</p>
+</li>
+</ul>
+<p>  /**</p>
+<ul>
+<li>User: hzy</li>
+<li>Date: 2020/7/19</li>
+<li>Time: 8:05 PM</li>
+<li><p>Description: ASM &#x904D;&#x5386;&#x7C7B;
+*/</p>
+<p>class ClickVisitor(private val visitor: ClassVisitor) : ClassVisitor(ASM7, visitor) {
+ private var className: String? = null
+ override fun visit(version: Int, access: Int, name: String?, signature: String?, superName: String?, interfaces: Array<out string="">?) {</out></p>
+<pre><code> super.visit(version, access, name, signature, superName, interfaces)
+ className = name
+</code></pre><p> }</p>
+<p> override fun visitMethod(access: Int, name: String?, descriptor: String?, signature: String?, exceptions: Array<out string="">?): MethodVisitor {</out></p>
+<pre><code> val visitor = super.visitMethod(access, name, descriptor, signature, exceptions)
+ return ClickMethodVisitor(visitor, access, name, descriptor, className)
+</code></pre><p> }
+ override fun visitAnnotation(descriptor: String?, visible: Boolean): AnnotationVisitor {</p>
+<pre><code> return super.visitAnnotation(descriptor, visible)
+</code></pre><p> }</p>
+<p>}
+```</p>
+</li>
+</ul>
+<ul>
+<li><p>&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x7684;MethodVisitor&#x5BF9;&#x8C61;&#x4E2D;&#x8FDB;&#x884C;&#x63D2;&#x6869;&#xFF1A;&#x5728;&#x65B9;&#x6CD5;&#x8BBF;&#x95EE;&#x4E2D;&#xFF0C;&#x9996;&#x5148;&#x6839;&#x636E;visitAnnotation&#x8BBF;&#x95EE;&#x6CE8;&#x89E3;&#x5224;&#x65AD;&#x8BE5;&#x65B9;&#x6CD5;&#x662F;&#x5426;&#x9700;&#x8981;&#x63D2;&#x6869;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x771F;&#x6B63;&#x8FDB;&#x5165;&#x65B9;&#x6CD5;&#x7684;onMethodEnter&#x4E2D;&#x8FDB;&#x884C;&#x5B57;&#x8282;&#x7801;&#x63D2;&#x6869;&#xFF0C;&#x63D2;&#x6869;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;ASM&#x63D2;&#x4EF6;&#x5BF9;&#x6BD4;&#x63D2;&#x6869;&#x540E;&#x7684;java&#x67E5;&#x770B;(kotlin&#x4E0D;&#x652F;&#x6301;)</p>
+<pre><code class="lang-kotlin"><span class="hljs-keyword">package</span> com.hzy.buildsrc.ClickTrack
+
+<span class="hljs-keyword">import</span> org.objectweb.asm.AnnotationVisitor
+<span class="hljs-keyword">import</span> org.objectweb.asm.Label
+<span class="hljs-keyword">import</span> org.objectweb.asm.MethodVisitor
+<span class="hljs-keyword">import</span> org.objectweb.asm.Opcodes
+<span class="hljs-keyword">import</span> org.objectweb.asm.commons.AdviceAdapter
+
+<span class="hljs-comment">/**
+ * User: hzy
+ * Date: 2020/7/19
+ * Time: 8:42 PM
+ * Description: &#x5728;&#x65B9;&#x6CD5;&#x524D;&#x540E;&#x63D2;&#x5165;&#x4EE3;&#x7801;
+ */</span>
+<span class="hljs-keyword">private</span> <span class="hljs-variable"><span class="hljs-keyword">val</span> TAG</span> = <span class="hljs-string">&quot;ClickAnnotationAdapter:  &quot;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClickMethodVisitor</span></span>(cv: MethodVisitor?, access: <span class="hljs-keyword">Int</span> = <span class="hljs-number">0</span>, name: String?, desc: String?, <span class="hljs-keyword">private</span> <span class="hljs-variable"><span class="hljs-keyword">val</span> className</span>: String? = <span class="hljs-literal">null</span>) : AdviceAdapter(ASM7, cv, access, name, desc) {
+
+    <span class="hljs-keyword">private</span> <span class="hljs-variable"><span class="hljs-keyword">var</span> intercept</span> = <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onMethodEnter</span><span class="hljs-params">()</span> {</span>
+        super.onMethodEnter()
+        <span class="hljs-keyword">if</span> (!intercept) <span class="hljs-keyword">return</span>
+        <span class="hljs-comment">//&#x63D2;&#x6869;&#x65B9;&#x6CD5;</span>
+        mv?.let {
+            <span class="hljs-comment">//&#x63D2;&#x6869;&#x663E;&#x793A;Toast  &#x8BE5;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x6709;context&#x548C;text&#x53C2;&#x6570;</span>
+            <span class="hljs-variable"><span class="hljs-keyword">val</span> l0</span> = Label()
+            mv.visitLabel(l0)
+            mv.visitLineNumber(<span class="hljs-number">16</span>, l0)
+            mv.visitVarInsn(Opcodes.ALOAD, <span class="hljs-number">1</span>)
+            mv.visitVarInsn(Opcodes.ALOAD, <span class="hljs-number">2</span>)
+            mv.visitInsn(Opcodes.ICONST_0)
+            mv.visitMethodInsn(Opcodes.INVOKESTATIC, <span class="hljs-string">&quot;android/widget/Toast&quot;</span>, <span class="hljs-string">&quot;makeText&quot;</span>, <span class="hljs-string">&quot;(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;&quot;</span>, <span class="hljs-literal">false</span>)
+            mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, <span class="hljs-string">&quot;android/widget/Toast&quot;</span>, <span class="hljs-string">&quot;show&quot;</span>, <span class="hljs-string">&quot;()V&quot;</span>, <span class="hljs-literal">false</span>)
+            <span class="hljs-variable"><span class="hljs-keyword">val</span> l1</span> = Label()
+            mv.visitLabel(l1)
+            mv.visitLineNumber(<span class="hljs-number">17</span>, l1)
+            mv.visitInsn(Opcodes.RETURN)
+            <span class="hljs-variable"><span class="hljs-keyword">val</span> l2</span> = Label()
+            mv.visitLabel(l2)
+            mv.visitLocalVariable(<span class="hljs-string">&quot;this&quot;</span>, <span class="hljs-string">&quot;Lcom/hzy/cnn/CustomView/Utils/ASMCode;&quot;</span>, <span class="hljs-literal">null</span>, l0, l2, <span class="hljs-number">0</span>)
+            mv.visitLocalVariable(<span class="hljs-string">&quot;context&quot;</span>, <span class="hljs-string">&quot;Landroid/content/Context;&quot;</span>, <span class="hljs-literal">null</span>, l0, l2, <span class="hljs-number">1</span>)
+            mv.visitLocalVariable(<span class="hljs-string">&quot;text&quot;</span>, <span class="hljs-string">&quot;Ljava/lang/String;&quot;</span>, <span class="hljs-literal">null</span>, l0, l2, <span class="hljs-number">2</span>)
+            mv.visitMaxs(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+        }
+<span class="hljs-comment">//        AsmLog.e(mv, &quot;Click&quot;, &quot;method:$name&quot;)</span>
+    }
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">visitAnnotation</span><span class="hljs-params">(descriptor: <span class="hljs-type">String?, visible: Boolean</span>)</span>: AnnotationVisitor {</span>
+        <span class="hljs-comment">//&#x8BBF;&#x95EE;&#x6CE8;&#x89E3;&#x5224;&#x65AD;&#x662F;&#x5426;&#x8981;&#x62E6;&#x622A;&#x65B9;&#x6CD5; &#x6CE8;&#x89E3;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x5E76;&#x4E14;&#x751F;&#x6548;&#x8303;&#x56F4;&#x8981;&#x4E3A;Runtime</span>
+        intercept = descriptor?.contains(<span class="hljs-string">&quot;Lcom/hzy/aopdemo/Track/ClickTrack&quot;</span>) == <span class="hljs-literal">true</span>
+        println(TAG + <span class="hljs-string">&quot;visitAnnotation:${descriptor} --&gt; $intercept&quot;</span>)
+        <span class="hljs-keyword">return</span> super.visitAnnotation(descriptor, visible)
+    }
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onMethodExit</span><span class="hljs-params">(opcode: <span class="hljs-type">Int</span>)</span> {</span>
+        super.onMethodExit(opcode)
+    }
+
+}
+</code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Gradle编译流程梳理.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Gradle编译流程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"Transform使用","subtitle":"Transform使用","date":"2020-07-19T15:40:00.000Z","author":"hzy","//header-img":"img/post-bg-2015.jpg","catalog":true,"tags":["AOP"],"level":"1.2.4.2","depth":3,"next":{"title":"kotlin实践","level":"1.2.5","depth":2,"ref":"","articles":[{"title":"协程初步使用","level":"1.2.5.1","depth":3,"path":"android/Kotlin/协程使用.md","ref":"android/Kotlin/协程使用.md","articles":[]}]},"previous":{"title":"Gradle编译流程","level":"1.2.4.1","depth":3,"path":"android/Gradle/Gradle编译流程梳理.md","ref":"android/Gradle/Gradle编译流程梳理.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/Gradle/Transform使用.md","mtime":"2020-08-16T16:13:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T09:28:16.191Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,2216 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Glide · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="LeakCanary原理.html" />
+    
+    
+    <link rel="prev" href="fresco.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="BlockCanary.html">
+            
+                <a href="BlockCanary.html">
+            
+                    
+                    BlockCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="fresco.html">
+            
+                <a href="fresco.html">
+            
+                    
+                    Fresco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.3" data-path="Glide源码.html">
+            
+                <a href="Glide源码.html">
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="LeakCanary原理.html">
+            
+                <a href="LeakCanary原理.html">
+            
+                    
+                    LeakCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="Retrofit源码.html">
+            
+                <a href="Retrofit源码.html">
+            
+                    
+                    Retrofit源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../源码/Binder.html">
+            
+                <a href="../源码/Binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../源码/Dialog源码.html">
+            
+                <a href="../源码/Dialog源码.html">
+            
+                    
+                    Dialog源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../源码/RecycleView缓存机制.html">
+            
+                <a href="../源码/RecycleView缓存机制.html">
+            
+                    
+                    RecycleView缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../源码/WMS源码.html">
+            
+                <a href="../源码/WMS源码.html">
+            
+                    
+                    WMS源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    自定义View及效果
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../自定义View及效果/触摸事件.html">
+            
+                <a href="../自定义View及效果/触摸事件.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../自定义View及效果/自定义ItemDecoration.html">
+            
+                <a href="../自定义View及效果/自定义ItemDecoration.html">
+            
+                    
+                    自定义ItemDecoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                <a href="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                    
+                    ItemTouchHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                <a href="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                    
+                    MaterilaDesign布局使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Gradle
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Gradle/Gradle编译流程梳理.html">
+            
+                <a href="../Gradle/Gradle编译流程梳理.html">
+            
+                    
+                    Gradle编译流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Gradle/Transform使用.html">
+            
+                <a href="../Gradle/Transform使用.html">
+            
+                    
+                    Transform使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    kotlin实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../Kotlin/协程使用.html">
+            
+                <a href="../Kotlin/协程使用.html">
+            
+                    
+                    协程初步使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../java/多线程同步.html">
+            
+                <a href="../../java/多线程同步.html">
+            
+                    
+                    多线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../java/垃圾回收机制.html">
+            
+                <a href="../../java/垃圾回收机制.html">
+            
+                    
+                    垃圾回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../计算机网络/">
+            
+                <a href="../../计算机网络/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../计算机网络/编码加密.html">
+            
+                <a href="../../计算机网络/编码加密.html">
+            
+                    
+                    编码加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../计算机网络/登陆认证.html">
+            
+                <a href="../../计算机网络/登陆认证.html">
+            
+                    
+                    登陆认证流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../计算机网络/http协议.html">
+            
+                <a href="../../计算机网络/http协议.html">
+            
+                    
+                    http协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../操作系统/">
+            
+                <a href="../../操作系统/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../设计模式/建造者模式.html">
+            
+                <a href="../../设计模式/建造者模式.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Glide</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="glide&#x6E90;&#x7801;">Glide&#x6E90;&#x7801;</h3>
+<h5 id="glide&#x7684;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;&#xFF1A;">Glide&#x7684;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;&#xFF1A;</h5>
+<ul>
+<li><p>&#x5728;&#x4F7F;&#x7528;Glide.with&#x65B9;&#x6CD5;&#x65F6;&#x4F1A;&#x4F20;&#x5165;&#x4E00;&#x4E2A;context&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;GlideRequests&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  Glide.with(this)//&#x5728;Activity&#x4E2D;&#x8C03;&#x7528;
+</code></pre><p>&#x5728;Glide4.4&#x4E4B;&#x540E;&#x4F7F;&#x7528;&#x7684;&#x662F;GlideApp&#x4EE3;&#x66FF;Glide&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x539F;&#x7406;&#x4E0D;&#x53D8;</p>
+</li>
+<li><p>Glide.with&#x65B9;&#x6CD5;&#x4E2D;getRetriever&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;RequestManagerRetriever&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code>  @NonNullpublic static RequestManager with(@NonNull Activity activity) {  
+      return getRetriever(activity).get(activity);
+  }
+</code></pre></li>
+<li><p>Glide&#x7C7B;&#x4E2D;&#x7684;getRetriever&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>  @NonNull
+  private static RequestManagerRetriever getRetriever(@Nullable Context context) {
+//&#x4E0A;&#x4E0B;&#x6587;&#x53EF;&#x80FD;&#x7531;&#x4E8E;&#x5176;&#x4ED6;&#x539F;&#x56E0;&#x800C;&#x4E3A;&#x7A7A;&#xFF08;&#x5373;&#xFF0C;&#x7528;&#x6237;&#x4F20;&#x5165;null&#xFF09;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5B83;&#x4EC5;&#x4F1A;&#x7531;&#x4E8E;Fragment&#x751F;&#x547D;&#x5468;&#x671F;&#x9519;&#x8BEF;&#x800C;&#x53D1;&#x751F;&#x8C03;&#x7528;&#x65F6;&#x4F20;&#x5165;&#x7684;&#x662F;&#x7A7A;&#x5BF9;&#x8C61;
+  Preconditions.checkNotNull(
+      context,
+      &quot;You cannot start a load on a not yet attached View or a Fragment where getActivity() &quot;
+          + &quot;returns null (which usually occurs when getActivity() is called before the Fragment &quot;
+          + &quot;is attached or after the Fragment is destroyed).&quot;)&#xFF1B;
+      return Glide.get(context).getRequestManagerRetriever();
+  }
+</code></pre><p>&#x5728;&#x8BE5;&#x65B9;&#x6CD5;&#x4E2D;&#x901A;&#x8FC7;Glide.get(context)&#x65B9;&#x6CD5;&#x521D;&#x59CB;&#x5316;Glide&#x3002;</p>
+</li>
+<li><p>Glide&#x4E2D;&#x7684;get&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code> @NonNull
+ public static Glide get(@NonNull Context context) {
+ if (glide == null) {
+ //&#x83B7;&#x53D6;&#x6A21;&#x5757; --- &#x8FD9;&#x91CC;&#x901A;&#x8FC7;&#x6CE8;&#x89E3;@GlideModule&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x5757;&#x751F;&#x6210;&#x81EA;&#x5DF1;&#x5DE5;&#x7A0B;&#x4E0B;&#x7684;GeneratedAppGlideModuleImpl&#x7C7B;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x53CD;&#x5C04;&#x65F6;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x4F1A;&#x5148;&#x52A0;&#x8F7D;&#x672C;&#x5730;jar&#x5305;&#x8DEF;&#x5F84;&#x7684;&#x751F;&#x6210;&#x7684;GeneratedAppGlideModuleImpl&#x7C7B;&#xFF0C;&#x800C;&#x9ED8;&#x8BA4;&#x521D;&#x59CB;&#x5316;&#x4E2D;&#x53CD;&#x5C04;&#x4F7F;&#x7528;Glide&#x7684;&#x9ED8;&#x8BA4;GeneratedAppGlideModuleImpl&#x7C7B;
+   GeneratedAppGlideModule annotationGeneratedModule =
+       getAnnotationGeneratedGlideModules(context.getApplicationContext());
+   synchronized (Glide.class) {
+     if (glide == null) {
+       checkAndInitializeGlide(context, annotationGeneratedModule);
+     }
+   }
+ }c
+
+ return glide;
+}
+</code></pre><p>&#x901A;&#x8FC7;DLC&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x83B7;&#x53D6;&#xFF0C;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x65F6;&#x8FDB;&#x5165;checkAndInitializeGlide&#x65B9;&#x6CD5;&#x521D;&#x59CB;&#x5316;Glide&#xFF0C;&#x5176;&#x4E2D;&#x4F1A;&#x52A0;&#x8F7D;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+</li>
+<li><p>Glide&#x4E2D;&#x7684;checkAndInitializeGlide&#x65B9;&#x6CD5;&#x9632;&#x6B62;Glide&#x7684;get&#x65B9;&#x6CD5;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x5BFC;&#x81F4;&#x7684;&#x591A;&#x6B21;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5728;initializeGlide&#x4E2D;&#xFF1A;</p>
+<pre><code>  private static void initializeGlide(
+    @NonNull Context context,
+    @NonNull GlideBuilder builder,
+    @Nullable GeneratedAppGlideModule annotationGeneratedModule) {
+  Context applicationContext = context.getApplicationContext();
+  //&#x4ECE;AndroidManifest&#x4E2D;&#x89E3;&#x6790;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x65B0;&#x7248;&#x672C;&#x7684;&#x5DF2;&#x7ECF;&#x4E0D;&#x9700;&#x8981;&#x914D;&#x7F6E;&#xFF0C;&#x65B0;&#x7248;&#x672C;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5728;get&#x65B9;&#x6CD5;&#x4E2D;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x83B7;&#x53D6;&#xFF0C;&#x8BE6;&#x7EC6;&#x7684;&#x5728;&#x540E;&#x9762;&#x4F1A;&#x63D0;&#x5230;&#x3002;
+  ...
+ // debug &#x8F93;&#x51FA;&#x65E5;&#x5FD7;
+  ...
+  RequestManagerRetriever.RequestManagerFactory factory =
+      annotationGeneratedModule != null
+          ? annotationGeneratedModule.getRequestManagerFactory()
+          : null;
+
+  //&#x8BBE;&#x7F6E;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;
+  builder.setRequestManagerFactory(factory);
+  for (com.bumptech.glide.module.GlideModule module : manifestModules) {
+    module.applyOptions(applicationContext, builder);
+  }
+  if (annotationGeneratedModule != null) {
+    annotationGeneratedModule.applyOptions(applicationContext, builder);
+  }
+
+  //&#x521B;&#x5EFA; glide&#x5B9E;&#x4F8B;
+  Glide glide = builder.build(applicationContext);
+  //&#x6CE8;&#x518C;&#x81EA;&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x7C7B;Module&#x7684;&#x52A0;&#x8F7D;&#x914D;&#x7F6E;&#xFF0C;&#x6CE8;&#x518C;&#x5BF9;&#x5E94;&#x7F16;&#x7801;&#x89E3;&#x7801;&#x5668;&#x7B49;&#x3002;
+  ...
+  //&#x6CE8;&#x518C;&#x72B6;&#x6001;&#x56DE;&#x8C03;&#xFF0C;&#x56DB;&#x5927;&#x7EC4;&#x4EF6;&#x90FD;&#x6CE8;&#x518C;&#x4E86;&#x8BE5;&#x63A5;&#x53E3;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x7BA1;&#x7406;&#x5185;&#x5B58;&#x53D8;&#x5316;&#x3001;&#x7A97;&#x53E3;&#x53D8;&#x5316;&#x7B49;
+  applicationContext.registerComponentCallbacks(glide)&#xFF1B;
+  Glide.glide = glide;
+}
+</code></pre><p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x4E3B;&#x8981;&#x662F;&#x52A0;&#x8F7D;&#x4E86;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;GlideBuilder&#x8BBE;&#x7F6E;&#x4E86;&#x8BE5;&#x914D;&#x7F6E;&#x751F;&#x6210;&#x7684;&#x4E00;&#x4E2A;RequestManagerFactory&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;GlideBuilder&#x7684;builder&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;glide&#x5BF9;&#x8C61;&#x3002;</p>
+</li>
+<li><p>GlideBuilder&#x7684;builder:</p>
+<pre><code>@NonNull
+Glide build(@NonNull Context context) {
+//&#x521D;&#x59CB;&#x5316;&#x4E00;&#x7CFB;&#x5217;&#x7F13;&#x5B58;&#x6C60;
+  if (sourceExecutor == null) {
+    sourceExecutor = GlideExecutor.newSourceExecutor();
+  }
+
+  if (diskCacheExecutor == null) {
+    diskCacheExecutor = GlideExecutor.newDiskCacheExecutor();
+  }
+
+  if (animationExecutor == null) {
+    animationExecutor = GlideExecutor.newAnimationExecutor();
+  }
+
+  if (memorySizeCalculator == null) {
+    memorySizeCalculator = new MemorySizeCalculator.Builder(context).build();
+  }
+
+  if (connectivityMonitorFactory == null) {
+    connectivityMonitorFactory = new DefaultConnectivityMonitorFactory();
+  }
+
+  if (bitmapPool == null) {
+    int size = memorySizeCalculator.getBitmapPoolSize();
+    if (size &gt; 0) {
+      bitmapPool = new LruBitmapPool(size);
+    } else {
+      bitmapPool = new BitmapPoolAdapter();
+    }
+  }
+
+  if (arrayPool == null) {
+    arrayPool = new LruArrayPool(memorySizeCalculator.getArrayPoolSizeInBytes());
+  }
+
+  if (memoryCache == null) {
+    memoryCache = new LruResourceCache(memorySizeCalculator.getMemoryCacheSize());
+  }
+
+  if (diskCacheFactory == null) {
+    diskCacheFactory = new InternalCacheDiskCacheFactory(context);
+  }
+
+  if (engine == null) {
+  //&#x521B;&#x5EFA;&#x52A0;&#x8F7D;&#x5F15;&#x64CE;&#x7C7B;
+    engine =
+        new Engine(
+            memoryCache,
+            diskCacheFactory,
+            diskCacheExecutor,
+            sourceExecutor,
+            GlideExecutor.newUnlimitedSourceExecutor(),
+            animationExecutor,
+            isActiveResourceRetentionAllowed);
+  }
+
+  if (defaultRequestListeners == null) {
+    defaultRequestListeners = Collections.emptyList();
+  } else {
+    defaultRequestListeners = Collections.unmodifiableList(defaultRequestListeners);
+  }
+
+  RequestManagerRetriever requestManagerRetriever =
+      new RequestManagerRetriever(requestManagerFactory);
+
+  return new Glide(
+      context,
+      engine,
+      memoryCache,
+      bitmapPool,
+      arrayPool,
+      requestManagerRetriever,
+      connectivityMonitorFactory,
+      logLevel,
+      defaultRequestOptionsFactory,
+      defaultTransitionOptions,
+      defaultRequestListeners,
+      isLoggingRequestOriginsEnabled
+      isImageDecoderEnabledForBitmaps);
+}
+</code></pre><p>&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x7F13;&#x5B58;&#x6C60;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5B9E;&#x5728;GlideBuilder&#x4E2D;&#x521D;&#x59CB;&#x5316;&#x7684;&#xFF0C;&#x6700;&#x540E;&#x8C03;&#x7528;&#x4E86;Glide&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4F20;&#x5165;&#x4E86;&#x5404;&#x7C7B;&#x7F13;&#x5B58;&#x6C60;&#x548C;&#x5728;&#x4E00;&#x5F00;&#x59CB;Glide.with&#x65B9;&#x6CD5;&#x4E2D;getRetriever&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;RequestManagerRetriever&#x5BF9;&#x8C61;&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x7684;&#x3002;</p>
+</li>
+<li><p>Glide&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code>  Glide(
+    @NonNull Context context,
+    @NonNull Engine engine,
+    @NonNull MemoryCache memoryCache,
+    @NonNull BitmapPool bitmapPool,
+    @NonNull ArrayPool arrayPool,
+    @NonNull RequestManagerRetriever requestManagerRetriever,
+    @NonNull ConnectivityMonitorFactory connectivityMonitorFactory,
+    int logLevel,
+    @NonNull RequestOptionsFactory defaultRequestOptionsFactory,
+    @NonNull Map&lt;Class&lt;?&gt;, TransitionOptions&lt;?, ?&gt;&gt; defaultTransitionOptions,
+    @NonNull List&lt;RequestListener&lt;Object&gt;&gt; defaultRequestListeners,
+    boolean isLoggingRequestOriginsEnabled,
+    boolean isImageDecoderEnabledForBitmaps) {
+  this.engine = engine;
+  this.bitmapPool = bitmapPool;
+  this.arrayPool = arrayPool;
+  this.memoryCache = memoryCache;
+  this.requestManagerRetriever = requestManagerRetriever;
+  this.connectivityMonitorFactory = connectivityMonitorFactory;
+  this.defaultRequestOptionsFactory = defaultRequestOptionsFactory;
+
+  final Resources resources = context.getResources();
+
+  //&#x6CE8;&#x518C;&#x5404;&#x7C7B;&#x5BF9;&#x5E94;&#x89E3;&#x7801;&#x5668;
+  registry = new Registry();
+  registry.register(new DefaultImageHeaderParser());
+  // Right now we&apos;re only using this parser for HEIF images, which are only supported on OMR1+.
+  // If we need this for other file types, we should consider removing this restriction.
+  if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O_MR1) {
+    registry.register(new ExifInterfaceImageHeaderParser());
+  }
+
+  List&lt;ImageHeaderParser&gt; imageHeaderParsers = registry.getImageHeaderParsers();
+
+  ByteBufferGifDecoder byteBufferGifDecoder =
+      new ByteBufferGifDecoder(context, imageHeaderParsers, bitmapPool, arrayPool);
+  ResourceDecoder&lt;ParcelFileDescriptor, Bitmap&gt; parcelFileDescriptorVideoDecoder =
+      VideoDecoder.parcel(bitmapPool);
+
+  // TODO(judds): Make ParcelFileDescriptorBitmapDecoder work with ImageDecoder.
+  Downsampler downsampler =
+      new Downsampler(
+          registry.getImageHeaderParsers(), resources.getDisplayMetrics(), bitmapPool, arrayPool);
+
+  ResourceDecoder&lt;ByteBuffer, Bitmap&gt; byteBufferBitmapDecoder;
+  ResourceDecoder&lt;InputStream, Bitmap&gt; streamBitmapDecoder;
+  if (isImageDecoderEnabledForBitmaps &amp;&amp; Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.P) {
+    streamBitmapDecoder = new InputStreamBitmapImageDecoderResourceDecoder();
+    byteBufferBitmapDecoder = new ByteBufferBitmapImageDecoderResourceDecoder();
+  } else {
+    byteBufferBitmapDecoder = new ByteBufferBitmapDecoder(downsampler);
+    streamBitmapDecoder = new StreamBitmapDecoder(downsampler, arrayPool);
+  }
+
+  ResourceDrawableDecoder resourceDrawableDecoder = new ResourceDrawableDecoder(context);
+  ResourceLoader.StreamFactory resourceLoaderStreamFactory =
+      new ResourceLoader.StreamFactory(resources);
+  ResourceLoader.UriFactory resourceLoaderUriFactory = new ResourceLoader.UriFactory(resources);
+  ResourceLoader.FileDescriptorFactory resourceLoaderFileDescriptorFactory =
+      new ResourceLoader.FileDescriptorFactory(resources);
+  ResourceLoader.AssetFileDescriptorFactory resourceLoaderAssetFileDescriptorFactory =
+      new ResourceLoader.AssetFileDescriptorFactory(resources);
+  BitmapEncoder bitmapEncoder = new BitmapEncoder(arrayPool);
+
+  BitmapBytesTranscoder bitmapBytesTranscoder = new BitmapBytesTranscoder();
+  GifDrawableBytesTranscoder gifDrawableBytesTranscoder = new GifDrawableBytesTranscoder();
+
+  ContentResolver contentResolver = context.getContentResolver();
+
+  registry
+      .append(ByteBuffer.class, new ByteBufferEncoder())
+      .append(InputStream.class, new StreamEncoder(arrayPool))
+      /* Bitmaps */
+      .append(Registry.BUCKET_BITMAP, ByteBuffer.class, Bitmap.class, byteBufferBitmapDecoder)
+      .append(Registry.BUCKET_BITMAP, InputStream.class, Bitmap.class, streamBitmapDecoder);
+
+  if (ParcelFileDescriptorRewinder.isSupported()) {
+    registry.append(
+        Registry.BUCKET_BITMAP,
+        ParcelFileDescriptor.class,
+        Bitmap.class,
+        new ParcelFileDescriptorBitmapDecoder(downsampler));
+  }
+
+  registry
+      .append(
+          Registry.BUCKET_BITMAP,
+          ParcelFileDescriptor.class,
+          Bitmap.class,
+          parcelFileDescriptorVideoDecoder)
+      .append(
+          Registry.BUCKET_BITMAP,
+          AssetFileDescriptor.class,
+          Bitmap.class,
+          VideoDecoder.asset(bitmapPool))
+      .append(Bitmap.class, Bitmap.class, UnitModelLoader.Factory.&lt;Bitmap&gt;getInstance())
+      .append(Registry.BUCKET_BITMAP, Bitmap.class, Bitmap.class, new UnitBitmapDecoder())
+      .append(Bitmap.class, bitmapEncoder)
+      /* BitmapDrawables */
+      .append(
+          Registry.BUCKET_BITMAP_DRAWABLE,
+          ByteBuffer.class,
+          BitmapDrawable.class,
+          new BitmapDrawableDecoder&lt;&gt;(resources, byteBufferBitmapDecoder))
+      .append(
+          Registry.BUCKET_BITMAP_DRAWABLE,
+          InputStream.class,
+          BitmapDrawable.class,
+          new BitmapDrawableDecoder&lt;&gt;(resources, streamBitmapDecoder))
+      .append(
+          Registry.BUCKET_BITMAP_DRAWABLE,
+          ParcelFileDescriptor.class,
+          BitmapDrawable.class,
+          new BitmapDrawableDecoder&lt;&gt;(resources, parcelFileDescriptorVideoDecoder))
+      .append(BitmapDrawable.class, new BitmapDrawableEncoder(bitmapPool, bitmapEncoder))
+      /* GIFs */
+      .append(
+          Registry.BUCKET_GIF,
+          InputStream.class,
+          GifDrawable.class,
+          new StreamGifDecoder(imageHeaderParsers, byteBufferGifDecoder, arrayPool))
+      .append(Registry.BUCKET_GIF, ByteBuffer.class, GifDrawable.class, byteBufferGifDecoder)
+      .append(GifDrawable.class, new GifDrawableEncoder())
+      /* GIF Frames */
+      // Compilation with Gradle requires the type to be specified for UnitModelLoader here.
+      .append(
+          GifDecoder.class, GifDecoder.class, UnitModelLoader.Factory.&lt;GifDecoder&gt;getInstance())
+      .append(
+          Registry.BUCKET_BITMAP,
+          GifDecoder.class,
+          Bitmap.class,
+          new GifFrameResourceDecoder(bitmapPool))
+      /* Drawables */
+      .append(Uri.class, Drawable.class, resourceDrawableDecoder)
+      .append(
+          Uri.class, Bitmap.class, new ResourceBitmapDecoder(resourceDrawableDecoder, bitmapPool))
+      /* Files */
+      .register(new ByteBufferRewinder.Factory())
+      .append(File.class, ByteBuffer.class, new ByteBufferFileLoader.Factory())
+      .append(File.class, InputStream.class, new FileLoader.StreamFactory())
+      .append(File.class, File.class, new FileDecoder())
+      .append(File.class, ParcelFileDescriptor.class, new FileLoader.FileDescriptorFactory())
+      // Compilation with Gradle requires the type to be specified for UnitModelLoader here.
+      .append(File.class, File.class, UnitModelLoader.Factory.&lt;File&gt;getInstance())
+      /* Models */
+      .register(new InputStreamRewinder.Factory(arrayPool));
+
+  if (ParcelFileDescriptorRewinder.isSupported()) {
+    registry.register(new ParcelFileDescriptorRewinder.Factory());
+  }
+
+  registry
+      .append(int.class, InputStream.class, resourceLoaderStreamFactory)
+      .append(int.class, ParcelFileDescriptor.class, resourceLoaderFileDescriptorFactory)
+      .append(Integer.class, InputStream.class, resourceLoaderStreamFactory)
+      .append(Integer.class, ParcelFileDescriptor.class, resourceLoaderFileDescriptorFactory)
+      .append(Integer.class, Uri.class, resourceLoaderUriFactory)
+      .append(int.class, AssetFileDescriptor.class, resourceLoaderAssetFileDescriptorFactory)
+      .append(Integer.class, AssetFileDescriptor.class, resourceLoaderAssetFileDescriptorFactory)
+      .append(int.class, Uri.class, resourceLoaderUriFactory)
+      .append(String.class, InputStream.class, new DataUrlLoader.StreamFactory&lt;String&gt;())
+      .append(Uri.class, InputStream.class, new DataUrlLoader.StreamFactory&lt;Uri&gt;())
+      .append(String.class, InputStream.class, new StringLoader.StreamFactory())
+      .append(String.class, ParcelFileDescriptor.class, new StringLoader.FileDescriptorFactory())
+      .append(
+          String.class, AssetFileDescriptor.class, new StringLoader.AssetFileDescriptorFactory())
+      .append(Uri.class, InputStream.class, new HttpUriLoader.Factory())
+      .append(Uri.class, InputStream.class, new AssetUriLoader.StreamFactory(context.getAssets()))
+      .append(
+          Uri.class,
+          ParcelFileDescriptor.class,
+          new AssetUriLoader.FileDescriptorFactory(context.getAssets()))
+      .append(Uri.class, InputStream.class, new MediaStoreImageThumbLoader.Factory(context))
+      .append(Uri.class, InputStream.class, new MediaStoreVideoThumbLoader.Factory(context));
+  if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.Q) {
+    registry.append(
+        Uri.class, InputStream.class, new QMediaStoreUriLoader.InputStreamFactory(context));
+    registry.append(
+        Uri.class,
+        ParcelFileDescriptor.class,
+        new QMediaStoreUriLoader.FileDescriptorFactory(context));
+  }
+  registry
+      .append(Uri.class, InputStream.class, new UriLoader.StreamFactory(contentResolver))
+      .append(
+          Uri.class,
+          ParcelFileDescriptor.class,
+          new UriLoader.FileDescriptorFactory(contentResolver))
+      .append(
+          Uri.class,
+          AssetFileDescriptor.class,
+          new UriLoader.AssetFileDescriptorFactory(contentResolver))
+      .append(Uri.class, InputStream.class, new UrlUriLoader.StreamFactory())
+      .append(URL.class, InputStream.class, new UrlLoader.StreamFactory())
+      .append(Uri.class, File.class, new MediaStoreFileLoader.Factory(context))
+      .append(GlideUrl.class, InputStream.class, new HttpGlideUrlLoader.Factory())
+      .append(byte[].class, ByteBuffer.class, new ByteArrayLoader.ByteBufferFactory())
+      .append(byte[].class, InputStream.class, new ByteArrayLoader.StreamFactory())
+      .append(Uri.class, Uri.class, UnitModelLoader.Factory.&lt;Uri&gt;getInstance())
+      .append(Drawable.class, Drawable.class, UnitModelLoader.Factory.&lt;Drawable&gt;getInstance())
+      .append(Drawable.class, Drawable.class, new UnitDrawableDecoder())
+      /* Transcoders */
+      .register(Bitmap.class, BitmapDrawable.class, new BitmapDrawableTranscoder(resources))
+      .register(Bitmap.class, byte[].class, bitmapBytesTranscoder)
+      .register(
+          Drawable.class,
+          byte[].class,
+          new DrawableBytesTranscoder(
+              bitmapPool, bitmapBytesTranscoder, gifDrawableBytesTranscoder))
+      .register(GifDrawable.class, byte[].class, gifDrawableBytesTranscoder);
+
+  if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.M) {
+    ResourceDecoder&lt;ByteBuffer, Bitmap&gt; byteBufferVideoDecoder =
+        VideoDecoder.byteBuffer(bitmapPool);
+    registry.append(ByteBuffer.class, Bitmap.class, byteBufferVideoDecoder);
+    registry.append(
+        ByteBuffer.class,
+        BitmapDrawable.class,
+        new BitmapDrawableDecoder&lt;&gt;(resources, byteBufferVideoDecoder));
+  }
+
+  ImageViewTargetFactory imageViewTargetFactory = new ImageViewTargetFactory();
+  glideContext =
+      new GlideContext(
+          context,
+          arrayPool,
+          registry,
+          imageViewTargetFactory,
+          defaultRequestOptionsFactory,
+          defaultTransitionOptions,
+          defaultRequestListeners,
+          engine,
+          isLoggingRequestOriginsEnabled,
+          logLevel);
+}
+</code></pre></li>
+</ul>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x5927;&#x90E8;&#x5206;&#x662F;&#x5728;&#x6CE8;&#x518C;&#x5BF9;&#x5E94;&#x7684;&#x89E3;&#x7801;&#x5668;&#xFF0C;&#x76F4;&#x63A5;&#x770B;&#x6700;&#x540E;&#x4E00;&#x6BB5;&#xFF0C;&#x6784;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;GlideContext&#x5BF9;&#x8C61;&#x4FDD;&#x5B58;&#x4E86;&#x5404;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x3002;<strong>&#x4EE5;&#x4E0A;&#x5C31;&#x662F;Glide&#x7684;&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;&#x4E2D;&#x5404;&#x7C7B;&#x8D44;&#x6E90;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#xFF0C;&#x56DE;&#x5230;&#x521D;&#x59CB;&#x5316;&#x7684; &#x7B2C; 2 &#x70B9;&#xFF0C;Glide&#x7684;get&#x65B9;&#x6CD5;&#x89E6;&#x53D1;&#x4E86;Glide&#x7684;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5E76;&#x5728;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x4E2D;&#x521D;&#x59CB;&#x5316;&#x4E86;RequestManagerRetriever&#x5BF9;&#x8C61;&#xFF0C;Glide&#x7684;with&#x65B9;&#x6CD5;&#x5B9E;&#x9645;&#x8C03;&#x7528;&#x7684;&#x662F;RequestManagerRetriever&#x7684;get&#x65B9;&#x6CD5;&#x3002;</strong></p>
+<ul>
+<li>RequestManagerRetriever&#x7684;get&#x65B9;&#x6CD5;:</li>
+</ul>
+<pre><code>    @NonNull
+    public RequestManager get(@NonNull FragmentActivity activity) {
+        if (Util.isOnBackgroundThread()) {
+        //&#x4E0D;&#x662F;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;
+          return get(activity.getApplicationContext());
+        } else {
+          assertNotDestroyed(activity);
+          FragmentManager fm = activity.getSupportFragmentManager();
+          return supportFragmentGet(activity, fm, /*parentHint=*/ null, isActivityVisible(activity));
+        }
+    }
+</code></pre><p>&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x901A;&#x8FC7;supportFragmentGet&#x65B9;&#x6CD5;&#x751F;&#x6210;&#x7684;RequestManager&#x3002;</p>
+<ul>
+<li>RequestManagerRetriever&#x7684;supportFragmentGet&#x65B9;&#x6CD5;&#xFF1A;</li>
+</ul>
+<pre><code>    @NonNull
+    private RequestManager supportFragmentGet(
+      @NonNull Context context,
+      @NonNull FragmentManager fm,
+      @Nullable Fragment parentHint,
+      boolean isParentVisible) {
+        SupportRequestManagerFragment current =
+            getSupportRequestManagerFragment(fm, parentHint, isParentVisible);
+        RequestManager requestManager = current.getRequestManager();
+        if (requestManager == null) {
+            // TODO(b/27524013): Factor out this Glide.get() call.
+            Glide glide = Glide.get(context);
+            requestManager =
+              factory.build(
+                glide, current.getGlideLifecycle(), current.getRequestManagerTreeNode(), context);
+            current.setRequestManager(requestManager);
+        return requestManager;
+    }
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;requestManager&#x662F;&#x7531;factory&#x7684;build&#x65B9;&#x6CD5;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x4F46;&#x5728;&#x8FD9;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x770B;&#x4E0B;&#x5176;&#x4E2D;build&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5982;&#x4F55;&#x6765;&#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;Glide&#x548C;Activity&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x5173;&#x8054;&#x3002;</p>
+<ul>
+<li>Glide&#x548C;Activity&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x5173;&#x8054;&#xFF0C;SupportRequestManagerFragment&#x7684;&#x751F;&#x6210;&#xFF1A;
+&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;SupportRequestManagerFragment&#x662F;&#x7531;getSupportRequestManagerFragment&#x65B9;&#x6CD5;&#x751F;&#x6210;&#x7684;&#xFF1A;</li>
+</ul>
+<pre><code>    private SupportRequestManagerFragment getSupportRequestManagerFragment(
+      @NonNull final FragmentManager fm, @Nullable Fragment parentHint, boolean isParentVisible) {
+      //&#x901A;&#x8FC7;Tag&#x83B7;&#x5F97;Fragment
+        SupportRequestManagerFragment current =
+            (SupportRequestManagerFragment) fm.findFragmentByTag(FRAGMENT_TAG);
+        if (current == null) {
+          current = pendingSupportRequestManagerFragments.get(fm);
+          if (current == null) {
+            //&#x83B7;&#x53D6;&#x4E3A;&#x7A7A;&#x7684;&#x8BDD;&#x5C31;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;
+            current = new SupportRequestManagerFragment();
+            current.setParentFragmentHint(parentHint);
+            if (isParentVisible) {
+               //&#x8C03;&#x7528;onStart&#x56DE;&#x8C03;
+              current.getGlideLifecycle().onStart();
+            }
+            pendingSupportRequestManagerFragments.put(fm, current);
+            //&#x6DFB;&#x52A0;&#x5230;&#x5BF9;&#x5E94;&#x7684;context&#x7684;FragmentManger&#x4E2D;&#xFF0C;&#x9644;&#x52A0;tag
+            fm.beginTransaction().add(current, FRAGMENT_TAG).commitAllowingStateLoss();
+            handler.obtainMessage(ID_REMOVE_SUPPORT_FRAGMENT_MANAGER, fm).sendToTarget();
+          }
+        }
+        return current;
+    }
+</code></pre><p>Glide&#x901A;&#x8FC7;&#x5411;Activity&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;Tag&#x7684;Fragment&#xFF0C;&#x5E76;&#x5728;&#x8FD9;&#x4E2A;Fragment&#x4E2D;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;Lifecycle&#x63A5;&#x53E3;&#x7684;&#x5B50;&#x7C7B;&#x7528;&#x4E8E;&#x901A;&#x77E5;&#x5916;&#x754C;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x53D8;&#x5316;&#x3002;&#x56E0;&#x6B64;&#x6BCF;&#x4E2A;Activity&#x4E2D;&#x5982;&#x679C;&#x8C03;&#x7528;&#x4E86;with&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;Fragment,&#x4E92;&#x4E0D;&#x5E72;&#x6270;&#x3002;</p>
+<ul>
+<li>&#x56DE;&#x5230;&#x7B2C;9&#x6B65;&#x4E2D;&#x4F7F;&#x7528;RequestManagerFactory&#x7684;build&#x751F;&#x6210;&#x4E00;&#x4E2A;RequestManager&#x5BF9;&#x8C61;&#xFF08;&#x9996;&#x6B21;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#xFF09;&#xFF1A;RequestManagerFactory&#x5728;&#x521D;&#x59CB;&#x5316;&#x4E2D;Glide&#x7684;initializeGlide&#x65B9;&#x6CD5;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x901A;&#x8FC7;</li>
+</ul>
+<pre><code>    RequestManagerRetriever.RequestManagerFactory factory =
+        annotationGeneratedModule != null
+            ? annotationGeneratedModule.getRequestManagerFactory(): null;
+</code></pre><p><strong>annotationGeneratedModule.getRequestManagerFactory()&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;null&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5B50;&#x7C7B;&#x4E3A;GeneratedAppGlideModuleImpl&#xFF0C;&#x5728;&#x5B50;&#x7C7B;GeneratedAppGlideModuleImpl&#x4E2D;&#x7684;getRequestManagerFactory()&#x8FD4;&#x56DE;GeneratedRequestManagerFactory&#x7C7B;&#xFF0C;&#x56E0;&#x6B64;&#x6B64;&#x5904;&#x7684;factory&#x8C03;&#x7528;&#x7684;&#x662F;GeneratedRequestManagerFactory&#x7684;build&#x65B9;&#x6CD5;&#xFF08;&#x5982;&#x679C;&#x5728;&#x6CA1;&#x6709;&#x81EA;&#x5B9A;&#x4E49;GlideModule&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5728;Glide&#x7684;getAnnotationGeneratedGlideModules&#x65B9;&#x6CD5;&#x4E2D;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x83B7;&#x53D6;&#x5230;&#x5230;&#x8FD9;&#x4E2A;GeneratedAppGlideModuleImpl&#x7C7B;&#xFF0C;&#x5176;&#x4E2D;&#x5176;&#x4ED6;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x662F;&#x8C03;&#x7528;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x6A21;&#x5757;&#x7684;&#x91CD;&#x5199;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x53EF;&#x4EE5;&#x91CD;&#x5199;&#x5177;&#x6709;&#x6CE8;&#x89E3;@GlideModule&#x7684;AppGlideModule&#x7C7B;&#x7684;getRequestManagerFactory&#x65B9;&#x6CD5;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;Factory&#x7C7B;&#xFF09;</strong></p>
+<ul>
+<li>&#x9ED8;&#x8BA4;&#x7684;GeneratedRequestManagerFactory&#x7684;build&#x65B9;&#x6CD5;&#xFF1A;</li>
+</ul>
+<pre><code>    public RequestManager build(@NonNull Glide glide, @NonNull Lifecycle lifecycle,
+        @NonNull RequestManagerTreeNode treeNode, @NonNull Context context) {
+            return new GlideRequests(glide, lifecycle, treeNode, context);
+        }
+    }
+</code></pre><p>&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;GlideRequests</p>
+<ul>
+<li><p>GlideRequests&#x7C7B;&#x7EE7;&#x627F;&#x4E8E;RequestManager&#xFF0C;&#x4E14;&#x8BE5;&#x7C7B;&#x662F;&#x7531;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x6CE8;&#x89E3;@GlideExtension&#x548C;@GlideType&#x4F1A;&#x88AB;&#x52A8;&#x5BF9;&#x5E94;&#x751F;&#x6210;&#xFF0C;&#x56E0;&#x6B64;&#x4F7F;&#x5F97;Glide.with&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x5BF9;&#x8C61;&#x6240;&#x8C03;&#x7528;&#x7684;&#x94FE;&#x5F0F;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7531;@GlideExtension&#x548C;@GlideType&#x8FD9;&#x4E24;&#x4E2A;&#x6CE8;&#x89E3;&#x81EA;&#x5B9A;&#x4E49;&#x6DFB;&#x52A0;&#x7279;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x5904;&#x7406;&#x3002;&#x7531;&#x4E8E;&#x8BE5;&#x7C7B;&#x7EE7;&#x627F;&#x81EA;RequestManager&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x90FD;&#x5728;RequestManager&#x7236;&#x7C7B;&#x4E2D;&#xFF0C;&#x5728;&#x8BE5;&#x7C7B;&#x4E2D;&#x50A8;&#x5B58;&#x4E86;&#x8BF7;&#x6C42;&#x7684;&#x914D;&#x7F6E;&#x3002;</p>
+</li>
+<li><p>&#x5728;&#x4F7F;&#x7528;RequestManager&#x7C7B;&#x65B9;&#x6CD5;&#x65F6;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E26;&#x6CDB;&#x578B;&#x7684;GlideRequest<t>&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x7EE7;&#x627F;&#x4E8E;RequestBuilder<t>&#x7C7B;&#xFF0C;&#x8BE5;&#x6CDB;&#x578B;&#x7528;&#x4E8E;&#x8F6C;&#x6362;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x548C;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x662F;&#x521B;&#x5EFA;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x8BF7;&#x6C42;&#x7684;&#x5185;&#x5BB9;Request&#x7C7B;&#xFF0C;&#x76F4;&#x5230;&#x8C03;&#x7528;RequestBuilder<t>&#x7684;into&#x65B9;&#x6CD5;&#xFF0C;&#x6570;&#x636E;&#x624D;&#x5F00;&#x59CB;&#x52A0;&#x8F7D;&#x3002;</t></t></t></p>
+</li>
+<li><p>RequestBuilder&#x7684;into&#x65B9;&#x6CD5;&#xFF1A;</p>
+</li>
+</ul>
+<pre><code>  private &lt;Y extends Target&lt;TranscodeType&gt;&gt; Y into(
+      @NonNull Y target,
+      @Nullable RequestListener&lt;TranscodeType&gt; targetListener,
+      BaseRequestOptions&lt;?&gt; options,
+      Executor callbackExecutor) {
+    Preconditions.checkNotNull(target);
+    if (!isModelSet) {
+      throw new IllegalArgumentException(&quot;You must call #load() before calling #into()&quot;);
+    }
+
+    //&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x4F53;
+    Request request = buildRequest(target, targetListener, options, callbackExecutor);
+
+    Request previous = target.getRequest();
+    //&#x91CD;&#x590D;&#x7684;&#x8BF7;&#x6C42;&#x7684;&#x8BDD;&#x5C31;&#x91CD;&#x65B0;&#x5F00;&#x59CB;&#xFF0C;&#x5E76;&#x5C06;target&#x8FD4;&#x56DE;
+    if (request.isEquivalentTo(previous)
+        &amp;&amp; !isSkipMemoryCacheWithCompletePreviousRequest(options, previous)) {
+      // If the request is completed, beginning again will ensure the result is re-delivered,
+      // triggering RequestListeners and Targets. If the request is failed, beginning again will
+      // restart the request, giving it another chance to complete. If the request is already
+      // running, we can let it continue running without interruption.
+      if (!Preconditions.checkNotNull(previous).isRunning()) {
+        // Use the previous request rather than the new one to allow for optimizations like skipping
+        // setting placeholders, tracking and un-tracking Targets, and obtaining View dimensions
+        // that are done in the individual Request.
+        previous.begin();
+      }
+      return target;
+    }
+
+    //&#x6E05;&#x9664;&#x8BF7;&#x6C42;&#x7F13;&#x5B58;f
+    requestManager.clear(target);
+    target.setRequest(request);
+    //&#x5F00;&#x59CB;&#x8BF7;&#x6C42;
+    requestManager.track(target, request);
+
+    return target;
+  }
+</code></pre><p>&#x6700;&#x7EC8;&#x7684;&#x8BF7;&#x6C42;&#x5728;&#x5224;&#x65AD;&#x662F;&#x91CD;&#x590D;&#x8BF7;&#x6C42;&#x540E;&#x4F1A;&#x8C03;&#x7528;previous.begin&#x91CD;&#x65B0;&#x6267;&#x884C;&#xFF0C;&#x4E0D;&#x662F;&#x91CD;&#x590D;&#x7684;&#x8BF7;&#x6C42;&#x5219;&#x4F1A;&#x8C03;&#x7528;requestManager.track(target, request)&#x5F00;&#x59CB;&#x52A0;&#x8F7D;&#x3002;</p>
+<ul>
+<li>requestManager.track(target, request)&#x65B9;&#x6CD5;&#xFF1A;</li>
+</ul>
+<pre><code> synchronized void track(@NonNull Target&lt;?&gt; target, @NonNull Request request) {
+    targetTracker.track(target);
+    requestTracker.runRequest(request);
+  }
+</code></pre><p>&#x5176;&#x4E2D;&#x7684; targetTracker.track(target);&#x662F;&#x5C06;&#x8FD9;&#x4E2A;target&#x5BF9;&#x8C61;&#x4FDD;&#x5B58;&#x8D77;&#x6765;&#xFF0C;&#x7528;&#x4E8E;&#x5728;RequestManager&#x7C7B;&#x4E2D;&#x6CE8;&#x518C;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x56DE;&#x8C03;&#x7684;&#x901A;&#x77E5;&#x3002;
+requestTracker.runRequest(request);&#x5219;&#x662F;&#x6B63;&#x5F0F;&#x5F00;&#x59CB;&#x52A0;&#x8F7D;&#x3002;</p>
+<ul>
+<li>requestTracker.runRequest(request)&#x65B9;&#x6CD5;&#xFF1A;</li>
+</ul>
+<pre><code> /** Starts tracking the given request. */
+  public void runRequest(@NonNull Request request) {
+    requests.add(request);
+    if (!isPaused) {
+      request.begin();
+    } else {
+      request.clear();
+      if (Log.isLoggable(TAG, Log.VERBOSE)) {
+        Log.v(TAG, &quot;Paused, delaying request&quot;);
+      }
+      //&#x4FDD;&#x5B58;&#x8BF7;&#x6C42;&#x4EE5;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B21;&#x6392;&#x961F;
+      pendingRequests.add(request);
+    }
+  }
+</code></pre><p>&#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x5F00;&#x59CB;&#x52A0;&#x8F7D;&#x7684;&#x65B9;&#x6CD5;&#x4E5F;&#x662F;Request&#x7C7B;&#x7684;begin&#x65B9;&#x6CD5;&#xFF0C;&#x4E0E;&#x4E4B;&#x524D;&#x5224;&#x65AD;&#x91CD;&#x590D;&#x8BF7;&#x6C42;&#x7684;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#x3002;</p>
+<ul>
+<li><p>Request&#x7C7B;&#x7684;begin()&#x65B9;&#x6CD5;&#xFF0C;&#x7531;&#x4E8E;&#x8BE5;&#x7C7B;&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x9700;&#x8981;&#x627E;&#x5230;&#x5B9E;&#x9645;&#x5B9E;&#x73B0;&#x7684;&#x7C7B;&#xFF0C;&#x56DE;&#x5230;&#x7B2C;15&#x6B65;&#xFF0C;&#x8BE5;&#x7C7B;&#x5B9E;&#x4F8B;&#x5316;&#x662F;&#x7531;RequestBuilder&#x7684;buildRequest(target, targetListener, options, callbackExecutor);&#x65B9;&#x6CD5;&#x751F;&#x6210;&#x3002;</p>
+</li>
+<li><p>RequestBuilder&#x7684;buildRequest&#x65B9;&#x6CD5;&#xFF1A;</p>
+</li>
+</ul>
+<pre><code> private Request buildRequest(
+      Target&lt;TranscodeType&gt; target,
+      @Nullable RequestListener&lt;TranscodeType&gt; targetListener,
+      BaseRequestOptions&lt;?&gt; requestOptions,
+      Executor callbackExecutor) {
+    return buildRequestRecursive(
+        /*requestLock=*/ new Object(),
+        target,
+        targetListener,
+        /*parentCoordinator=*/ null,
+        transitionOptions,
+        requestOptions.getPriority(),
+        requestOptions.getOverrideWidth(),
+        requestOptions.getOverrideHeight(),
+        requestOptions,
+        callbackExecutor);
+  }
+</code></pre><p>&#x6700;&#x540E;&#x8C03;&#x7528;&#x7684;&#x65F6;buildRequestRecursive&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code> private Request buildRequestRecursive(
+      Object requestLock,
+      Target&lt;TranscodeType&gt; target,
+      @Nullable RequestListener&lt;TranscodeType&gt; targetListener,
+      @Nullable RequestCoordinator parentCoordinator,
+      TransitionOptions&lt;?, ? super TranscodeType&gt; transitionOptions,
+      Priority priority,
+      int overrideWidth,
+      int overrideHeight,
+      BaseRequestOptions&lt;?&gt; requestOptions,
+      Executor callbackExecutor) {
+
+    //&#x5148;&#x521B;&#x5EFA;&#x5177;&#x6709;&#x9519;&#x8BEF;&#x56DE;&#x8C03;&#x7684;Request
+    // Build the ErrorRequestCoordinator first if necessary so we can update parentCoordinator.
+    ErrorRequestCoordinator errorRequestCoordinator = null;
+    if (errorBuilder != null) {
+        //&#x521B;&#x5EFA;&#x53EA;&#x6709;&#x5728;&#x8BBE;&#x7F6E;&#x4E86;RequestManger&#x7684;error&#x65B9;&#x6CD5;&#x8BBE;&#x7F6E;&#x4E86;&#x9519;&#x8BEF;&#x56DE;&#x8C03;&#x8D44;&#x6E90;&#x540E;&#x624D;&#x542F;&#x7528;&#xFF0C;&#x4F18;&#x5148;&#x8C03;&#x7528;&#x662F;&#x4E3A;&#x4E86;&#x540C;&#x6B65;parentCoordinator&#x3002;
+      errorRequestCoordinator = new ErrorRequestCoordinator(requestLock, parentCoordinator);
+      parentCoordinator = errorRequestCoordinator;
+    }
+
+    //&#x521B;&#x5EFA;&#x7F29;&#x7565;&#x56FE;Request
+    //&#x521B;&#x5EFA;ThumbnailRequestCoordinator&#x5B9E;&#x9645;&#x8BF7;&#x6C42;&#x7C7B;
+    Request mainRequest =
+        buildThumbnailRequestRecursive(
+            requestLock,
+            target,
+            targetListener,
+            parentCoordinator,
+            transitionOptions,
+            priority,
+            overrideWidth,
+            overrideHeight,
+            requestOptions,
+            callbackExecutor);
+
+    if (errorRequestCoordinator == null) {
+        //  &#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x5904;&#x7406;error&#x65F6;
+      return mainRequest;
+    }
+
+    //&#x8BBE;&#x7F6E;&#x4E86;error&#xFF0C;&#x83B7;&#x53D6;&#x8BBE;&#x7F6E;&#x7684;&#x5C5E;&#x6027;&#x751F;&#x6210;&#x4E00;&#x4E2A;errorRequest
+    int errorOverrideWidth = errorBuilder.getOverrideWidth();
+    int errorOverrideHeight = errorBuilder.getOverrideHeight();
+    if (Util.isValidDimensions(overrideWidth, overrideHeight) &amp;&amp; !errorBuilder.isValidOverride()) {
+      errorOverrideWidth = requestOptions.getOverrideWidth();
+      errorOverrideHeight = requestOptions.getOverrideHeight();
+    }
+
+//&#x521B;&#x5EFA;ErrorRequestCoordinator&#x5B9E;&#x9645;&#x8BF7;&#x6C42;&#x7C7B;
+    Request errorRequest =
+        errorBuilder.buildRequestRecursive(
+            requestLock,
+            target,
+            targetListener,
+            errorRequestCoordinator,
+            errorBuilder.transitionOptions,
+            errorBuilder.getPriority(),
+            errorOverrideWidth,
+            errorOverrideHeight,
+            errorBuilder,
+            callbackExecutor);
+    errorRequestCoordinator.setRequests(mainRequest, errorRequest);
+    return errorRequestCoordinator;
+  }
+</code></pre><p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x6B64;&#x5904;&#x4E3B;&#x8981;&#x662F;&#x6839;&#x636E;&#x662F;&#x5426;&#x8C03;&#x7528;&#x4E86;error&#x65B9;&#x6CD5;&#x533A;&#x522B;&#x751F;&#x6210;&#x4E0D;&#x540C;&#x7684;&#x8BF7;&#x6C42;&#x5B9E;&#x4F53;&#xFF1A;
+&#x5206;&#x522B;&#x662F;ThumbnailRequestCoordinator&#x548C;ErrorRequestCoordinator&#x3002;</p>
+<ul>
+<li>&#x5728;17&#x6B65;&#x4E2D;&#x7684;begin()&#x65B9;&#x6CD5;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;ThumbnailRequestCoordinator&#x7684;begin&#x65B9;&#x6CD5;&#xFF1A;</li>
+</ul>
+<pre><code>  /** Starts first the thumb request and then the full request. */
+  @Override
+  public void begin() {
+    synchronized (requestLock) {
+      isRunningDuringBegin = true;
+      try {
+        // If the request has completed previously, there&apos;s no need to restart both the full and the
+        // thumb, we can just restart the full.
+        if (fullState != RequestState.SUCCESS &amp;&amp; thumbState != RequestState.RUNNING) {
+          thumbState = RequestState.RUNNING;
+          //&#x53D1;&#x8D77;&#x8BF7;&#x6C42;
+          thumb.begin();
+        }
+        if (isRunningDuringBegin &amp;&amp; fullState != RequestState.RUNNING) {
+          fullState = RequestState.RUNNING;
+          //   &#x53D1;&#x8D77;&#x8BF7;&#x6C42;
+          full.begin();
+        }
+      } finally {
+        isRunningDuringBegin = false;
+      }
+    }
+  }
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x5B9E;&#x9645;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x7684;&#x4E5F;&#x4E0D;&#x662F;ThumbnailRequestCoordinator&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x5982;&#x540C;&#x540D;&#x5B57;&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x662F;&#x7528;&#x6765;&#x534F;&#x8C03;&#x4E24;&#x4E2A;&#x8BF7;&#x6C42;&#x4E4B;&#x95F4;&#x7684;&#x72B6;&#x6001;&#x540C;&#x6B65;&#xFF0C;&#x56E0;&#x4E3A;&#x8BE5;&#x7C7B;&#x662F;&#x4E00;&#x4E2A;&#x5148;&#x52A0;&#x8F7D;&#x7F29;&#x7565;&#x56FE;&#x518D;&#x52A0;&#x8F7D;&#x539F;&#x56FE;&#x7684;Request&#x7EC4;&#x5408;&#x7C7B;&#x3002;
+&#x56DE;&#x5230;&#x521B;&#x5EFA;ThumbnailRequestCoordinator&#x7C7B;&#x5B9E;&#x4F8B;&#x7684;&#x5730;&#x65B9;&#xFF1A;RequestManger&#x7684;buildThumbnailRequestRecursive&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>private Request buildThumbnailRequestRecursive(
+      Object requestLock,
+      Target&lt;TranscodeType&gt; target,
+      RequestListener&lt;TranscodeType&gt; targetListener,
+      @Nullable RequestCoordinator parentCoordinator,
+      TransitionOptions&lt;?, ? super TranscodeType&gt; transitionOptions,
+      Priority priority,
+      int overrideWidth,
+      int overrideHeight,
+      BaseRequestOptions&lt;?&gt; requestOptions,
+      Executor callbackExecutor) {
+      if (thumbnailBuilder != null) {
+      //&#x68C0;&#x6D4B; &#x5E76;&#x8BBE;&#x7F6E;&#x8FC7;&#x6EE4;&#x7B49;&#x5C5E;&#x6027;
+      ...
+
+      ThumbnailRequestCoordinator coordinator =
+          new ThumbnailRequestCoordinator(requestLock, parentCoordinator);
+             //&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x8BF7;&#x6C42;
+      Request fullRequest =
+          obtainRequest(
+              requestLock,
+              target,
+              targetListener,
+              requestOptions,
+              coordinator,
+              transitionOptions,
+              priority,
+              overrideWidth,
+              overrideHeight,
+              callbackExecutor);
+      isThumbnailBuilt = true;
+      // Recursively generate thumbnail requests.
+          //&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F29;&#x7565;&#x56FE;&#x8BF7;&#x6C42;
+      Request thumbRequest =
+          thumbnailBuilder.buildRequestRecursive(
+              requestLock,
+              target,
+              targetListener,
+              coordinator,
+              thumbTransitionOptions,
+              thumbPriority,
+              thumbOverrideWidth,
+              thumbOverrideHeight,
+              thumbnailBuilder,
+              callbackExecutor);
+      isThumbnailBuilt = false;
+      coordinator.setRequests(fullRequest, thumbRequest);
+      return coordinator;
+    } else if (thumbSizeMultiplier != null) {
+      // Base case: thumbnail multiplier generates a thumbnail request, but cannot recurse.
+      ThumbnailRequestCoordinator coordinator =
+          new ThumbnailRequestCoordinator(requestLock, parentCoordinator);
+      Request fullRequest =
+          obtainRequest(
+              requestLock,
+              target,
+              targetListener,
+              requestOptions,
+              coordinator,
+              transitionOptions,
+              priority,
+              overrideWidth,
+              overrideHeight,
+              callbackExecutor);
+      BaseRequestOptions&lt;?&gt; thumbnailOptions =
+          requestOptions.clone().sizeMultiplier(thumbSizeMultiplier);
+
+       //&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F29;&#x7565;&#x56FE;&#x8BF7;&#x6C42;
+      Request thumbnailRequest =
+          obtainRequest(
+              requestLock,
+              target,
+              targetListener,
+              thumbnailOptions,
+              coordinator,
+              transitionOptions,
+              getThumbnailPriority(priority),
+              overrideWidth,
+              overrideHeight,
+              callbackExecutor);
+
+      coordinator.setRequests(fullRequest, thumbnailRequest);
+      return coordinator;
+    } else {
+      // Base case: no thumbnail.
+      //&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x7F29;&#x7565;&#x56FE;&#x5373;&#x8C03;&#x7528;thumb&#x65B9;&#x6CD5;&#x8BBE;&#x7F6E;&#x542F;&#x7528;&#x7F29;&#x7565;&#x56FE;
+      return obtainRequest(
+          requestLock,
+          target,
+          targetListener,
+          requestOptions,
+          parentCoordinator,
+          transitionOptions,
+          priority,
+          overrideWidth,
+          overrideHeight,
+          callbackExecutor);
+    }
+  }
+</code></pre><p>&#x770B;&#x5230;&#x6839;&#x636E;&#x7F29;&#x7565;&#x56FE;&#x7684;&#x5C3A;&#x5BF8;&#x9700;&#x8981;&#x548C;&#x539F;&#x56FE;&#x8FDB;&#x884C;&#x9012;&#x5F52;&#x8BA1;&#x7B97;&#x751F;&#x6210;&#x7F29;&#x7565;&#x56FE;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD9;&#x662F;&#x5728;&#x8BBE;&#x7F6E;&#x4E86;&#x7F29;&#x7565;&#x56FE;&#x542F;&#x7528;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x822C;&#x8D70;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x539F;&#x56FE;&#x7684;Request,&#x901A;&#x8FC7;obtainRequest&#x65B9;&#x6CD5;&#x751F;&#x6210;&#x3002;</p>
+<ul>
+<li>RequestBuilder&#x7684;obtainRequest&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code>private Request obtainRequest(
+      Object requestLock,
+      Target&lt;TranscodeType&gt; target,
+      RequestListener&lt;TranscodeType&gt; targetListener,
+      BaseRequestOptions&lt;?&gt; requestOptions,
+      RequestCoordinator requestCoordinator,
+      TransitionOptions&lt;?, ? super TranscodeType&gt; transitionOptions,
+      Priority priority,
+      int overrideWidth,
+      int overrideHeight,
+      Executor callbackExecutor) {
+    return SingleRequest.obtain(
+        context,
+        glideContext,
+        requestLock,
+        model,
+        transcodeClass,
+        requestOptions,
+        overrideWidth,
+        overrideHeight,
+        priority,
+        target,
+        targetListener,
+        requestListeners,
+        requestCoordinator,
+        glideContext.getEngine(),
+        transitionOptions.getTransitionFactory(),
+        callbackExecutor);
+  }
+</code></pre><p>&#x6700;&#x7EC8;&#x8C03;&#x7528;&#x751F;&#x6210;&#x7684;&#x662F;SingleRequest.obtain&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>public static &lt;R&gt; SingleRequest&lt;R&gt; obtain(
+      Context context,
+      GlideContext glideContext,
+      Object requestLock,
+      Object model,
+      Class&lt;R&gt; transcodeClass,
+      BaseRequestOptions&lt;?&gt; requestOptions,
+      int overrideWidth,
+      int overrideHeight,
+      Priority priority,
+      Target&lt;R&gt; target,
+      RequestListener&lt;R&gt; targetListener,
+      @Nullable List&lt;RequestListener&lt;R&gt;&gt; requestListeners,
+      RequestCoordinator requestCoordinator,
+      Engine engine,
+      TransitionFactory&lt;? super R&gt; animationFactory,
+      Executor callbackExecutor) {
+    return new SingleRequest&lt;&gt;(
+        context,
+        glideContext,
+        requestLock,
+        model,
+        transcodeClass,
+        requestOptions,
+        overrideWidth,
+        overrideHeight,
+        priority,
+        target,
+        targetListener,
+        requestListeners,
+        requestCoordinator,
+        engine,
+        animationFactory,
+        callbackExecutor);
+  }
+</code></pre><p>&#x6700;&#x7EC8;&#x8FD4;&#x56DE;&#x7684;Request&#x7C7B;&#x578B;&#x662F;SingleRequest&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x624D;&#x662F;&#x6700;&#x540E;&#x8C03;&#x7528;begin&#x65B9;&#x6CD5;&#x542F;&#x52A8;&#x52A0;&#x8F7D;&#x7684;&#x5730;&#x65B9;&#x3002;</p>
+<ul>
+<li>SingleRequest&#x7684;begin&#x65B9;&#x6CD5;&#xFF1A;</li>
+</ul>
+<pre><code> @Override
+  public void begin() {
+    synchronized (requestLock) {
+    //&#x9519;&#x8BEF;&#x68C0;&#x6D4B;
+      assertNotCallingCallbacks();
+      stateVerifier.throwIfRecycled();
+      startTime = LogTime.getLogTime();
+      if (model == null) {
+        if (Util.isValidDimensions(overrideWidth, overrideHeight)) {
+          width = overrideWidth;
+          height = overrideHeight;
+        }
+        // Only log at more verbose log levels if the user has set a fallback drawable, because
+        // fallback Drawables indicate the user expects null models occasionally.
+        int logLevel = getFallbackDrawable() == null ? Log.WARN : Log.DEBUG;
+        onLoadFailed(new GlideException(&quot;Received null model&quot;), logLevel);
+        return;
+      }
+
+      if (status == Status.RUNNING) {
+        throw new IllegalArgumentException(&quot;Cannot restart a running request&quot;);
+      }
+
+      // If we&apos;re restarted after we&apos;re complete (usually via something like a notifyDataSetChanged
+      // that starts an identical request into the same Target or View), we can simply use the
+      // resource and size we retrieved the last time around and skip obtaining a new size, starting
+      // a new load etc. This does mean that users who want to restart a load because they expect
+      // that the view size has changed will need to explicitly clear the View or Target before
+      // starting the new load.
+      if (status == Status.COMPLETE) {
+        //&#x89E6;&#x53D1;&#x56DE;&#x8C03;
+        onResourceReady(resource, DataSource.MEMORY_CACHE);
+        return;
+      }
+
+      // Restarts for requests that are neither complete nor running can be treated as new requests
+      // and can run again from the beginning.
+
+      status = Status.WAITING_FOR_SIZE;
+        //&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x83B7;&#x53D6;&#x5927;&#x5C0F;&#xFF0C;&#x6700;&#x7EC8;&#x90FD;&#x4F1A;&#x8C03;&#x7528;&#x5230;onSizeReady&#x65B9;&#x6CD5;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x83B7;&#x53D6;&#x3002;
+      if (Util.isValidDimensions(overrideWidth, overrideHeight)) {
+        onSizeReady(overrideWidth, overrideHeight);
+      } else {
+        target.getSize(this);
+      }
+
+      if ((status == Status.RUNNING || status == Status.WAITING_FOR_SIZE)
+          &amp;&amp; canNotifyStatusChanged()) {
+        target.onLoadStarted(getPlaceholderDrawable());
+      }
+      if (IS_VERBOSE_LOGGABLE) {
+        logV(&quot;finished run method in &quot; + LogTime.getElapsedMillis(startTime));
+      }
+    }
+  }
+</code></pre><p>&#x5728;&#x5176;&#x4E2D;&#x53EA;&#x6709; onSizeReady(overrideWidth, overrideHeight); &#x4EE3;&#x7801;&#x89E6;&#x53D1;&#x4E86;&#x52A0;&#x8F7D;&#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x4EE3;&#x7801;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x5224;&#x65AD;&#x56DE;&#x8C03;&#x89E6;&#x53D1;&#x65F6;&#x673A;&#x3002;
+&#x8FDB;&#x5165; onSizeReady(overrideWidth, overrideHeight)&#x65B9;&#x6CD5;:</p>
+<ul>
+<li>SingleRequest&#x7684; onSizeReady&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code> @Override
+  public void onSizeReady(int width, int height) {
+    stateVerifier.throwIfRecycled();
+    synchronized (requestLock) {
+      if (IS_VERBOSE_LOGGABLE) {
+        logV(&quot;Got onSizeReady in &quot; + LogTime.getElapsedMillis(startTime));
+      }
+      if (status != Status.WAITING_FOR_SIZE) {
+        return;
+      }
+      status = Status.RUNNING;
+
+      float sizeMultiplier = requestOptions.getSizeMultiplier();
+      this.width = maybeApplySizeMultiplier(width, sizeMultiplier);
+      this.height = maybeApplySizeMultiplier(height, sizeMultiplier);
+
+      if (IS_VERBOSE_LOGGABLE) {
+        logV(&quot;finished setup for calling load in &quot; + LogTime.getElapsedMillis(startTime));
+      }
+      loadStatus =
+          engine.load(
+              glideContext,
+              model,
+              requestOptions.getSignature(),
+              this.width,
+              this.height,
+              requestOptions.getResourceClass(),
+              transcodeClass,
+              priority,
+              requestOptions.getDiskCacheStrategy(),
+              requestOptions.getTransformations(),
+              requestOptions.isTransformationRequired(),
+              requestOptions.isScaleOnlyOrNoTransform(),
+              requestOptions.getOptions(),
+              requestOptions.isMemoryCacheable(),
+              requestOptions.getUseUnlimitedSourceGeneratorsPool(),
+              requestOptions.getUseAnimationPool(),
+              requestOptions.getOnlyRetrieveFromCache(),
+              this,
+              callbackExecutor);
+
+      // This is a hack that&apos;s only useful for testing right now where loads complete synchronously
+      // even though under any executor running on any thread but the main thread, the load would
+      // have completed asynchronously.
+      if (status != Status.RUNNING) {
+        loadStatus = null;
+      }
+      if (IS_VERBOSE_LOGGABLE) {
+        logV(&quot;finished onSizeReady in &quot; + LogTime.getElapsedMillis(startTime));
+      }
+    }
+  }
+</code></pre><p>&#x6700;&#x7EC8;&#x7EC8;&#x4E8E;&#x627E;&#x5230;&#x8BF7;&#x6C42;Request&#x8C03;&#x7528;&#x52A0;&#x8F7D;&#x7C7B;Engine&#x53D1;&#x8D77;&#x52A0;&#x8F7D;&#x64CD;&#x4F5C;&#x7684;&#x5730;&#x65B9;&#xFF1A;
+engine.load&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x52A0;&#x8F7D;&#x5B8C;&#x4E4B;&#x540E;&#x901A;&#x8FC7;ResourceCallback&#x63A5;&#x53E3;&#x5373;SingRequest&#x5B9E;&#x73B0;&#x7684;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x5C06;&#x7ED3;&#x679C;&#x56DE;&#x8C03;&#x3002;</p>
+<h5 id="engine&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;&#xFF1A;">Engine&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;&#xFF1A;</h5>
+<ul>
+<li><p>&#x5728;Glide&#x4F7F;&#x7528;&#x7684;&#x6700;&#x540E;&#x8C03;&#x7528;&#x4E86;engine.load&#x65B9;&#x6CD5;&#x53D1;&#x8D77;&#x83B7;&#x53D6;&#x8D44;&#x6E90;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code>  public &lt;R&gt; LoadStatus load(
+      GlideContext glideContext,
+      Object model,
+      Key signature,
+      int width,
+      int height,
+      Class&lt;?&gt; resourceClass,
+      Class&lt;R&gt; transcodeClass,
+      Priority priority,
+      DiskCacheStrategy diskCacheStrategy,
+      Map&lt;Class&lt;?&gt;, Transformation&lt;?&gt;&gt; transformations,
+      boolean isTransformationRequired,
+      boolean isScaleOnlyOrNoTransform,
+      Options options,
+      boolean isMemoryCacheable,
+      boolean useUnlimitedSourceExecutorPool,
+      boolean useAnimationPool,
+      boolean onlyRetrieveFromCache,
+      ResourceCallback cb,
+      Executor callbackExecutor) {
+
+      long startTime = VERBOSE_IS_LOGGABLE ? LogTime.getLogTime() : 0;
+
+      EngineKey key =
+          keyFactory.buildKey(
+              model,
+              signature,
+              width,
+              height,
+              transformations,
+              resourceClass,
+              transcodeClass,
+              options);
+
+      EngineResource&lt;?&gt; memoryResource;
+      synchronized (this) {
+         //&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x83B7;&#x53D6;&#x8D44;&#x6E90;
+        memoryResource = loadFromMemory(key, isMemoryCacheable, startTime);
+
+        if (memoryResource == null) {
+          //&#x4ECE;&#x7F13;&#x5B58;&#x52A0;&#x8F7D;&#x4E0D;&#x5230;&#x542F;&#x52A8;&#x7EBF;&#x7A0B;&#x52A0;&#x8F7D;
+          return waitForExistingOrStartNewJob(
+              glideContext,
+              model,
+              signature,
+              width,
+              height,
+              resourceClass,
+              transcodeClass,
+              priority,
+              diskCacheStrategy,
+              transformations,
+              isTransformationRequired,
+              isScaleOnlyOrNoTransform,
+              options,
+              isMemoryCacheable,
+              useUnlimitedSourceExecutorPool,
+              useAnimationPool,
+              onlyRetrieveFromCache,
+              cb,
+              callbackExecutor,
+              key,
+              startTime);
+          }
+      }
+     //&#x907F;&#x514D;&#x5728;&#x6309;&#x4F4F;&#x5F15;&#x64CE;&#x9501;&#x5B9A;&#x7684;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x56DE;&#x8C03;&#xFF0C;&#x8FD9;&#x6837;&#x4F1A;&#x4F7F;&#x8C03;&#x7528;&#x8005;&#x66F4;&#x5BB9;&#x6613;//&#x6B7B;&#x9501;&#x3002;
+      cb.onResourceReady(memoryResource, DataSource.MEMORY_CACHE);
+      return null;
+}
+</code></pre></li>
+</ul>
+<p>&#x5728;waitForExistingOrStartNewJob&#x4E2D;&#x53D1;&#x8D77;&#x4E86;&#x65B0;&#x7684;&#x8BF7;&#x6C42;&#x3002;</p>
+<ul>
+<li><p>Engine&#x7684;waitForExistingOrStartNewJob&#x65B9;&#x6CD5;:</p>
+<pre><code>  private &lt;R&gt; LoadStatus waitForExistingOrStartNewJob(
+      GlideContext glideContext,
+        Object model,
+        Key signature,
+        int width,
+        int height,
+        Class&lt;?&gt; resourceClass,
+        Class&lt;R&gt; transcodeClass,
+        Priority priority,
+        DiskCacheStrategy diskCacheStrategy,
+        Map&lt;Class&lt;?&gt;, Transformation&lt;?&gt;&gt; transformations,
+        boolean isTransformationRequired,
+        boolean isScaleOnlyOrNoTransform,
+        Options options,
+        boolean isMemoryCacheable,
+        boolean useUnlimitedSourceExecutorPool,
+        boolean useAnimationPool,
+        boolean onlyRetrieveFromCache,
+        ResourceCallback cb,
+        Executor callbackExecutor,
+        EngineKey key,
+        long startTime){
+      //&#x8BE5;&#x8BF7;&#x6C42;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5728;&#x6267;&#x884C;&#x961F;&#x5217;&#x4E2D;
+      EngineJob&lt;?&gt; current = jobs.get(key, onlyRetrieveFromCache);
+      if (current != null) {
+        current.addCallback(cb, callbackExecutor);
+        if (VERBOSE_IS_LOGGABLE) {
+          logWithTimeAndKey(&quot;Added to existing load&quot;, startTime, key);
+        }
+        //&#x91CD;&#x7F6E;&#x72B6;&#x6001;&#x56DE;&#x8C03;
+        return new LoadStatus(cb, current);
+      }
+
+      EngineJob&lt;R&gt; engineJob =
+          engineJobFactory.build(
+              key,
+              isMemoryCacheable,
+              useUnlimitedSourceExecutorPool,
+              useAnimationPool,
+              onlyRetrieveFromCache);
+
+      DecodeJob&lt;R&gt; decodeJob =
+          decodeJobFactory.build(
+              glideContext,
+              model,
+              key,
+              signature,
+              width,
+              height,
+              resourceClass,
+              transcodeClass,
+              priority,
+              diskCacheStrategy,
+              transformations,
+              isTransformationRequired,
+              isScaleOnlyOrNoTransform,
+              onlyRetrieveFromCache,
+              options,
+              engineJob);
+
+      //&#x52A0;&#x5165;&#x8BF7;&#x6C42;&#x4EFB;&#x52A1;
+      jobs.put(key, engineJob);
+
+      engineJob.addCallback(cb, callbackExecutor);
+      //&#x542F;&#x52A8;&#x8BF7;&#x6C42;&#x4EFB;&#x52A1;
+      engineJob.start(decodeJob);
+
+      if (VERBOSE_IS_LOGGABLE) {
+        logWithTimeAndKey(&quot;Started new load&quot;, startTime, key);
+      }
+      return new LoadStatus(cb, engineJob);
+  }
+</code></pre></li>
+</ul>
+<p>&#x6700;&#x7EC8;&#x542F;&#x52A8;&#x52A0;&#x8F7D;&#x4EFB;&#x52A1;&#x7684;&#x662F;  engineJob.start(decodeJob)&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
+<ul>
+<li>EngineJob.start(DecodeJob<r> r)&#x65B9;&#x6CD5;:<pre><code>public synchronized void start(DecodeJob&lt;R&gt; decodeJob) {
+  this.decodeJob = decodeJob;
+  //&#x9009;&#x62E9;&#x7EBF;&#x7A0B;&#x6C60;
+  GlideExecutor executor =
+      decodeJob.willDecodeFromCache() ? diskCacheExecutor : getActiveSourceExecutor();
+  //&#x7EBF;&#x7A0B;&#x6C60;&#x6267;&#x884C;&#x4EFB;&#x52A1;
+  executor.execute(decodeJob);
+</code></pre>&#x6682;&#x4E14;&#x4E0D;&#x7BA1;&#x54EA;&#x4E2A;&#x7EBF;&#x7A0B;&#x6C60;&#x6267;&#x884C;&#x8BE5;&#x4EFB;&#x52A1;&#xFF0C;&#x6700;&#x7EC8;&#x90FD;&#x4F1A;&#x8C03;&#x7528;decodeJob&#x7684;run&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x56DE;&#x5230;2&#xFF0C;&#x67E5;&#x770B;&#x5B9E;&#x9645;DecodeJob&#x7C7B;&#x662F;&#x7531;decodeJobFactory.build&#x751F;&#x6210;&#x7684;&#x3002;</r></li>
+<li>DecodeJobFactory&#x7684;build&#x65B9;&#x6CD5;&#xFF1A;<pre><code>  &lt;R&gt; DecodeJob&lt;R&gt; build(
+      GlideContext glideContext,
+      Object model,
+      EngineKey loadKey,
+      Key signature,
+      int width,
+      int height,
+      Class&lt;?&gt; resourceClass,
+      Class&lt;R&gt; transcodeClass,
+      Priority priority,
+      DiskCacheStrategy diskCacheStrategy,
+      Map&lt;Class&lt;?&gt;, Transformation&lt;?&gt;&gt; transformations,
+      boolean isTransformationRequired,
+      boolean isScaleOnlyOrNoTransform,
+      boolean onlyRetrieveFromCache,
+      Options options,
+      DecodeJob.Callback&lt;R&gt; callback) {
+      //&#x4ECE;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x83B7;&#x5F97;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;
+    DecodeJob&lt;R&gt; result = Preconditions.checkNotNull((DecodeJob&lt;R&gt;) pool.acquire());
+    //&#x521D;&#x59CB;&#x5316;
+    return result.init(
+        glideContext,
+        model,
+        loadKey,
+        signature,
+        width,
+        height,
+        resourceClass,
+        transcodeClass,
+        priority,
+        diskCacheStrategy,
+        transformations,
+        isTransformationRequired,
+        isScaleOnlyOrNoTransform,
+        onlyRetrieveFromCache,
+        options,
+        callback,
+        creationOrder++);
+  }
+}
+</code></pre>&#x56E0;&#x6B64;&#x6267;&#x884C;&#x8BF7;&#x6C42;&#x5E94;&#x8BE5;&#x662F;DecodeJob&#x7684;Run&#x65B9;&#x6CD5;&#x3002;</li>
+<li>DecodeJob&#x7684;Run&#x65B9;&#x6CD5;<pre><code>@Override
+public void run() {
+  GlideTrace.beginSectionFormat(&quot;DecodeJob#run(model=%s)&quot;, model);
+  DataFetcher&lt;?&gt; localFetcher = currentFetcher;
+  try {
+  //&#x5982;&#x679C;&#x53D6;&#x6D88;&#x4E86;&#x52A0;&#x8F7D;&#x5C31;&#x56DE;&#x8C03;&#x5931;&#x8D25;
+    if (isCancelled) {
+      notifyFailed();
+      return;
+    }
+    //&#x6267;&#x884C;&#x52A0;&#x8F7D;
+    runWrapped();
+  } catch (CallbackException e) {
+    throw e;
+  } catch (Throwable t) {
+   //&#x6355;&#x83B7;&#x6253;&#x5370;&#x65E5;&#x5FD7;
+    if (Log.isLoggable(TAG, Log.DEBUG)) {
+      Log.d(
+          TAG,
+          &quot;DecodeJob threw unexpectedly&quot; + &quot;, isCancelled: &quot; + isCancelled + &quot;, stage: &quot; + stage,
+          t);
+    }
+    // &#x5931;&#x8D25;&#x6267;&#x884C;
+    if (stage != Stage.ENCODE) {
+      throwables.add(t);
+      notifyFailed();
+    }
+    if (!isCancelled) {
+      throw t;
+    }
+    throw t;
+  } finally {
+    // Keeping track of the fetcher here and calling cleanup is excessively paranoid, we call
+    // close in all cases anyway.
+    if (localFetcher != null) {
+      localFetcher.cleanup();
+    }
+    GlideTrace.endSection();
+  }
+}
+</code></pre></li>
+<li>DecodeJob&#x7684;runWrapped&#x65B9;&#x6CD5;:<pre><code>private void runWrapped() {
+  switch (runReason) {
+    case INITIALIZE:
+      //&#x521D;&#x59CB;&#x5316;&#x52A0;&#x8F7D;
+      stage = getNextStage(Stage.INITIALIZE);
+      currentGenerator = getNextGenerator();
+      runGenerators();
+      break;
+    case SWITCH_TO_SOURCE_SERVICE:
+      //&#x4ECE;&#x78C1;&#x76D8;&#x6216;&#x7F51;&#x7EDC;&#x52A0;&#x8F7D;
+      runGenerators();
+      break;
+    case DECODE_DATA:
+      //&#x89E3;&#x6790;&#x8D44;&#x6E90;
+      decodeFromRetrievedData();
+      break;
+    default:
+      throw new IllegalStateException(&quot;Unrecognized run reason: &quot; + runReason);
+  }
+}
+</code></pre>&#x5728;DecodeJob&#x521D;&#x59CB;&#x5316;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;runReason&#x4E3A;INITIALIZE&#x3002;&#x56E0;&#x6B64;&#x8D70;&#x5230;INITIALIZE&#x5206;&#x652F;&#xFF1A;
+&#x5728;&#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x4E86;<pre><code>      stage = getNextStage(Stage.INITIALIZE);
+      currentGenerator = getNextGenerator();
+      runGenerators();
+</code></pre>&#x4F9D;&#x6B21;&#x67E5;&#x770B;&#x4E0B;&#x8FD9;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>DecodeJob&#x7684;getNextStage()&#x3001;getNextGenerator()&#x3001;runGenerators()&#x65B9;&#x6CD5;&#xFF1A;
+<strong>getNextStage()&#x65B9;&#x6CD5;&#xFF1A;</strong><pre><code>private Stage getNextStage(Stage current) {
+  switch (current) {
+    case INITIALIZE&#xFF1A;
+      //&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x4ECE;&#x78C1;&#x76D8;&#x4E2D;&#x52A0;&#x8F7D;&#x5230;&#x89E3;&#x7801;&#x7684;&#x7F13;&#x5B58;&#x8D44;&#x6E90;&#x7684;&#x8BDD;&#x5C31;&#x8FD4;&#x56DE;&#x6807;&#x8BB0;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x5FAA;&#x73AF;&#x67E5;&#x770B;&#x662F;&#x5426;&#x5176;&#x4F59;&#x8D44;&#x6E90;&#x7F13;&#x5B58;
+      return diskCacheStrategy.decodeCachedResource()
+          ? Stage.RESOURCE_CACHE
+          : getNextStage(Stage.RESOURCE_CACHE);
+    case RESOURCE_CACHE:
+      //&#x67E5;&#x770B;&#x662F;&#x5426;&#x6709;&#x4E0B;&#x8F7D;&#x7684;&#x672A;&#x89E3;&#x7801;&#x7684;&#x6E90;&#x6570;&#x636E;&#x7F13;&#x5B58;
+      return diskCacheStrategy.decodeCachedData()
+          ? Stage.DATA_CACHE
+          : getNextStage(Stage.DATA_CACHE);
+    case DATA_CACHE:
+      //&#x4ECE;&#x6570;&#x636E;&#x6E90;&#x83B7;&#x53D6;    
+      //&#x6CA1;&#x6709;&#x7F13;&#x5B58;&#x5C31;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x3001;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;&#x53EA;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x83B7;&#x53D6;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x7ED3;&#x675F;
+      // Skip loading from source if the user opted to only retrieve the resource from cache.
+      return onlyRetrieveFromCache ? Stage.FINISHED : Stage.SOURCE;
+    case SOURCE:
+    case FINISHED:
+      return Stage.FINISHED;
+    default:
+      throw new IllegalArgumentException(&quot;Unrecognized stage: &quot; + current);
+  }
+}
+</code></pre>&#x7ECF;&#x8FC7;&#x8BE5;&#x65B9;&#x6CD5; stage&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x5E94;&#x8BE5;&#x50A8;&#x5B58;&#x8981;&#x53D1;&#x8D77;&#x54EA;&#x79CD;&#x83B7;&#x53D6;&#xFF08;&#x78C1;&#x76D8;&#x7F13;&#x5B58;&#x8FD8;&#x662F;&#x6E90;&#x6570;&#x636E;&#x83B7;&#x53D6;&#xFF09;&#x3002;</li>
+</ul>
+<p><strong>getNextStage()&#x65B9;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code>private DataFetcherGenerator getNextGenerator() {
+    switch (stage) {
+      case RESOURCE_CACHE:
+        return new ResourceCacheGenerator(decodeHelper, this);
+      case DATA_CACHE:
+        return new DataCacheGenerator(decodeHelper, this);
+      case SOURCE:
+        return new SourceGenerator(decodeHelper, this);
+      case FINISHED:
+        return null;
+      default:
+        throw new IllegalStateException(&quot;Unrecognized stage: &quot; + stage);
+    }
+  }
+</code></pre><p>&#x6839;&#x636E;&#x4E4B;&#x524D;getNextStage&#x51FD;&#x6570;&#x5224;&#x65AD;&#x7684;&#x5E94;&#x8BE5;&#x4ECE;&#x54EA;&#x91CC;&#x52A0;&#x8F7D;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;DataFetcherGenerator&#x5B9E;&#x73B0;&#x7C7B;&#x3002;
+<strong>runGenerators()&#x65B9;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code> private void runGenerators() {
+    currentThread = Thread.currentThread();
+    startFetchTime = LogTime.getLogTime();
+    boolean isStarted = false;
+    //&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x7531;currentGenerator.startNext()&#x6267;&#x884C;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6210;&#x529F;
+    while (!isCancelled
+        &amp;&amp; currentGenerator != null
+        &amp;&amp; !(isStarted = currentGenerator.startNext())) {
+      stage = getNextStage(stage);
+      currentGenerator = getNextGenerator();
+      //&#x5982;&#x679C;&#x662F;&#x4ECE;&#x6E90;&#x6570;&#x636E;&#x52A0;&#x8F7D;&#xFF0C;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x52A0;&#x8F7D;
+      if (stage == Stage.SOURCE) {
+        reschedule();
+        return;
+      }
+    if ((stage == Stage.FINISHED || isCancelled) &amp;&amp; !isStarted) {
+    //&#x5982;&#x679C;&#x91CD;&#x8BD5;&#x4E5F;&#x5931;&#x8D25;&#x4F1A;&#x8D70;&#x5230;&#x8FD9;&#x91CC;
+        notifyFailed();
+    }
+
+    // Otherwise a generator started a new load and we expect to be called back in
+    // onDataFetcherReady.
+  }
+</code></pre><p>&#x5728;&#x5B9E;&#x9645;&#x4E2D;&#x4F1A;&#x8C03;&#x7528;currentGenerator.startNext()&#x6765;&#x5224;&#x65AD;&#x52A0;&#x8F7D;&#x662F;&#x5426;&#x6210;&#x529F;
+&#x7531;&#x4E8E;getNextStage&#x51FD;&#x6570;&#x4F1A;&#x8FD4;&#x56DE;&#x4E09;&#x79CD;&#x4E0D;&#x540C;&#x7684;DataFetcherGenerator&#x5B9E;&#x73B0;&#x7C7B;&#xFF1A;ResourceCacheGenerator&#x3001;DataCacheGenerator&#x3001;SourceGenerator&#x3002;&#x53EF;&#x4EE5;&#x9010;&#x6B65;&#x67E5;&#x770B;&#x4E09;&#x79CD;&#x7C7B;&#x7684;startNext&#x65B9;&#x6CD5;&#x3002;</p>
+<ul>
+<li><p>ResourceCacheGenerator&#x3001;DataCacheGenerator&#x3001;SourceGenerator&#x7684;startNext&#x65B9;&#x6CD5;&#xFF1A;
+<strong>ResourceCacheGenerator&#x7684;startNext&#x65B9;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code>public boolean startNext() {
+  //&#x83B7;&#x53D6;&#x7F13;&#x5B58;key
+  List&lt;Key&gt; sourceIds = helper.getCacheKeys();
+  if (sourceIds.isEmpty()) {
+    return false;
+  }
+  //&#x83B7;&#x53D6;&#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x6CE8;&#x518C;&#x7684;&#x53EF;&#x88AB;&#x8F6C;&#x6362;&#x89E3;&#x6790;&#x7684;&#x6240;&#x6709;&#x7C7B;&#x578B;
+  List&lt;Class&lt;?&gt;&gt; resourceClasses = helper.getRegisteredResourceClasses();
+  if (resourceClasses.isEmpty()) {
+    if (File.class.equals(helper.getTranscodeClass())) {
+      return false;
+    }
+    throw new IllegalStateException(
+        &quot;Failed to find any load path from &quot;
+            + helper.getModelClass()
+            + &quot; to &quot;
+            + helper.getTranscodeClass());
+  }
+  //&#x5C1D;&#x8BD5;20&#x6B21; &#x5728;&#x5FAA;&#x73AF;&#x5728;&#x53EF;&#x89E3;&#x6790;&#x7C7B;&#x578B;&#x96C6;&#x5408;&#x4E2D;&#x67E5;&#x627E;&#x8981;&#x89E3;&#x6790;&#x7684;&#x7C7B;&#x76F4;&#x5230;&#x7B2C;&#x4E00;&#x6B21;&#x6210;&#x529F;
+  while (modelLoaders == null || !hasNextModelLoader()) {
+    resourceClassIndex++;
+    if (resourceClassIndex &gt;= resourceClasses.size()) {
+      sourceIdIndex++;
+      if (sourceIdIndex &gt;= sourceIds.size()) {
+        return false;
+      }
+      resourceClassIndex = 0;
+    }
+    //&#x83B7;&#x5F97;&#x5BF9;&#x5E94;&#x7684;&#x7F13;&#x5B58;
+    Key sourceId = sourceIds.get(sourceIdIndex);
+    Class&lt;?&gt; resourceClass = resourceClasses.get(resourceClassIndex);
+    //&#x53D6;&#x5F97;&#x89E3;&#x7801;&#x540E;&#x7684;&#x8F6C;&#x6362;
+    Transformation&lt;?&gt; transformation = helper.getTransformation(resourceClass);
+
+    currentKey =
+        new ResourceCacheKey( // NOPMD AvoidInstantiatingObjectsInLoops
+            helper.getArrayPool(),
+            sourceId,
+            helper.getSignature(),
+            helper.getWidth(),
+            helper.getHeight(),
+            transformation,
+            resourceClass,
+            helper.getOptions());
+
+     //&#x83B7;&#x53D6;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x78C1;&#x76D8;&#x7F13;&#x5B58;&#x8D44;&#x6E90;&#x6587;&#x4EF6;
+    cacheFile = helper.getDiskCache().get(currentKey);
+    if (cacheFile != null) {
+      sourceKey = sourceId;
+      //&#x83B7;&#x5F97;&#x6CE8;&#x518C;&#x7684;&#x89E3;&#x7801;&#x52A0;&#x8F7D;&#x5668;
+      modelLoaders = helper.getModelLoaders(cacheFile);
+      modelLoaderIndex = 0;
+    }
+  }
+
+  loadData = null;
+  boolean started = false;
+  while (!started &amp;&amp; hasNextModelLoader()) {
+     //&#x904D;&#x5386;&#x89E3;&#x7801;&#x5668;
+    ModelLoader&lt;File, ?&gt; modelLoader = modelLoaders.get(modelLoaderIndex++);
+    //&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x89E3;&#x7801;&#x6570;&#x636E;&#x7C7B;&#x578B;
+    loadData =
+        modelLoader.buildLoadData(
+            cacheFile, helper.getWidth(), helper.getHeight(), helper.getOptions());
+    // helper.hasLoadPath(loadData.fetcher.getDataClass()&#x8FD9;&#x53E5;&#x4EE3;&#x7801;&#x8BF4;&#x660E;&#x89E3;&#x7801;&#x5668;&#x53EF;&#x4EE5;&#x89E3;&#x7801;&#x8BE5;&#x7C7B;&#x578B;
+    if (loadData != null &amp;&amp; helper.hasLoadPath(loadData.fetcher.getDataClass())) {
+      //&#x53EA;&#x6709;&#x89E3;&#x7801;&#x6210;&#x529F;&#x624D;&#x4F1A;&#x8D70;&#x5230;&#x8FD9;&#x91CC;
+      started = true;
+      //&#x8C03;&#x7528;&#x89E3;&#x7801;&#x5668;&#x89E3;&#x6790;&#x6570;&#x636E;
+      loadData.fetcher.loadData(helper.getPriority(), this);
+    }
+  }
+  return started;
+}
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6700;&#x7EC8;&#x8C03;&#x7528;&#x7684;&#x662F;loadData.fetcher.loadData(helper.getPriority(), this);&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x89E3;&#x7801;&#x6570;&#x636E;&#xFF0C;&#x56E0;&#x6B64;&#x8981;&#x627E;&#x5230;&#x8BE5;fetcher&#x5BF9;&#x5E94;&#x7684;&#x5177;&#x4F53;&#x521D;&#x59CB;&#x5316;&#x5730;&#x65B9;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;loadData&#x6570;&#x636E;&#x662F;&#x7531;modelLoader.buildLoadData&#x65B9;&#x6CD5;&#x751F;&#x6210;&#xFF0C;modelLoader&#x662F;&#x7531;&#x5BF9;&#x5E94;&#x7684;&#x7C7B;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x89E3;&#x7801;&#x5668;&#xFF0C;&#x56DE;&#x5230;modelLoader&#x7684;&#x521D;&#x59CB;&#x5316;&#x5730;&#x65B9;&#xFF0C;&#x770B;&#x4E0B;Glide&#x9ED8;&#x8BA4;&#x6CE8;&#x518C;&#x4E86;&#x90A3;&#x4E9B;&#x89E3;&#x7801;&#x5668;&#xFF1A;
+&#x5728;Glide&#x7684;&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#x4E2D;
+```
+Glide(</p>
+<pre><code>@NonNull Context context,
+@NonNull Engine engine,
+@NonNull MemoryCache memoryCache,
+@NonNull BitmapPool bitmapPool,
+@NonNull ArrayPool arrayPool,
+@NonNull RequestManagerRetriever requestManagerRetriever,
+@NonNull ConnectivityMonitorFactory connectivityMonitorFactory,
+int logLevel,
+@NonNull RequestOptionsFactory defaultRequestOptionsFactory,
+@NonNull Map&lt;Class&lt;?&gt;, TransitionOptions&lt;?, ?&gt;&gt; defaultTransitionOptions,
+@NonNull List&lt;RequestListener&lt;Object&gt;&gt; defaultRequestListeners,
+boolean isLoggingRequestOriginsEnabled,
+boolean isImageDecoderEnabledForBitmaps) {
+</code></pre><p>//&#x53C2;&#x6570;&#x8D4B;&#x503C;
+...</p>
+<p>  registry = new Registry();
+  //&#x6CE8;&#x518C;&#x9ED8;&#x8BA4;&#x7684;&#x56FE;&#x7247;&#x6570;&#x636E;&#x5934;&#x90E8;&#x6570;&#x636E;&#x6A21;&#x5757;
+  //&#x6B64;&#x89E3;&#x6790;&#x5668;&#x7528;&#x4E8E;HEIF&#x56FE;&#x50CF;&#xFF0C;&#x53EA;&#x6709;OMR1 +&#x652F;&#x6301;&#x8BE5;&#x89E3;&#x6790;&#x5668;&#x3002; //&#x5982;&#x679C;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x9700;&#x8981;&#x6B64;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x5E94;&#x8003;&#x8651;&#x5220;&#x9664;&#x6B64;&#x9650;&#x5236;&#x3002;
+  registry.register(new DefaultImageHeaderParser());</p>
+<p>  if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O_MR1) {</p>
+<pre><code>registry.register(new ExifInterfaceImageHeaderParser());
+</code></pre><p>  }</p>
+<p>  List<imageheaderparser> imageHeaderParsers = registry.getImageHeaderParsers();
+  //&#x521B;&#x5EFA;&#x4E00;&#x7CFB;&#x5217;&#x89E3;&#x7801;&#x5668;
+  ...
+  //&#x6CE8;&#x518C;&#x54EA;&#x4E9B;&#x7C7B;&#x5BF9;&#x5E94;&#x4F7F;&#x7528;&#x90A3;&#x4E9B;&#x89E3;&#x7801;&#x5668;</imageheaderparser></p>
+</li>
+</ul>
+<pre><code>registry
+    .append(ByteBuffer.class, new ByteBufferEncoder())  //&#x6CE8;&#x518C;ByteBuffer&#x7C7B;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x5BF9;&#x5E94;&#x4EFB;&#x4F55;&#x5B50;&#x7C7B;
+    .append(InputStream.class, new StreamEncoder(arrayPool))    //&#x6CE8;&#x518C;InputStream&#x7C7B;&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x5BF9;&#x5E94;&#x4EFB;&#x4F55;&#x5B50;&#x7C7B;
+    /* Bitmaps */
+    .append(Registry.BUCKET_BITMAP, ByteBuffer.class, Bitmap.class, byteBufferBitmapDecoder)//&#x6CE8;&#x518C;ByteBuffer&#x8F6C;&#x6362;&#x4E3A;bitmap
+    .append(Registry.BUCKET_BITMAP, InputStream.class, Bitmap.class, streamBitmapDecoder);
+</code></pre><p>   ...
+  }</p>
+<pre><code>&#x7531;&#x4E8E;registry&#x4E5F;&#x5206;&#x4E3A;&#x8BB8;&#x591A;&#x6A21;&#x5757;&#xFF0C;&#x5982;&#x89E3;&#x6790;&#x56FE;&#x7247;&#x5934;&#x4FE1;&#x606F;&#x7684;&#x6A21;&#x5757;&#x3001;&#x7F16;&#x7801;&#x6A21;&#x5757;&#x7B49;:
+</code></pre><p>  private final ModelLoaderRegistry modelLoaderRegistry;
+  private final EncoderRegistry encoderRegistry;
+  private final ResourceDecoderRegistry decoderRegistry;
+  private final ResourceEncoderRegistry resourceEncoderRegistry;
+  private final DataRewinderRegistry dataRewinderRegistry;
+  private final TranscoderRegistry transcoderRegistry;
+  private final ImageHeaderParserRegistry imageHeaderParserRegistry;</p>
+<pre><code>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x770B;&#x5230;&#x89E3;&#x7801;&#x6A21;&#x5757;&#xFF0C;&#x56E0;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x90FD;&#x662F;&#x5C06;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x89E3;&#x7801;&#x4E3A;&#x8F93;&#x51FA;&#x7C7B;&#x578B;&#x3002;
+&#x6700;&#x540E;&#x6267;&#x884C;&#x7684;&#x90FD;&#x662F;DataFetcher&#x5B50;&#x7C7B;&#x7684;loadData&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x5BF9;&#x5E94;&#x7684;DataFetcher&#x662F;&#x7531;Glide&#x521D;&#x59CB;&#x5316;&#x65F6;&#x6CE8;&#x518C;&#x7684;&#x5BF9;&#x5E94;ModelLoader&#x7684;buildLoadData&#x65B9;&#x6CD5;&#x521D;&#x59CB;&#x5316;&#x7684;&#x3001;&#x968F;&#x4FBF;&#x627E;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;ModelLoader&#x7684;&#x5B50;&#x7C7B;&#x5982;ByteBufferFileLoader&#x7684;buildLoadData&#x65B9;&#x6CD5;&#xFF1A;
+</code></pre><p> @Override
+  public LoadData<bytebuffer> buildLoadData(
+      @NonNull File file, int width, int height, @NonNull Options options) {
+    //&#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F20;&#x5165;&#x4E86;&#x5BF9;&#x5E94;&#x7684;ByteBufferFetcher
+    return new LoadData&lt;&gt;(new ObjectKey(file), new ByteBufferFetcher(file));
+  }</bytebuffer></p>
+<pre><code>&#x603B;&#x7ED3;&#xFF1A;&#x5728;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;&#x65F6;&#x4F1A;&#x5148;&#x5224;&#x65AD;&#x8981;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;&#x7684;&#x7C7B;&#x578B;&#x904D;&#x5386;&#x5728;Glide&#x521B;&#x5EFA;&#x65F6;&#x6CE8;&#x518C;&#x76F8;&#x5E94;ModelLoader&#xFF0C;&#x5E76;&#x4F7F;&#x7528;ModelLoader&#x7684;buildeLoadData&#x4F1A;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x89E3;&#x7801;&#x5668;DataFetcher&#x7528;&#x4E8E;&#x52A0;&#x8F7D;&#x8F6C;&#x6362;&#x7C7B;&#x578B;&#x3002;
+**DataCacheGenerator&#x7684;startNext&#x65B9;&#x6CD5;&#xFF1A;**
+</code></pre><p>@Override
+  public boolean startNext() {
+    while (modelLoaders == null || !hasNextModelLoader()) {
+      sourceIdIndex++;
+      if (sourceIdIndex &gt;= cacheKeys.size()) {
+        return false;
+      }</p>
+<pre><code>  Key sourceId = cacheKeys.get(sourceIdIndex);
+  // PMD.AvoidInstantiatingObjectsInLoops The loop iterates a limited number of times
+  // and the actions it performs are much more expensive than a single allocation.
+  //&#x751F;&#x6210;&#x7684;&#x56FE;&#x7247;Key&#x503C;
+  @SuppressWarnings(&quot;PMD.AvoidInstantiatingObjectsInLoops&quot;)
+  Key originalKey = new DataCacheKey(sourceId, helper.getSignature());
+  cacheFile = helper.getDiskCache().get(originalKey);
+  if (cacheFile != null) {
+    this.sourceKey = sourceId;
+    modelLoaders = helper.getModelLoaders(cacheFile);
+    modelLoaderIndex = 0;
+  }
+}
+
+loadData = null;
+boolean started = false;
+while (!started &amp;&amp; hasNextModelLoader()) {
+  ModelLoader&lt;File, ?&gt; modelLoader = modelLoaders.get(modelLoaderIndex++);
+  loadData =
+      modelLoader.buildLoadData(
+          cacheFile, helper.getWidth(), helper.getHeight(), helper.getOptions());
+  if (loadData != null &amp;&amp; helper.hasLoadPath(loadData.fetcher.getDataClass())) {
+    started = true;
+    loadData.fetcher.loadData(helper.getPriority(), this);
+  }
+}
+return started;
+</code></pre><p>  }</p>
+<pre><code>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x5176;&#x4E2D;&#x7684;&#x52A0;&#x8F7D;&#x903B;&#x8F91;&#x548C;ResourceCacheGenerator&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x4E0D;&#x8FC7;&#x662F;&#x751F;&#x6210;&#x7684;key&#x4E0D;&#x540C;&#x5BFC;&#x81F4;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x7F13;&#x5B58;&#x3002;
+**SourceGenerator&#x7684;startNext&#x65B9;&#x6CD5;&#xFF1A;**
+</code></pre><p> @Override
+  public boolean startNext() {
+    if (dataToCache != null) {
+      Object data = dataToCache;
+      dataToCache = null;
+      cacheData(data);
+    }</p>
+<pre><code>if (sourceCacheGenerator != null &amp;&amp; sourceCacheGenerator.startNext()) {
+  return true;
+}
+sourceCacheGenerator = null;
+
+loadData = null;
+boolean started = false;
+while (!started &amp;&amp; hasNextModelLoader()) {
+  loadData = helper.getLoadData().get(loadDataListIndex++);
+  if (loadData != null
+      &amp;&amp; (helper.getDiskCacheStrategy().isDataCacheable(loadData.fetcher.getDataSource())
+          || helper.hasLoadPath(loadData.fetcher.getDataClass()))) {
+    started = true;
+    startNextLoad(loadData);
+  }
+}
+return started;
+</code></pre><p>  }</p>
+<pre><code>&#x5728;  loadData=helper.getLoadData().get(loadDataListIndex++);&#x8FD9;&#x53E5;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x65F6;&#x4F1A;&#x83B7;&#x53D6;&#x6CE8;&#x518C;&#x5176;&#x4E2D;&#x6240;&#x6709;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x8BE5;&#x8F93;&#x5165;&#x7684;ModelLoader,&#x518D;&#x6839;&#x636E;helper.hasLoadPath(loadData.fetcher.getDataClass()&#x8FD9;&#x53E5;&#x4EE3;&#x7801;&#x4F1A;&#x68C0;&#x6D4B;&#x89E3;&#x7801;&#x5668;&#x662F;&#x5426;&#x80FD;&#x89E3;&#x6790;&#x51FA;&#x9700;&#x8981;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x6839;&#x636E;string&#x7684;&#x56FE;&#x7247;url&#x751F;&#x6210;bitmap&#x3002;
+&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x52A0;&#x8F7D;&#x6E90;&#x6570;&#x636E;&#x65F6;&#x4F1A;&#x5148;&#x67E5;&#x8BE2;&#x7F13;&#x5B58;&#x5185;&#x5B58;&#x518D;&#x4F7F;&#x7528;fetch&#x8FDB;&#x884C;&#x52A0;&#x8F7D;&#xFF0C;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x4F20;&#x5165;&#x4E00;&#x4E2A;String&#x89E6;&#x53D1;&#x52A0;&#x8F7D;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5230;String&#x5BF9;&#x5E94;&#x7684;&#x89E3;&#x6790;&#x7C7B;&#x662F;
+</code></pre><p> .append(String.class, InputStream.class, new DataUrlLoader.StreamFactory<string>())
+        .append(Uri.class, InputStream.class, new DataUrlLoader.StreamFactory<uri>())
+        .append(String.class, InputStream.class, new StringLoader.StreamFactory())
+        .append(String.class, ParcelFileDescriptor.class, new StringLoader.FileDescriptorFactory())
+        .append(
+            String.class, AssetFileDescriptor.class, new StringLoader.AssetFileDescriptorFactory())
+```</uri></string></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="fresco.html" class="navigation navigation-prev " aria-label="Previous page: Fresco">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="LeakCanary原理.html" class="navigation navigation-next " aria-label="Next page: LeakCanary">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"Glide","subtitle":" Glide源码解析","date":"2020-02-13T10:24:00.000Z","author":"hzy","//header-img":"img/post-bg-2015.jpg","catalog":true,"tags":["框架"],"level":"1.2.1.3","depth":3,"next":{"title":"LeakCanary","level":"1.2.1.4","depth":3,"path":"android/框架/LeakCanary原理.md","ref":"android/框架/LeakCanary原理.md","articles":[]},"previous":{"title":"Fresco","level":"1.2.1.2","depth":3,"path":"android/框架/fresco.md","ref":"android/框架/fresco.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/框架/Glide源码.md","mtime":"2020-02-13T03:10:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T09:28:16.191Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

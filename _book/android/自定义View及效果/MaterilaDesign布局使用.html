@@ -1,0 +1,750 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MaterilaDesign布局使用 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="ItemTouchHelper使用.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../框架/BlockCanary.html">
+            
+                <a href="../框架/BlockCanary.html">
+            
+                    
+                    BlockCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../框架/fresco.html">
+            
+                <a href="../框架/fresco.html">
+            
+                    
+                    Fresco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../框架/Glide源码.html">
+            
+                <a href="../框架/Glide源码.html">
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../框架/LeakCanary原理.html">
+            
+                <a href="../框架/LeakCanary原理.html">
+            
+                    
+                    LeakCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../框架/Retrofit源码.html">
+            
+                <a href="../框架/Retrofit源码.html">
+            
+                    
+                    Retrofit源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../源码/Binder.html">
+            
+                <a href="../源码/Binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../源码/Dialog源码.html">
+            
+                <a href="../源码/Dialog源码.html">
+            
+                    
+                    Dialog源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../源码/RecycleView缓存机制.html">
+            
+                <a href="../源码/RecycleView缓存机制.html">
+            
+                    
+                    RecycleView缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../源码/WMS源码.html">
+            
+                <a href="../源码/WMS源码.html">
+            
+                    
+                    WMS源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    自定义View及效果
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="触摸事件.html">
+            
+                <a href="触摸事件.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="自定义ItemDecoration.html">
+            
+                <a href="自定义ItemDecoration.html">
+            
+                    
+                    自定义ItemDecoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="ItemTouchHelper使用.html">
+            
+                <a href="ItemTouchHelper使用.html">
+            
+                    
+                    ItemTouchHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3.4" data-path="MaterilaDesign布局使用.html">
+            
+                <a href="MaterilaDesign布局使用.html">
+            
+                    
+                    MaterilaDesign布局使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Gradle
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Gradle/Gradle编译流程梳理.html">
+            
+                <a href="../Gradle/Gradle编译流程梳理.html">
+            
+                    
+                    Gradle编译流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Gradle/Transform使用.html">
+            
+                <a href="../Gradle/Transform使用.html">
+            
+                    
+                    Transform使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    kotlin实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../Kotlin/协程使用.html">
+            
+                <a href="../Kotlin/协程使用.html">
+            
+                    
+                    协程初步使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../java/多线程同步.html">
+            
+                <a href="../../java/多线程同步.html">
+            
+                    
+                    多线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../java/垃圾回收机制.html">
+            
+                <a href="../../java/垃圾回收机制.html">
+            
+                    
+                    垃圾回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../计算机网络/">
+            
+                <a href="../../计算机网络/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../计算机网络/编码加密.html">
+            
+                <a href="../../计算机网络/编码加密.html">
+            
+                    
+                    编码加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../计算机网络/登陆认证.html">
+            
+                <a href="../../计算机网络/登陆认证.html">
+            
+                    
+                    登陆认证流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../计算机网络/http协议.html">
+            
+                <a href="../../计算机网络/http协议.html">
+            
+                    
+                    http协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../操作系统/">
+            
+                <a href="../../操作系统/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../设计模式/建造者模式.html">
+            
+                <a href="../../设计模式/建造者模式.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >MaterilaDesign布局使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="materil-design-&#x5E03;&#x5C40;&#xFF1A;">Materil Design &#x5E03;&#x5C40;&#xFF1A;</h1>
+<h3 id="coordinatorlayout&#xFF1A;&#x5B9E;&#x73B0;&#x8054;&#x52A8;&#x5E03;&#x5C40;">CoordinatorLayout&#xFF1A;&#x5B9E;&#x73B0;&#x8054;&#x52A8;&#x5E03;&#x5C40;</h3>
+<ul>
+<li>layout_behavior&#x5C5E;&#x6027;&#xFF08;&#x8BE5;&#x5C5E;&#x6027;&#x5FC5;&#x987B;&#x662F;AppBarLayout&#x7684;&#x76F4;&#x63A5;&#x5B50;&#x5E03;&#x5C40;&#xFF09;&#xFF1A;<ul>
+<li>@string/appbar_scrolling_view_behavior&#xFF1A;&#x5F53;&#x5E03;&#x5C40;&#x4E2D;&#x5B58;&#x5728;&#x6EDA;&#x52A8;&#x5E03;&#x5C40;&#x65F6;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x8BE5;&#x5C5E;&#x6027;&#x901A;&#x77E5;&#x5E03;&#x5C40;&#x5177;&#x6709;&#x6EDA;&#x52A8;&#x5E03;&#x5C40;</li>
+</ul>
+</li>
+</ul>
+<h3 id="appbarlayout&#xFF1A;&#x5B9E;&#x73B0;&#x5B50;&#x63A7;&#x4EF6;&#x6EDA;&#x52A8;&#x8054;&#x52A8;&#x5E03;&#x5C40;">AppBarLayout&#xFF1A;&#x5B9E;&#x73B0;&#x5B50;&#x63A7;&#x4EF6;&#x6EDA;&#x52A8;&#x8054;&#x52A8;&#x5E03;&#x5C40;</h3>
+<h4 id="&#x5E03;&#x5C40;&#x5C5E;&#x6027;&#xFF1A;">&#x5E03;&#x5C40;&#x5C5E;&#x6027;&#xFF1A;</h4>
+<ul>
+<li>layout_scrollFlags&#x5C5E;&#x6027;&#xFF1A;  <ul>
+<li>scroll&#xFF1A;&#x8BBE;&#x7F6E;&#x53EF;&#x6EDA;&#x52A8;&#xFF0C;&#x5373;&#x8DDF;&#x968F;&#x5E03;&#x5C40;&#x4E2D;&#x53EF;&#x6EDA;&#x52A8;&#x7684;View&#x4E00;&#x8D77;&#x6EDA;&#x52A8;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#xFF0C;&#x5426;&#x5219;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x65E0;&#x6548; </li>
+<li>enterAlways&#xFF1A;&#x5411;&#x4E0B;&#x6EDA;&#x52A8;&#x65F6;&#x8BE5;&#x5E03;&#x5C40;&#x7ACB;&#x523B;&#x51FA;&#x73B0;&#xFF0C;&#x5373;&#x5FEB;&#x901F;&#x8FD4;&#x56DE;&#x529F;&#x80FD;</li>
+<li>exitUntilCollapsed&#xFF1A;&#x8BBE;&#x7F6E;&#x4E86;minHeight&#x540E;  &#x6EDA;&#x52A8;&#x53EA;&#x4F1A;&#x6298;&#x53E0;&#x5230;&#x6700;&#x5C0F;&#x9AD8;&#x5EA6;&#x4E0D;&#x4F1A;&#x5168;&#x90E8;&#x6D88;&#x5931;</li>
+<li>enterAlwaysCollapsed&#xFF1A;&#x8BBE;&#x7F6E;&#x4E86;&#x6700;&#x5C0F;&#x9AD8;&#x5EA6;&#x540E;&#xFF0C;&#x5411;&#x4E0B;&#x6ED1;&#x52A8;&#x4F1A;&#x5148;&#x6ED1;&#x52A8;&#x8FD9;&#x4E2A;&#x5E03;&#x5C40;&#x5230;&#x6700;&#x5C0F;&#x9AD8;&#x5EA6;&#x518D;&#x6ED1;&#x52A8;&#x5176;&#x4ED6;&#x63A7;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x6700;&#x597D;&#x8BBE;&#x7F6E;&#x4E3A;scroll|enterAlways|enterAlwaysCollapsed&#xFF0C;&#x56E0;&#x4E3A;&#x53EA;&#x6709;&#x5728;&#x5176;&#x4ED6;&#x6ED1;&#x52A8;&#x63A7;&#x4EF6;&#x53EF;&#x5411;&#x4E0B;&#x6ED1;&#x52A8;&#x65F6;&#x518D;&#x6ED1;&#x52A8;&#x624D;&#x80FD;&#x770B;&#x51FA;&#x6548;&#x679C;&#x662F;&#x5148;&#x6ED1;&#x52A8;&#x4E86;&#x8FD9;&#x4E2A;&#x5E03;&#x5C40;&#x518D;&#x6EDA;&#x52A8;&#x5176;&#x4ED6;&#x5E03;&#x5C40;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="collapsingtoolbarlayout&#xFF1A;&#x5B9E;&#x73B0;&#x6298;&#x53E0;&#x5E03;&#x5C40;">CollapsingToolbarLayout&#xFF1A;&#x5B9E;&#x73B0;&#x6298;&#x53E0;&#x5E03;&#x5C40;</h3>
+<h4 id="&#x5E03;&#x5C40;&#x5C5E;&#x6027;&#xFF1A;">&#x5E03;&#x5C40;&#x5C5E;&#x6027;&#xFF1A;</h4>
+<ul>
+<li>layout_collapseMode&#xFF1A;&#x8BBE;&#x7F6E;&#x6298;&#x53E0;&#x6A21;&#x5F0F;&#x5C5E;&#x6027;<ul>
+<li>off&#xFF1A;&#x9ED8;&#x8BA4;&#x5C5E;&#x6027;&#xFF0C;&#x5E03;&#x5C40;&#x6B63;&#x5E38;&#x663E;&#x793A;&#xFF0C; &#x6CA1;&#x6709;&#x6298;&#x53E0;&#x6548;&#x679C;</li>
+<li>pin&#xFF1A;&#x6298;&#x53E0;&#x540E;&#x505C;&#x7559;&#x5728;&#x9876;&#x90E8;&#xFF08;&#x521D;&#x59CB;&#x4E0D;&#x4F1A;&#x8DDF;&#x968F;&#x6EDA;&#x52A8;&#x63A7;&#x4EF6;&#x79FB;&#x52A8;&#xFF0C;&#x5F53;&#x5230;&#x8FBE;&#x5E95;&#x90E8;&#x89E6;&#x53CA;CollapsingToolbarLayout&#x5E03;&#x5C40;&#x5E95;&#x90E8;&#x540E;&#x8DDF;&#x968F;&#x6EDA;&#x52A8;&#x5411;&#x4E0A;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x6548;&#x679C;&#x4F1A;&#x505C;&#x7559;&#x5728;CollapsingToolbarLayout&#x5E03;&#x5C40;&#x7684;&#x5E95;&#x90E8;&#xFF09;</li>
+<li>parallax&#xFF1A;&#x89C6;&#x5DEE;&#x6298;&#x53E0;&#x6548;&#x679C;&#xFF08;&#x6839;&#x636E;&#x6EDA;&#x52A8;&#x89C6;&#x56FE;&#x7684;&#x6EDA;&#x52A8;&#x6309;&#x7167;&#xFF08;layout_collapseParallaxMultiplier&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF09;&#x6EDA;&#x52A8;&#x8BE5;&#x63A7;&#x4EF6;&#xFF09;</li>
+</ul>
+</li>
+<li>layout_collapseParallaxMultiplier&#xFF1A;&#x8BBE;&#x7F6E;&#x6EDA;&#x52A8;&#x89C6;&#x5DEE;&#x56E0;&#x5B50;&#xFF0C;&#x5728;layout_collapseMode&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E3A;parallax&#x540E;&#x8BE5;&#x8BBE;&#x7F6E;&#x751F;&#x6548;&#xFF0C;&#x8BE5;&#x503C;&#x53D6;&#x503C;&#x4E3A;0~1&#xFF0C;&#x5BF9;&#x5E94;&#x662F;&#x6307;&#x5E03;&#x5C40;&#x5360;&#x636E;&#x8BE5;CollapsingToolbarLayout&#x5E03;&#x5C40;&#x4E0B;&#x534A;&#x90E8;&#x5206;&#x7684;&#x6BD4;&#x4F8B;&#xFF09;&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x89C2;&#x8BA4;&#x4E3A;&#x662F;&#x8BE5;&#x63A7;&#x4EF6;&#x8DDF;&#x968F;&#x6EDA;&#x52A8;&#x63A7;&#x4EF6;&#x79FB;&#x52A8;&#x7684;&#x901F;&#x7387;&#x8F6C;&#x6362;&#xFF0C;&#x5F53;&#x4E3A;0 &#x65F6;&#x8DDF;&#x968F;&#x6EDA;&#x52A8;&#x4E00;&#x8D77;&#x6EDA;&#x52A8;&#xFF0C;&#x4E3A;0.5&#x65F6;&#x53EA;&#x6EDA;&#x52A8;&#x4E00;&#x534A;&#x7684;&#x901F;&#x7387;&#x3002;</li>
+<li>contentScrim=&#x201D;?attr/colorPrimary&#x201D;&#xFF1A;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;&#x4E4B;&#x540E;&#x6298;&#x53E0;toolbar&#x4F1A;&#x663E;&#x793A;&#x4E3B;&#x9898;&#x7684;&#x989C;&#x8272;  </li>
+</ul>
+<h3 id="appbarlayout&#x81EA;&#x5B9A;&#x4E49;behavior&#x5B9E;&#x73B0;&#xFF1A;">AppBarLayout&#x81EA;&#x5B9A;&#x4E49;Behavior&#x5B9E;&#x73B0;&#xFF1A;</h3>
+<ul>
+<li>&#x5B9E;&#x73B0;CoordinatorLayout.Behavior<view>&#x63A5;&#x53E3;&#xFF1A;&#x5176;&#x4E2D;&#x7684;View&#x6CDB;&#x578B;&#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x8BE5;BehaViro&#x7684;&#x63A7;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x8BB0;&#x5F97;&#x91CD;&#x5199;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x65B9;&#x6CD5;&#x624D;&#x80FD;&#x5728;&#x5E03;&#x5C40;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</view></li>
+<li>&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#xFF1A;<ul>
+<li>boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency)&#xFF0C;&#x5176;&#x4E2D;parent&#x4E3A;&#x6839;&#x5E03;&#x5C40;&#xFF0C;child&#x4E3A;&#x4F7F;&#x7528;&#x8BE5;Behavior&#x7684;&#x63A7;&#x4EF6;&#xFF0C;dependency&#x4E3A;&#x76D1;&#x542C;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;true&#x8868;&#x793A;&#x76D1;&#x542C;dependency&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x6307;&#x5B9A;&#x76D1;&#x542C;RecycleView&#x7684;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5199;&#xFF1A; <pre><code>  @Override
+  public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {   
+      return dependency instanceof RecyclerView;
+  }
+</code></pre></li>
+<li>boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) &#xFF1A;&#x5728;&#x6EDA;&#x52A8;&#x63A7;&#x4EF6;dependency&#x4F4D;&#x7F6E;&#x6539;&#x53D8;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x5373;dependency.getY()&#x5C5E;&#x6027;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#xFF08;&#x8BE5;&#x51FD;&#x6570;&#x53EA;&#x4F1A;&#x5728;dependency&#x7684;&#x4F4D;&#x7F6E;&#x53D8;&#x5316;&#x65F6;&#x548C;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x5185;&#x90E8;&#x7684;&#x6EDA;&#x52A8;&#x6EDA;&#x52A8;&#x4F1A;&#x8C03;&#x7528;NestedScrolling&#x63A5;&#x53E3;&#x7684;&#x65B9;&#x6CD5;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ItemTouchHelper使用.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: ItemTouchHelper">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"MaterilaDesign布局使用","subtitle":" Materil Design 布局使用","date":"2020-01-02T12:00:00.000Z","author":"hzy","//header-img":"img/post-bg-2015.jpg","catalog":true,"tags":["Android","布局"],"level":"1.2.3.4","depth":3,"next":{"title":"Gradle","level":"1.2.4","depth":2,"ref":"","articles":[{"title":"Gradle编译流程","level":"1.2.4.1","depth":3,"path":"android/Gradle/Gradle编译流程梳理.md","ref":"android/Gradle/Gradle编译流程梳理.md","articles":[]},{"title":"Transform使用","level":"1.2.4.2","depth":3,"path":"android/Gradle/Transform使用.md","ref":"android/Gradle/Transform使用.md","articles":[]}]},"previous":{"title":"ItemTouchHelper","level":"1.2.3.3","depth":3,"path":"android/自定义View及效果/ItemTouchHelper使用.md","ref":"android/自定义View及效果/ItemTouchHelper使用.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/自定义View及效果/MaterilaDesign布局使用.md","mtime":"2020-08-16T16:13:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T09:28:16.191Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

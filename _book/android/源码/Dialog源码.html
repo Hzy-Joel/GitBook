@@ -1,0 +1,972 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Dialog源码 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="RecycleView缓存机制.html" />
+    
+    
+    <link rel="prev" href="Binder.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../框架/BlockCanary.html">
+            
+                <a href="../框架/BlockCanary.html">
+            
+                    
+                    BlockCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../框架/fresco.html">
+            
+                <a href="../框架/fresco.html">
+            
+                    
+                    Fresco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../框架/Glide源码.html">
+            
+                <a href="../框架/Glide源码.html">
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../框架/LeakCanary原理.html">
+            
+                <a href="../框架/LeakCanary原理.html">
+            
+                    
+                    LeakCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../框架/Retrofit源码.html">
+            
+                <a href="../框架/Retrofit源码.html">
+            
+                    
+                    Retrofit源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="Binder.html">
+            
+                <a href="Binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.2" data-path="Dialog源码.html">
+            
+                <a href="Dialog源码.html">
+            
+                    
+                    Dialog源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="RecycleView缓存机制.html">
+            
+                <a href="RecycleView缓存机制.html">
+            
+                    
+                    RecycleView缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="WMS源码.html">
+            
+                <a href="WMS源码.html">
+            
+                    
+                    WMS源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    自定义View及效果
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../自定义View及效果/触摸事件.html">
+            
+                <a href="../自定义View及效果/触摸事件.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../自定义View及效果/自定义ItemDecoration.html">
+            
+                <a href="../自定义View及效果/自定义ItemDecoration.html">
+            
+                    
+                    自定义ItemDecoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                <a href="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                    
+                    ItemTouchHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                <a href="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                    
+                    MaterilaDesign布局使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Gradle
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Gradle/Gradle编译流程梳理.html">
+            
+                <a href="../Gradle/Gradle编译流程梳理.html">
+            
+                    
+                    Gradle编译流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Gradle/Transform使用.html">
+            
+                <a href="../Gradle/Transform使用.html">
+            
+                    
+                    Transform使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    kotlin实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../Kotlin/协程使用.html">
+            
+                <a href="../Kotlin/协程使用.html">
+            
+                    
+                    协程初步使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../java/多线程同步.html">
+            
+                <a href="../../java/多线程同步.html">
+            
+                    
+                    多线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../java/垃圾回收机制.html">
+            
+                <a href="../../java/垃圾回收机制.html">
+            
+                    
+                    垃圾回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../计算机网络/">
+            
+                <a href="../../计算机网络/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../计算机网络/编码加密.html">
+            
+                <a href="../../计算机网络/编码加密.html">
+            
+                    
+                    编码加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../计算机网络/登陆认证.html">
+            
+                <a href="../../计算机网络/登陆认证.html">
+            
+                    
+                    登陆认证流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../计算机网络/http协议.html">
+            
+                <a href="../../计算机网络/http协议.html">
+            
+                    
+                    http协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../操作系统/">
+            
+                <a href="../../操作系统/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../设计模式/建造者模式.html">
+            
+                <a href="../../设计模式/建造者模式.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Dialog源码</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="dialog&#x6E90;&#x7801;&#x5206;&#x6790;">Dialog&#x6E90;&#x7801;&#x5206;&#x6790;</h3>
+<h5 id="1&#x3001;dialog&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;">1&#x3001;Dialog&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</h5>
+<pre><code>AlertDialog.Builder normalDialog = new AlertDialog.Builder(MainDialogActivity.this);
+        normalDialog.setIcon(R.mipmap.ic_launcher);
+        normalDialog.setTitle(&quot;&#x6211;&#x662F;&#x4E00;&#x4E2A;&#x666E;&#x901A;Dialog&quot;);
+normalDialog.show();
+</code></pre><h5 id="2&#x3001;&#x5176;&#x4E2D;&#x8C03;&#x7528;&#x4E86;alertdialogbuilder&#x7684;show&#x65B9;&#x6CD5;&#xFF1A;">2&#x3001;&#x5176;&#x4E2D;&#x8C03;&#x7528;&#x4E86;AlertDialog.Builder&#x7684;show&#x65B9;&#x6CD5;&#xFF1A;</h5>
+<pre><code> public AlertDialog create() {
+            // We can&apos;t use Dialog&apos;s 3-arg constructor with the createThemeContextWrapper param,
+            // so we always have to re-set the theme
+            final AlertDialog dialog = new AlertDialog(P.mContext, mTheme);
+            P.apply(dialog.mAlert);
+            dialog.setCancelable(P.mCancelable);
+            if (P.mCancelable) {
+                dialog.setCanceledOnTouchOutside(true);
+            }
+            dialog.setOnCancelListener(P.mOnCancelListener);
+            dialog.setOnDismissListener(P.mOnDismissListener);
+            if (P.mOnKeyListener != null) {
+                dialog.setOnKeyListener(P.mOnKeyListener);
+            }
+            return dialog;
+        }
+
+        /**
+         * Creates an {@link AlertDialog} with the arguments supplied to this
+         * builder and immediately displays the dialog.
+         * &lt;p&gt;
+         * Calling this method is functionally identical to:
+         * &lt;pre&gt;
+         *     AlertDialog dialog = builder.create();
+         *     dialog.show();
+         * &lt;/pre&gt;
+         */
+        public AlertDialog show() { 
+            final AlertDialog dialog = create();
+            //&#x8C03;&#x7528;&#x4E86;Dialog&#x7684;show&#x65B9;&#x6CD5;&#x663E;&#x793A;
+            dialog.show();
+            return dialog;
+        }
+</code></pre><p><strong>&#x5728;&#x8C03;&#x7528;show&#x65B9;&#x6CD5;&#x65F6;&#x5148;&#x4F7F;&#x7528;create()&#x65B9;&#x6CD5;&#x5C06;Builder&#x7684;&#x53C2;&#x6570;&#x7528;&#x4E8E;&#x6784;&#x9020;&#x4E00;&#x4E2A;AlertDialog&#x5E76;&#x8C03;&#x7528;show&#x65B9;&#x6CD5;&#x3002;&#x5728;AlertDialog&#x5E76;&#x6CA1;&#x6709;&#x8986;&#x76D6;show&#x65B9;&#x6CD5;&#x3001;&#x56E0;&#x6B64;&#x8C03;&#x7528;&#x7684;&#x662F;&#x7236;&#x7C7B;Dialog&#x7684;show&#x65B9;&#x6CD5;&#x3002;</strong></p>
+<h5 id="3&#x3001;dialogshow&#x65B9;&#x6CD5;&#xFF1A;">3&#x3001;Dialog.show()&#x65B9;&#x6CD5;&#xFF1A;</h5>
+<pre><code>public void show() {
+        if (mShowing) {
+            if (mDecor != null) {
+                if (mWindow.hasFeature(Window.FEATURE_ACTION_BAR)) {
+                    mWindow.invalidatePanelMenu(Window.FEATURE_ACTION_BAR);
+                }
+                mDecor.setVisibility(View.VISIBLE);
+            }
+            return;
+        }
+
+        mCanceled = false;
+
+        if (!mCreated) {
+            //&#x89E6;&#x53D1;onCreate&#x4E8B;&#x4EF6;
+            dispatchOnCreate(null);
+        } else {
+            // Fill the DecorView in on any configuration changes that
+            // may have occured while it was removed from the WindowManager.
+            final Configuration config = mContext.getResources().getConfiguration();
+            mWindow.getDecorView().dispatchConfigurationChanged(config);
+        }
+        //&#x8C03;&#x7528;OnStart&#x65B9;&#x6CD5;
+        onStart();
+        mDecor = mWindow.getDecorView();
+
+        if (mActionBar == null &amp;&amp; mWindow.hasFeature(Window.FEATURE_ACTION_BAR)) {
+            final ApplicationInfo info = mContext.getApplicationInfo();
+            mWindow.setDefaultIcon(info.icon);
+            mWindow.setDefaultLogo(info.logo);
+            mActionBar = new WindowDecorActionBar(this);
+        }
+
+        WindowManager.LayoutParams l = mWindow.getAttributes();
+        if ((l.softInputMode  &amp; WindowManager.LayoutParams.SOFT_INPUT_IS_FORWARD_NAVIGATION) == 0) {
+            WindowManager.LayoutParams nl = new WindowManager.LayoutParams();
+            nl.copyFrom(l);
+            nl.softInputMode |=
+                    WindowManager.LayoutParams.SOFT_INPUT_IS_FORWARD_NAVIGATION;
+            l = nl;
+        }
+
+        //&#x6DFB;&#x52A0;View
+        mWindowManager.addView(mDecor, l);
+        mShowing = true;
+
+        sendShowMessage();
+    }
+</code></pre><pre><code>    //&#x8C03;&#x7528;onCreate&#x4E8B;&#x4EF6;
+    void dispatchOnCreate(Bundle savedInstanceState) {
+        if (!mCreated) {
+            onCreate(savedInstanceState);
+            mCreated = true;
+        }
+    }
+</code></pre><p>  <strong>&#x8BE5;&#x65B9;&#x6CD5;&#x4E2D;&#x6D41;&#x7A0B;&#x4E3A;&#xFF1A;</strong>
+  <strong>1. &#x8C03;&#x7528;onCreate&#x65B9;&#x6CD5;</strong>
+  <strong>2. &#x8C03;&#x7528;onStart&#x65B9;&#x6CD5;</strong>
+  <strong>3. &#x8C03;&#x7528;mWindowManager.addView(mDecor, l)&#x6DFB;&#x52A0;View</strong>
+  <strong>4. &#x8C03;&#x7528;sendShowMessage</strong></p>
+<hr>
+<h4 id="1&#x3001;oncreate&#x65B9;&#x6CD5;&#xFF1A;">1&#x3001;onCreate&#x65B9;&#x6CD5;&#xFF1A;</h4>
+<h6 id="dialog&#x7684;oncreate&#x65B9;&#x6CD5;&#x4E3A;&#x7A7A;&#x5B9E;&#x73B0;&#xFF0C;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x88AB;alertdialog&#x7684;oncreate&#x8986;&#x76D6;&#xFF1A;">Dialog&#x7684;onCreate&#x65B9;&#x6CD5;&#x4E3A;&#x7A7A;&#x5B9E;&#x73B0;&#xFF0C;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x88AB;AlertDialog&#x7684;onCreate&#x8986;&#x76D6;&#xFF1A;</h6>
+<pre><code> @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //&#x8C03;&#x7528;&#x4E86;AlertController&#x7C7B;&#x7684;installContent&#xFF0C;&#x8BE5;&#x7C7B;&#x662F;&#x4FDD;&#x5B58;Dialog&#x7684;&#x6784;&#x5EFA;&#x4FE1;&#x606F;&#x7C7B;&#xFF0C;Builer&#x5C31;&#x662F;&#x7528;&#x6765;&#x6784;&#x5EFA;&#x8BE5;&#x7C7B;&#x5E76;&#x7528;&#x5176;&#x6765;&#x521D;&#x59CB;&#x5316;Dialog&#x7684;
+        mAlert.installContent();
+    }
+</code></pre><h5 id="alertcontroller&#x7C7B;&#x7684;installcontent&#x65B9;&#x6CD5;&#xFF1A;">AlertController&#x7C7B;&#x7684;installContent&#x65B9;&#x6CD5;&#xFF1A;</h5>
+<pre><code>public void installContent() {
+        final int contentView = selectContentView();
+        //&#x8BBE;&#x7F6E;&#x5185;&#x5BB9;&#x5E03;&#x5C40;
+        mDialog.setContentView(contentView);
+        //
+        setupView();
+    }
+</code></pre><p>selectContentView&#x65B9;&#x6CD5;&#x6839;&#x636E;&#x4E3B;&#x9898;&#x9009;&#x62E9;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;&#x5E03;&#x5C40;</p>
+<pre><code> private int selectContentView() {
+        if (mButtonPanelSideLayout == 0) {
+            return mAlertDialogLayout;
+        }
+        if (mButtonPanelLayoutHint == AlertDialog.LAYOUT_HINT_SIDE) {
+            return mButtonPanelSideLayout;
+        }
+        return mAlertDialogLayout;
+    }
+</code></pre><p>setupView&#x65B9;&#x6CD5;&#x8BBE;&#x7F6E;&#x5E03;&#x5C40;&#x4E2D;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5185;&#x5BB9;</p>
+<pre><code>private void setupView() {
+        final View parentPanel = mWindow.findViewById(R.id.parentPanel);
+        final View defaultTopPanel = parentPanel.findViewById(R.id.topPanel);
+        final View defaultContentPanel = parentPanel.findViewById(R.id.contentPanel);
+        final View defaultButtonPanel = parentPanel.findViewById(R.id.buttonPanel);
+
+        // Install custom content before setting up the title or buttons so
+        // that we can handle panel overrides.
+        //&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#x66FF;&#x6362;&#x8BE5;&#x533A;&#x57DF;&#x4F4D;&#x7F6E;&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x7684;
+        final ViewGroup customPanel = (ViewGroup) parentPanel.findViewById(R.id.customPanel);
+        setupCustomContent(customPanel);
+
+        final View customTopPanel = customPanel.findViewById(R.id.topPanel);
+        final View customContentPanel = customPanel.findViewById(R.id.contentPanel);
+        final View customButtonPanel = customPanel.findViewById(R.id.buttonPanel);
+
+        // Resolve the correct panels and remove the defaults, if needed.
+        final ViewGroup topPanel = resolvePanel(customTopPanel, defaultTopPanel);
+        final ViewGroup contentPanel = resolvePanel(customContentPanel, defaultContentPanel);
+        final ViewGroup buttonPanel = resolvePanel(customButtonPanel, defaultButtonPanel);
+
+        setupContent(contentPanel);
+        setupButtons(buttonPanel);
+        setupTitle(topPanel);
+
+        final boolean hasCustomPanel = customPanel != null
+                &amp;&amp; customPanel.getVisibility() != View.GONE;
+        final boolean hasTopPanel = topPanel != null
+                &amp;&amp; topPanel.getVisibility() != View.GONE;
+        final boolean hasButtonPanel = buttonPanel != null
+                &amp;&amp; buttonPanel.getVisibility() != View.GONE;
+
+        // Only display the text spacer if we don&apos;t have buttons.
+        if (!hasButtonPanel) {
+            if (contentPanel != null) {
+                final View spacer = contentPanel.findViewById(R.id.textSpacerNoButtons);
+                if (spacer != null) {
+                    spacer.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+
+        if (hasTopPanel) {
+            // Only clip scrolling content to padding if we have a title.
+            if (mScrollView != null) {
+                mScrollView.setClipToPadding(true);
+            }
+
+            // Only show the divider if we have a title.
+            View divider = null;
+            if (mMessage != null || mListView != null) {
+                divider = topPanel.findViewById(R.id.titleDividerNoCustom);
+            }
+
+            if (divider != null) {
+                divider.setVisibility(View.VISIBLE);
+            }
+        } else {
+            if (contentPanel != null) {
+                final View spacer = contentPanel.findViewById(R.id.textSpacerNoTitle);
+                if (spacer != null) {
+                    spacer.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+
+        if (mListView instanceof RecycleListView) {
+            ((RecycleListView) mListView).setHasDecor(hasTopPanel, hasButtonPanel);
+        }
+
+        // Update scroll indicators as needed.
+        if (!hasCustomPanel) {
+            final View content = mListView != null ? mListView : mScrollView;
+            if (content != null) {
+                final int indicators = (hasTopPanel ? ViewCompat.SCROLL_INDICATOR_TOP : 0)
+                        | (hasButtonPanel ? ViewCompat.SCROLL_INDICATOR_BOTTOM : 0);
+                setScrollIndicators(contentPanel, content, indicators,
+                        ViewCompat.SCROLL_INDICATOR_TOP | ViewCompat.SCROLL_INDICATOR_BOTTOM);
+            }
+        }
+
+        final ListView listView = mListView;
+        if (listView != null &amp;&amp; mAdapter != null) {
+            listView.setAdapter(mAdapter);
+            final int checkedItem = mCheckedItem;
+            if (checkedItem &gt; -1) {
+                listView.setItemChecked(checkedItem, true);
+                listView.setSelection(checkedItem);
+            }
+        }
+    }
+</code></pre><p>&#x5728;&#x4E4B;&#x4E0A;&#x7684;&#x8BBE;&#x7F6E;&#x5E03;&#x5C40;&#x6240;&#x83B7;&#x5F97;&#x5E03;&#x5C40;View&#x90FD;&#x662F;&#x5728;AlertController&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x83B7;&#x5F97;</p>
+<pre><code> public AlertController(Context context, AppCompatDialog di, Window window) {
+        mContext = context;
+        mDialog = di;
+        mWindow = window;
+        mHandler = new ButtonHandler(di);
+
+        final TypedArray a = context.obtainStyledAttributes(null, R.styleable.AlertDialog,
+                R.attr.alertDialogStyle, 0);
+
+        mAlertDialogLayout = a.getResourceId(R.styleable.AlertDialog_android_layout, 0);
+        mButtonPanelSideLayout = a.getResourceId(R.styleable.AlertDialog_buttonPanelSideLayout, 0);
+
+        mListLayout = a.getResourceId(R.styleable.AlertDialog_listLayout, 0);
+        mMultiChoiceItemLayout = a.getResourceId(R.styleable.AlertDialog_multiChoiceItemLayout, 0);
+        mSingleChoiceItemLayout = a
+                .getResourceId(R.styleable.AlertDialog_singleChoiceItemLayout, 0);
+        mListItemLayout = a.getResourceId(R.styleable.AlertDialog_listItemLayout, 0);
+        mShowTitle = a.getBoolean(R.styleable.AlertDialog_showTitle, true);
+        mButtonIconDimen = a.getDimensionPixelSize(R.styleable.AlertDialog_buttonIconDimen, 0);
+
+        a.recycle();
+
+        /* We use a custom title so never request a window title */
+        di.supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+    }
+</code></pre><h4 id="2&#x3001;&#x8C03;&#x7528;onstart&#x65B9;&#x6CD5;&#xFF1A;">2&#x3001;&#x8C03;&#x7528;onStart&#x65B9;&#x6CD5;&#xFF1A;</h4>
+<pre><code>protected void onStart() {
+        if (mActionBar != null) mActionBar.setShowHideAnimationEnabled(true);
+    }
+</code></pre><h4 id="3&#x3001;&#x8C03;&#x7528;mwindowmanageraddviewmdecor-l&#x6DFB;&#x52A0;view&#xFF1A;">3&#x3001;&#x8C03;&#x7528;mWindowManager.addView(mDecor, l)&#x6DFB;&#x52A0;View&#xFF1A;</h4>
+<p><strong>&#x65B9;&#x6CD5;&#x6D89;&#x53CA;&#x5230;WMS&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x8FD9;&#x91CC;&#x6682;&#x65F6;&#x53EA;&#x8BB0;&#x4F5C;&#x7528;&#xFF0C;&#x5C06;View&#x6DFB;&#x52A0;&#x5230;Window&#x7A97;&#x53E3;&#x4E2D;</strong></p>
+<h4 id="4&#x3001;sendshowmessage">4&#x3001;sendShowMessage</h4>
+<pre><code>private void sendShowMessage() {
+        if (mShowMessage != null) {
+            // Obtain a new message so this dialog can be re-used
+            Message.obtain(mShowMessage).sendToTarget();
+        }
+    }
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Binder.html" class="navigation navigation-prev " aria-label="Previous page: Binder">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="RecycleView缓存机制.html" class="navigation navigation-next " aria-label="Next page: RecycleView缓存机制">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"Dialog源码","subtitle":" Dialog源码分析","date":"2020-01-21T14:36:00.000Z","author":"hzy","//header-img":"img/post-bg-2015.jpg","catalog":true,"tags":["源码"],"level":"1.2.2.2","depth":3,"next":{"title":"RecycleView缓存机制","level":"1.2.2.3","depth":3,"path":"android/源码/RecycleView缓存机制.md","ref":"android/源码/RecycleView缓存机制.md","articles":[]},"previous":{"title":"Binder","level":"1.2.2.1","depth":3,"path":"android/源码/Binder.md","ref":"android/源码/Binder.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/源码/Dialog源码.md","mtime":"2020-02-13T02:17:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T09:28:16.191Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

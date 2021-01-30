@@ -1,0 +1,774 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ItemTouchHelper · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="MaterilaDesign布局使用.html" />
+    
+    
+    <link rel="prev" href="自定义ItemDecoration.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../框架/BlockCanary.html">
+            
+                <a href="../框架/BlockCanary.html">
+            
+                    
+                    BlockCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../框架/fresco.html">
+            
+                <a href="../框架/fresco.html">
+            
+                    
+                    Fresco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../框架/Glide源码.html">
+            
+                <a href="../框架/Glide源码.html">
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../框架/LeakCanary原理.html">
+            
+                <a href="../框架/LeakCanary原理.html">
+            
+                    
+                    LeakCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../框架/Retrofit源码.html">
+            
+                <a href="../框架/Retrofit源码.html">
+            
+                    
+                    Retrofit源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../源码/Binder.html">
+            
+                <a href="../源码/Binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../源码/Dialog源码.html">
+            
+                <a href="../源码/Dialog源码.html">
+            
+                    
+                    Dialog源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../源码/RecycleView缓存机制.html">
+            
+                <a href="../源码/RecycleView缓存机制.html">
+            
+                    
+                    RecycleView缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../源码/WMS源码.html">
+            
+                <a href="../源码/WMS源码.html">
+            
+                    
+                    WMS源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    自定义View及效果
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="触摸事件.html">
+            
+                <a href="触摸事件.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="自定义ItemDecoration.html">
+            
+                <a href="自定义ItemDecoration.html">
+            
+                    
+                    自定义ItemDecoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3.3" data-path="ItemTouchHelper使用.html">
+            
+                <a href="ItemTouchHelper使用.html">
+            
+                    
+                    ItemTouchHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="MaterilaDesign布局使用.html">
+            
+                <a href="MaterilaDesign布局使用.html">
+            
+                    
+                    MaterilaDesign布局使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Gradle
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Gradle/Gradle编译流程梳理.html">
+            
+                <a href="../Gradle/Gradle编译流程梳理.html">
+            
+                    
+                    Gradle编译流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Gradle/Transform使用.html">
+            
+                <a href="../Gradle/Transform使用.html">
+            
+                    
+                    Transform使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    kotlin实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../Kotlin/协程使用.html">
+            
+                <a href="../Kotlin/协程使用.html">
+            
+                    
+                    协程初步使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../java/多线程同步.html">
+            
+                <a href="../../java/多线程同步.html">
+            
+                    
+                    多线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../java/垃圾回收机制.html">
+            
+                <a href="../../java/垃圾回收机制.html">
+            
+                    
+                    垃圾回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../计算机网络/">
+            
+                <a href="../../计算机网络/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../计算机网络/编码加密.html">
+            
+                <a href="../../计算机网络/编码加密.html">
+            
+                    
+                    编码加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../计算机网络/登陆认证.html">
+            
+                <a href="../../计算机网络/登陆认证.html">
+            
+                    
+                    登陆认证流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../计算机网络/http协议.html">
+            
+                <a href="../../计算机网络/http协议.html">
+            
+                    
+                    http协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../操作系统/">
+            
+                <a href="../../操作系统/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../设计模式/建造者模式.html">
+            
+                <a href="../../设计模式/建造者模式.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >ItemTouchHelper</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="recycleview">RecycleView</h2>
+<h4 id="itemtouchhelper&#x5B9E;&#x73B0;&#x5BF9;recycleview&#x4EA4;&#x4E92;">ItemTouchHelper&#x5B9E;&#x73B0;&#x5BF9;RecycleView&#x4EA4;&#x4E92;</h4>
+<ul>
+<li>1.&#x5B9E;&#x73B0;ItemTouchHelper.Callback&#x63A5;&#x53E3;:&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ItemTouchHelper.SimpleCallback&#x5B9E;&#x73B0;&#xFF0C;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4F20;&#x5165;&#x9700;&#x8981;&#x652F;&#x6301;&#x7684;&#x6ED1;&#x52A8;&#x65B9;&#x5411;&#xFF0C;dragDirs&#x4EE3;&#x8868;&#x4E0A;&#x4E0B;&#xFF0C;swipeDirs&#x4EE3;&#x8868;&#x5DE6;&#x53F3;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x652F;&#x6301;&#x5219;&#x4F20;0&#xFF0C;&#x5982;&#x4E0B;&#x4EE3;&#x8868;&#x76D1;&#x542C;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x6ED1;&#x52A8;<pre><code>class TouchCallBack : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT)
+</code></pre></li>
+<li><p>2.&#x91CD;&#x5199;Callback&#x63A5;&#x53E3;&#x7684;&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#xFF1A;
+```
+  class TouchCallBack : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {</p>
+<pre><code>  /***
+   *   &#x4E0A;&#x4E0B;&#x6ED1;&#x52A8;&#x540E;&#x89E6;&#x53D1; &#x4E5F;&#x53EF;&#x4EE5;&#x7528;helper.startDrag()&#x6307;&#x5B9A;&#x89E6;&#x53D1;
+   */
+  override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+      //&#x62D6;&#x52A8;&#x540E;&#x6539;&#x53D8;&#x4F4D;&#x7F6E;&#x4EA4;&#x6362;
+      Collections.swap(adapter.getData(), viewHolder.adapterPosition, target.adapterPosition)
+      adapter.notifyItemRangeChanged(viewHolder.adapterPosition, target.adapterPosition)
+      return true
+  }
+
+  /***
+   * &#x5DE6;&#x53F3;&#x6ED1;&#x52A8;&#x540E;&#x89E6;&#x53D1;
+   */
+  override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+      //&#x6ED1;&#x52A8;&#x5220;&#x9664;
+      adapter.getData().removeAt(viewHolder.adapterPosition)
+      adapter.notifyItemRemoved(viewHolder.adapterPosition)
+  }
+
+  /***
+   * &#x957F;&#x6309;&#x542F;&#x52A8;&#x62D6;&#x52A8; &#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;helper.startDrag()&#x7528;&#x522B;&#x7684;&#x65B9;&#x5F0F;&#x89E6;&#x53D1;&#x62D6;&#x52A8;&#x8FD9;&#x91CC;&#x8981;&#x8FD4;&#x56DE;false
+   */
+  override fun isLongPressDragEnabled(): Boolean = true
+</code></pre></li>
+</ul>
+<pre><code>    /***
+     * &#x5728;&#x88AB;&#x62D6;&#x52A8;&#x65F6;&#x6216;&#x5DE6;&#x53F3;&#x6ED1;&#x52A8;&#x5F00;&#x59CB;&#x65F6;&#x4F1A;&#x89E6;&#x53D1; --&#x53EF;&#x4EE5;&#x505A;&#x4F8B;&#x5982;&#x62D6;&#x52A8;&#x6216;&#x6ED1;&#x52A8;&#x65F6;&#x4FEE;&#x6539;&#x80CC;&#x666F;&#x8272;
+     */
+    override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
+        super.onSelectedChanged(viewHolder, actionState)
+    }
+
+    /***
+     * &#x5728;&#x88AB;&#x62D6;&#x52A8;&#x5DE6;&#x53F3;&#x6ED1;&#x52A8;&#x7ED3;&#x675F;&#x65F6;&#x4F1A;&#x89E6;&#x53D1; --&#x53EF;&#x4EE5;&#x5728;&#x6ED1;&#x52A8;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x590D;&#x4F4D;
+     */
+    override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
+        super.clearView(recyclerView, viewHolder)
+    }
+
+    /***
+     * &#x88AB;&#x62D6;&#x62FD;&#x6216;&#x6ED1;&#x52A8;&#x65F6;&#x4F1A;&#x89E6;&#x53D1;--&gt;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x4F4D;&#x79FB; &#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x505A;&#x4E00;&#x4E9B;item&#x5207;&#x6362;&#x65F6;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;&#xFF0C;&#x4F8B;&#x5982;&#x5361;&#x7247;&#x6ED1;&#x52A8;
+     */
+    override fun onChildDraw(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
+        super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+    }
+
+    /***
+     * &#x5728;&#x7ED8;&#x5236;&#x4E4B;&#x540E;&#x89E6;&#x53D1;&#xFF0C;&#x53EF;&#x4EE5;&#x505A;&#x5230;item&#x8986;&#x76D6;
+     */
+    override fun onChildDrawOver(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder?, dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean) {
+        super.onChildDrawOver(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+    }
+}
+</code></pre><p>```</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="自定义ItemDecoration.html" class="navigation navigation-prev " aria-label="Previous page: 自定义ItemDecoration">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="MaterilaDesign布局使用.html" class="navigation navigation-next " aria-label="Next page: MaterilaDesign布局使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"ItemTouchHelper","subtitle":"RecycleView使用","date":"2020-06-28T19:10:00.000Z","author":"hzy","//header-img":"img/post-bg-2015.jpg","catalog":true,"tags":["Android","布局","RecycleView"],"level":"1.2.3.3","depth":3,"next":{"title":"MaterilaDesign布局使用","level":"1.2.3.4","depth":3,"path":"android/自定义View及效果/MaterilaDesign布局使用.md","ref":"android/自定义View及效果/MaterilaDesign布局使用.md","articles":[]},"previous":{"title":"自定义ItemDecoration","level":"1.2.3.2","depth":3,"path":"android/自定义View及效果/自定义ItemDecoration.md","ref":"android/自定义View及效果/自定义ItemDecoration.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/自定义View及效果/ItemTouchHelper使用.md","mtime":"2020-08-16T16:13:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T09:28:16.191Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

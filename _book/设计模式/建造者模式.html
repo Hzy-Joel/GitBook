@@ -1,0 +1,764 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>建造者模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="单例模式.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../android/">
+            
+                <a href="../android/">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../android/框架/BlockCanary.html">
+            
+                <a href="../android/框架/BlockCanary.html">
+            
+                    
+                    BlockCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../android/框架/fresco.html">
+            
+                <a href="../android/框架/fresco.html">
+            
+                    
+                    Fresco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../android/框架/Glide源码.html">
+            
+                <a href="../android/框架/Glide源码.html">
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../android/框架/LeakCanary原理.html">
+            
+                <a href="../android/框架/LeakCanary原理.html">
+            
+                    
+                    LeakCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../android/框架/Retrofit源码.html">
+            
+                <a href="../android/框架/Retrofit源码.html">
+            
+                    
+                    Retrofit源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../android/源码/Binder.html">
+            
+                <a href="../android/源码/Binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../android/源码/Dialog源码.html">
+            
+                <a href="../android/源码/Dialog源码.html">
+            
+                    
+                    Dialog源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../android/源码/RecycleView缓存机制.html">
+            
+                <a href="../android/源码/RecycleView缓存机制.html">
+            
+                    
+                    RecycleView缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../android/源码/WMS源码.html">
+            
+                <a href="../android/源码/WMS源码.html">
+            
+                    
+                    WMS源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    自定义View及效果
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../android/自定义View及效果/触摸事件.html">
+            
+                <a href="../android/自定义View及效果/触摸事件.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../android/自定义View及效果/自定义ItemDecoration.html">
+            
+                <a href="../android/自定义View及效果/自定义ItemDecoration.html">
+            
+                    
+                    自定义ItemDecoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../android/自定义View及效果/ItemTouchHelper使用.html">
+            
+                <a href="../android/自定义View及效果/ItemTouchHelper使用.html">
+            
+                    
+                    ItemTouchHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../android/自定义View及效果/MaterilaDesign布局使用.html">
+            
+                <a href="../android/自定义View及效果/MaterilaDesign布局使用.html">
+            
+                    
+                    MaterilaDesign布局使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Gradle
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../android/Gradle/Gradle编译流程梳理.html">
+            
+                <a href="../android/Gradle/Gradle编译流程梳理.html">
+            
+                    
+                    Gradle编译流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../android/Gradle/Transform使用.html">
+            
+                <a href="../android/Gradle/Transform使用.html">
+            
+                    
+                    Transform使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    kotlin实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../android/Kotlin/协程使用.html">
+            
+                <a href="../android/Kotlin/协程使用.html">
+            
+                    
+                    协程初步使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../java/">
+            
+                <a href="../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../java/多线程同步.html">
+            
+                <a href="../java/多线程同步.html">
+            
+                    
+                    多线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../java/垃圾回收机制.html">
+            
+                <a href="../java/垃圾回收机制.html">
+            
+                    
+                    垃圾回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../计算机网络/">
+            
+                <a href="../计算机网络/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../计算机网络/编码加密.html">
+            
+                <a href="../计算机网络/编码加密.html">
+            
+                    
+                    编码加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../计算机网络/登陆认证.html">
+            
+                <a href="../计算机网络/登陆认证.html">
+            
+                    
+                    登陆认证流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../计算机网络/http协议.html">
+            
+                <a href="../计算机网络/http协议.html">
+            
+                    
+                    http协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../操作系统/">
+            
+                <a href="../操作系统/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="单例模式.html">
+            
+                <a href="单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="建造者模式.html">
+            
+                <a href="建造者模式.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >建造者模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;">&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;</h2>
+<h4 id="&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;">&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</h4>
+<ul>
+<li>&#x5728;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x521B;&#x5EFA;&#x4F9D;&#x8D56;&#x7684;&#x53C2;&#x6570;&#x8FC7;&#x591A;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BE5;&#x6A21;&#x5F0F;&#x9650;&#x5236;&#x89C4;&#x8303;&#x521B;&#x5EFA;&#x65F6;&#x7684;&#x53C2;&#x6570;&#x6784;&#x5EFA;&#x8F93;&#x5165;&#x3002;</li>
+</ul>
+<h4 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#xFF1A;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#xFF1A;</h4>
+<ul>
+<li>&#x6784;&#x5EFA;&#x4E00;&#x4E2A;Car&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x521B;&#x5EFA;&#x4F9D;&#x8D56;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x7C7B;&#x5B8C;&#x6210;&#x7EC4;&#x88C5;&#xFF1A;<pre><code>  public class Car {    
+      private CarBuilder.CarConfig config;    
+      public Car(CarBuilder.CarConfig carConfig) {        
+              config = carConfig;    
+      }    
+      public CarBuilder.CarConfig getConfig() {        
+          return config;   
+      }    
+      public String getBrand(){       
+         return config.getBrand();    
+      }   
+      public String getEngineModel(){       
+          return config.getEngineModel(); 
+      }
+ }
+</code></pre></li>
+<li><p>&#x6784;&#x5EFA;&#x4E00;&#x4E2A;Builder&#x7C7B;&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x5E76;&#x521B;&#x5EFA;Car</p>
+<pre><code> public class CarBuilder {
+      class CarConfig {
+          private String brand;
+          private String engineModel;
+
+          public String getBrand() {
+              return brand;
+          }
+
+          public String getEngineModel() {
+              return engineModel;
+          }
+      }
+      private CarConfig carConfig = new CarConfig();
+      public CarBuilder setBrand(String brand){
+          carConfig.brand = brand;
+          return this;
+      }
+      public CarBuilder setEngineModel(String engineModel){
+          carConfig.engineModel = engineModel;
+          return this;
+      }
+      public Car build() {
+          return new Car(carConfig);
+      }
+  }
+</code></pre></li>
+<li>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;<pre><code>      CarBuilder carBuilder = new CarBuilder();
+      carBuilder.setBrand(&quot;123&quot;);
+      carBuilder.setEngineModel(&quot;456&quot;);
+      Car car = carBuilder.build();
+      System.out.println(car.getBrand()+&quot; &quot;+car.getEngineModel());
+</code></pre></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="单例模式.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 单例模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"建造者模式","subtitle":" Builder模式","date":"2020-01-16T16:04:00.000Z","author":"hzy","//header-img":"img/post-bg-2015.jpg","catalog":true,"tags":["设计模式"],"level":"1.6.2","depth":2,"previous":{"title":"单例模式","level":"1.6.1","depth":2,"path":"设计模式/单例模式.md","ref":"设计模式/单例模式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"设计模式/建造者模式.md","mtime":"2020-02-13T02:17:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T09:28:16.191Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

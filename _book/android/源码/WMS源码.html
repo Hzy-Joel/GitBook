@@ -1,0 +1,938 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>WMS源码 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="RecycleView缓存机制.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../框架/BlockCanary.html">
+            
+                <a href="../框架/BlockCanary.html">
+            
+                    
+                    BlockCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../框架/fresco.html">
+            
+                <a href="../框架/fresco.html">
+            
+                    
+                    Fresco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../框架/Glide源码.html">
+            
+                <a href="../框架/Glide源码.html">
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../框架/LeakCanary原理.html">
+            
+                <a href="../框架/LeakCanary原理.html">
+            
+                    
+                    LeakCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../框架/Retrofit源码.html">
+            
+                <a href="../框架/Retrofit源码.html">
+            
+                    
+                    Retrofit源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="Binder.html">
+            
+                <a href="Binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="Dialog源码.html">
+            
+                <a href="Dialog源码.html">
+            
+                    
+                    Dialog源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="RecycleView缓存机制.html">
+            
+                <a href="RecycleView缓存机制.html">
+            
+                    
+                    RecycleView缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.4" data-path="WMS源码.html">
+            
+                <a href="WMS源码.html">
+            
+                    
+                    WMS源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    自定义View及效果
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../自定义View及效果/触摸事件.html">
+            
+                <a href="../自定义View及效果/触摸事件.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../自定义View及效果/自定义ItemDecoration.html">
+            
+                <a href="../自定义View及效果/自定义ItemDecoration.html">
+            
+                    
+                    自定义ItemDecoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                <a href="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                    
+                    ItemTouchHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                <a href="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                    
+                    MaterilaDesign布局使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Gradle
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Gradle/Gradle编译流程梳理.html">
+            
+                <a href="../Gradle/Gradle编译流程梳理.html">
+            
+                    
+                    Gradle编译流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Gradle/Transform使用.html">
+            
+                <a href="../Gradle/Transform使用.html">
+            
+                    
+                    Transform使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    kotlin实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../Kotlin/协程使用.html">
+            
+                <a href="../Kotlin/协程使用.html">
+            
+                    
+                    协程初步使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../java/多线程同步.html">
+            
+                <a href="../../java/多线程同步.html">
+            
+                    
+                    多线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../java/垃圾回收机制.html">
+            
+                <a href="../../java/垃圾回收机制.html">
+            
+                    
+                    垃圾回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../计算机网络/">
+            
+                <a href="../../计算机网络/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../计算机网络/编码加密.html">
+            
+                <a href="../../计算机网络/编码加密.html">
+            
+                    
+                    编码加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../计算机网络/登陆认证.html">
+            
+                <a href="../../计算机网络/登陆认证.html">
+            
+                    
+                    登陆认证流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../计算机网络/http协议.html">
+            
+                <a href="../../计算机网络/http协议.html">
+            
+                    
+                    http协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../操作系统/">
+            
+                <a href="../../操作系统/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../设计模式/建造者模式.html">
+            
+                <a href="../../设计模式/建造者模式.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >WMS源码</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h4 id="wms&#x6E90;&#x7801;&#x89E3;&#x6790;">wms&#x6E90;&#x7801;&#x89E3;&#x6790;</h4>
+<p><img src="https://hzy-joel.github.io/img/post/post_wms.jpg" alt="WMS&#x6E90;&#x7801;UML&#x56FE;"></p>
+<h5 id="1&#x3001;dialog&#x4E2D;&#x83B7;&#x5F97;window&#x5E76;&#x5173;&#x8054;&#x7684;&#x5B9E;&#x73B0;&#xFF08;&#x8BE5;&#x65B9;&#x6CD5;&#x5728;dialog&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#xFF09;&#xFF1A;">1&#x3001;Dialog&#x4E2D;&#x83B7;&#x5F97;window&#x5E76;&#x5173;&#x8054;&#x7684;&#x5B9E;&#x73B0;&#xFF08;&#x8BE5;&#x65B9;&#x6CD5;&#x5728;Dialog&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#xFF09;&#xFF1A;</h5>
+<pre><code>Dialog(@NonNull Context context, @StyleRes int themeResId, boolean createContextThemeWrapper) {
+      ...
+      //&#x83B7;&#x5F97;WMS&#x670D;&#x52A1;--&gt;&#x901A;&#x8FC7;&#x5355;&#x4F8B;&#x83B7;&#x53D6;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x9700;&#x8981;&#x77E5;&#x9053;&#x539F;&#x5148;&#x7684;&#x670D;&#x52A1;&#x662F;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x540E;&#x9762;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4E0E;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x5173;&#x8054;&#x7684;WindowManager&#x5BF9;&#x8C61;&#x3002;
+        mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        //&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5F53;&#x524D;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x5E94;&#x7684;&#x7A97;&#x53E3;
+        final Window w = new PhoneWindow(mContext);
+        mWindow = w;
+        w.setCallback(this);
+        w.setOnWindowDismissedCallback(this);
+        w.setOnWindowSwipeDismissedCallback(() -&gt; {
+            if (mCancelable) {
+                cancel();
+            }
+        });
+        //&#x5173;&#x8054;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x548C;WMS
+        w.setWindowManager(mWindowManager, null, null);
+        w.setGravity(Gravity.CENTER);
+
+        mListenersHandler = new ListenersHandler(this);
+    }
+</code></pre><p><strong>&#x5176;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;w.setWindowManager(mWindowManager, null, null)&#xFF0C;&#x8BE5;&#x5B9E;&#x73B0;&#x5728;Window&#x4E2D;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x548C;WMS&#x7684;&#x5173;&#x8054;</strong></p>
+<h5 id="2&#x3001;&#x5173;&#x8054;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x548C;wms&#x7684;&#x65B9;&#x6CD5;--window&#x7684;setwindowmanager&#x65B9;&#x6CD5;&#xFF1A;">2&#x3001;&#x5173;&#x8054;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x548C;WMS&#x7684;&#x65B9;&#x6CD5;--&gt;window&#x7684;setWindowManager&#x65B9;&#x6CD5;&#xFF1A;</h5>
+<pre><code> public void setWindowManager(WindowManager wm, IBinder appToken, String appName,
+            boolean hardwareAccelerated) {
+        mAppToken = appToken;
+        mAppName = appName;
+        mHardwareAccelerated = hardwareAccelerated
+                || SystemProperties.getBoolean(PROPERTY_HARDWARE_UI, false);
+        if (wm == null) {
+            wm = (WindowManager)mContext.getSystemService(Context.WINDOW_SERVICE);
+        }
+        //&#x901A;&#x8FC7;&#x8BE5;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x548C;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x5173;&#x8054;&#x7684;WindowManager&#x5BF9;&#x8C61;&#xFF0C;WindowManagerImpl&#x4E3A;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x3002;
+        mWindowManager = ((WindowManagerImpl)wm).createLocalWindowManager(this);
+    }
+</code></pre><p><strong>&#x8BE5;&#x65B9;&#x6CD5;&#x6700;&#x540E;&#x8C03;&#x7528;&#x4E86;WindowManagerImpl&#x7684;createLocalWindowManager&#x65B9;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code>public WindowManagerImpl createLocalWindowManager(Window parentWindow) {
+        return new WindowManagerImpl(mContext, parentWindow);
+    }
+</code></pre><p><strong>&#x8BE5;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4E0D;&#x540C;&#x4E0E;&#x5728;getSystemService&#x4E2D;&#x83B7;&#x5F97;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;getSystemService&#x83B7;&#x5F97;&#x7684;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x65F6;&#x8C03;&#x7528;&#x7684;&#x662F;&#x4E00;&#x4E2A;context&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code>public WindowManagerImpl createPresentationWindowManager(Context displayContext) {
+        return new WindowManagerImpl(displayContext, mParentWindow);
+    }
+</code></pre><p><strong>&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x5BF9;&#x5E94;&#x7684;window&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x5173;&#x8054;&#x7684;WindowManagerImpl&#x5BF9;&#x8C61;</strong></p>
+<h5 id="3&#x3001;windowmanagerimpl&#x7C7B;&#x3001;&#x8BE5;&#x7C7B;&#x662F;&#x66B4;&#x9732;&#x7ED9;&#x5E94;&#x7528;&#x5C42;&#x7684;windowmanager&#x5B9E;&#x73B0;&#x7C7B;&#x3001;&#x8BE5;&#x7C7B;&#x7684;&#x5927;&#x81F4;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;">3&#x3001;WindowManagerImpl&#x7C7B;&#x3001;&#x8BE5;&#x7C7B;&#x662F;&#x66B4;&#x9732;&#x7ED9;&#x5E94;&#x7528;&#x5C42;&#x7684;WindowManager&#x5B9E;&#x73B0;&#x7C7B;&#x3001;&#x8BE5;&#x7C7B;&#x7684;&#x5927;&#x81F4;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</h5>
+<pre><code>public final class WindowManagerImpl implements WindowManager {
+    private final WindowManagerGlobal mGlobal = WindowManagerGlobal.getInstance();
+    private final Context mContext;
+    private final Window mParentWindow;
+
+    private IBinder mDefaultToken;
+
+    public WindowManagerImpl(Context context) {
+        this(context, null);
+    }
+
+    private WindowManagerImpl(Context context, Window parentWindow) {
+        mContext = context;
+        mParentWindow = parentWindow;
+    }
+
+    public WindowManagerImpl createLocalWindowManager(Window parentWindow) {
+        return new WindowManagerImpl(mContext, parentWindow);
+    }
+
+    @Override
+    public void addView(@NonNull View view, @NonNull ViewGroup.LayoutParams params) {
+        applyDefaultToken(params);
+        mGlobal.addView(view, params, mContext.getDisplay(), mParentWindow);
+    }
+
+    @Override
+    public void removeView(View view) {
+        mGlobal.removeView(view, false);
+    }
+
+    ...
+}
+</code></pre><p><strong>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x5176;&#x4E2D;&#x8C03;&#x7528;&#x7A97;&#x53E3;&#x64CD;&#x4F5C;&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x662F;WindowManagerGlobal</strong></p>
+<h5 id="4&#x3001;windowmanagerglobal&#x7C7B;&#xFF1A;">4&#x3001;WindowManagerGlobal&#x7C7B;&#xFF1A;</h5>
+<p><strong>addView&#x65B9;&#x6CD5;&#xFF1A;</strong></p>
+<pre><code>public void addView(View view, ViewGroup.LayoutParams params,
+            Display display, Window parentWindow) {
+    //&#x7701;&#x7565;&#x5224;&#x7A7A;&#x4EE3;&#x7801;
+    ...
+
+        ViewRootImpl root;
+        View panelParentView = null;
+
+    // &#x4EE3;&#x7801;&#x7701;&#x7565; 
+     ...
+
+    //&#x521B;&#x5EFA;handler&#x5BF9;&#x8C61;ViewRootImpl
+            root = new ViewRootImpl(view.getContext(), display);
+
+            view.setLayoutParams(wparams);
+
+            //&#x4FDD;&#x5B58;&#x7A97;&#x53E3;&#x53C2;&#x6570;
+            mViews.add(view);
+            mRoots.add(root);
+            mParams.add(wparams);
+
+            // do this last because it fires off messages to start doing things
+            try {
+                //&#x6DFB;&#x52A0;&#x7A97;&#x53E3;&#x5E76;&#x663E;&#x793A;
+                root.setView(view, wparams, panelParentView);
+            } catch (RuntimeException e) {
+                // BadTokenException or InvalidDisplayException, clean up.
+                if (index &gt;= 0) {
+                    removeViewLocked(index, true);
+                }
+                throw e;
+            }
+        }
+    }
+</code></pre><p><strong>&#x6700;&#x7EC8;&#x8C03;&#x7528;&#x4E86;ViewRootImpl&#x7684;setView&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x6B64;&#x65B9;&#x6CD5;&#x524D;&#xFF0C;&#x5148;&#x770B;&#x4E0B;ViewRootImpl&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;</strong></p>
+<pre><code> public ViewRootImpl(Context context, Display display) {
+        mContext = context;
+        //&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x901A;&#x8FC7;WindowManagerGlobal.getWindowSession()&#x83B7;&#x5F97;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#x63A5;&#x53E3;
+        mWindowSession = WindowManagerGlobal.getWindowSession();
+        //&#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x521B;&#x9020;ViewRootImpl&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x8BE5;&#x7EBF;&#x7A0B;&#x4E2D;&#x624D;&#x80FD;&#x4FEE;&#x6539;UI&#x754C;&#x9762;&#x662F;&#x56E0;&#x4E3A;&#x6240;&#x6709;&#x7A97;&#x53E3;&#x5237;&#x65B0;&#x90FD;&#x7531;&#x8BE5;&#x7C7B;&#x4E0E;WMS&#x8FDB;&#x7A0B;&#x4EA4;&#x4E92;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x4FDD;&#x5B58;&#x4E86;&#x521B;&#x5EFA;&#x7684;&#x8FDB;&#x7A0B;&#x3001;&#x5728;&#x4FEE;&#x6539;UI&#x7EBF;&#x7A0B;&#x64CD;&#x4F5C;&#x65F6;&#x4F1A;&#x68C0;&#x6D4B;&#x8BE5;&#x503C;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x5728;ViewRootImpl&#x8FD8;&#x6CA1;&#x521B;&#x5EFA;&#x65F6;&#x5C31;&#x5728;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x4E86;&#x5237;&#x65B0;&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x7ED5;&#x8FC7;&#x8BE5;&#x5224;&#x65AD;
+        mThread = Thread.currentThread();
+        ...
+    }
+</code></pre><pre><code>    public static IWindowSession getWindowSession() {
+        synchronized (WindowManagerGlobal.class) {
+            if (sWindowSession == null) {
+                try {
+                    InputMethodManager imm = InputMethodManager.getInstance();
+                    //&#x83B7;&#x5F97;getWindowManagerService&#x8FDB;&#x7A0B;&#x7684;AIDL&#x63A5;&#x53E3;
+                    IWindowManager windowManager = getWindowManagerService();
+                    sWindowSession = windowManager.openSession(
+                            new IWindowSessionCallback.Stub() {
+                                @Override
+                                public void onAnimatorScaleChanged(float scale) {
+                                    ValueAnimator.setDurationScale(scale);
+                                }
+                            },
+                            imm.getClient(), imm.getInputContext());
+                } catch (RemoteException e) {
+                    throw e.rethrowFromSystemServer();
+                }
+            }
+            return sWindowSession;
+        }
+    }
+</code></pre><p><strong>AIDL&#x83B7;&#x5F97;&#x8DE8;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#x63A5;&#x53E3;</strong></p>
+<pre><code>public static IWindowManager getWindowManagerService() {
+        synchronized (WindowManagerGlobal.class) {
+            if (sWindowManagerService == null) {
+                sWindowManagerService = IWindowManager.Stub.asInterface(
+                        ServiceManager.getService(&quot;window&quot;));
+                try {
+                    if (sWindowManagerService != null) {
+                        ValueAnimator.setDurationScale(
+                                sWindowManagerService.getCurrentAnimatorScale());
+                    }
+                } catch (RemoteException e) {
+                    throw e.rethrowFromSystemServer();
+                }
+            }
+            return sWindowManagerService;
+        }
+    }
+</code></pre><p><strong>&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5DF2;&#x7ECF;&#x83B7;&#x5F97;wms&#x7684;&#x8DE8;&#x8FDB;&#x7A0B;aidl&#x63A5;&#x53E3;&#xFF0C;&#x6700;&#x7EC8;&#x8C03;&#x7528;&#x7684;ViewRootImpl&#x7684;setView&#x65B9;&#x6CD5;&#x3001;&#x5728;&#x5176;&#x4E2D;&#x8C03;&#x7528;&#x8FDC;&#x7A0B;&#x63A5;&#x53E3;&#x6DFB;&#x52A0;&#x7A97;&#x53E3;&#xFF1A;</strong></p>
+<pre><code>    public void setView(View view, WindowManager.LayoutParams attrs, View panelParentView) {
+        synchronized (this) {
+            ...
+                try {
+                    mOrigWindowType = mWindowAttributes.type;
+                    mAttachInfo.mRecomputeGlobalAttributes = true;
+                    collectViewAttributes();
+                    //&#x8C03;&#x7528;&#x8DE8;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;--&gt;&#x5373;&#x8C03;&#x7528;native&#x5C42;WMS&#x65B9;&#x6CD5;
+                    res = mWindowSession.addToDisplay(mWindow, mSeq, mWindowAttributes,
+                            getHostVisibility(), mDisplay.getDisplayId(), mWinFrame,
+                            mAttachInfo.mContentInsets, mAttachInfo.mStableInsets,
+                            mAttachInfo.mOutsets, mAttachInfo.mDisplayCutout, mInputChannel);
+                } catch (RemoteException e) {
+                  //&#x91CD;&#x7F6E;&#x5C5E;&#x6027;&#x503C;
+                  ...
+                } finally {
+                    if (restore) {
+                        attrs.restore();
+                    }
+                }
+
+                ...
+                //&#x8BBE;&#x7F6E;&#x5F53;&#x524D;View&#x7684;mParent
+                view.assignParent(this);
+                ...
+        }
+    }
+</code></pre><p><strong>&#x5176;&#x4E2D;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x5C31;&#x662F;&#xFF1A;
+1&#x3001; requestLayout()
+2&#x3001;mWindowSession.addToDisplay()</strong></p>
+<p><strong>requestLayout&#x51FD;&#x6570;&#xFF1A;</strong></p>
+<pre><code>    @Override
+    public void requestLayout() {
+        if (!mHandlingLayoutInLayoutRequest) {
+            //request&#x4E2D;&#x4F1A;&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x662F;&#x4E4B;&#x524D;&#x6784;&#x9020;&#x51FD;&#x6570;&#x68C0;&#x6D4B;&#x7684;&#x7EBF;&#x7A0B;
+            checkThread();
+            mLayoutRequested = true;
+            //&#x8BF7;&#x6C42;&#x91CD;&#x7ED8;
+            scheduleTraversals();
+        }
+    }
+</code></pre><pre><code>void scheduleTraversals() {
+        //&#x68C0;&#x6D4B;&#x65F6;&#x95F4;&#x95F4;&#x9694;
+        if (!mTraversalScheduled) {
+            mTraversalScheduled = true;
+            //Handler&#x7684;&#x540C;&#x6B65;&#x5C4F;&#x969C;&#x3002;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x53EF;&#x4EE5;&#x62E6;&#x622A;Looper&#x5BF9;&#x540C;&#x6B65;&#x6D88;&#x606F;&#x7684;&#x83B7;&#x53D6;&#x548C;&#x5206;&#x53D1;&#xFF0C;&#x52A0;&#x5165;&#x540C;&#x6B65;&#x5C4F;&#x969C;&#x4E4B;&#x540E;&#xFF0C;Looper&#x53EA;&#x4F1A;&#x83B7;&#x53D6;&#x548C;&#x5904;&#x7406;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x8FDB;&#x5165;&#x963B;&#x585E;&#x72B6;&#x6001;&#x3002;&#x8BBE;&#x7F6E;&#x4E3A;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#x540E;&#x5BF9;View&#x7ED8;&#x5236;&#x6E32;&#x67D3;&#x7684;&#x5904;&#x7406;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x4F18;&#x5148;&#x5904;&#x7406;&#x3002;
+            mTraversalBarrier = mHandler.getLooper().getQueue().postSyncBarrier();
+            //&#x5728;Android4.1&#x4E4B;&#x540E;&#x589E;&#x52A0;&#x4E86;Choreographer&#x673A;&#x5236;&#xFF0C;&#x7528;&#x4E8E;&#x540C;Vsync&#x673A;&#x5236;&#x914D;&#x5408;
+            mChoreographer.postCallback(
+                    Choreographer.CALLBACK_TRAVERSAL, mTraversalRunnable, null);
+            if (!mUnbufferedInputDispatch) {
+                scheduleConsumeBatchedInput();
+            }
+            notifyRendererOfFramePending();
+            pokeDrawLockIfNeeded();
+        }
+    }
+</code></pre><p><strong>&#x5176;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x7684;&#x5730;&#x65B9;&#xFF1A;
+mChoreographer.postCallback(Choreographer.CALLBACK_TRAVERSAL, mTraversalRunnable, null);
+&#x8BE5;&#x65B9;&#x6CD5;&#x6700;&#x7EC8;&#x4F1A;&#x8C03;&#x7528;handler&#x53D1;&#x9001;&#x4E00;&#x4E2A;MSG_DO_SCHEDULE_VSYNC&#x6D88;&#x606F;&#xFF0C;&#x5BFC;&#x81F4;doTraversal()&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x5373;&#x89E6;&#x53D1;&#x89C6;&#x56FE;&#x6811;&#x7684;&#x91CD;&#x7ED8;&#x3002;</strong>
+Choreographer&#x8BE5;&#x7C7B;&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x7ED8;&#x5236;&#x7684;&#x540C;&#x6B65;&#x65F6;&#x673A;&#x3002;&#x5177;&#x4F53;&#x53EF;&#x4EE5;&#x67E5;&#x770B;</p>
+<blockquote>
+<p><a href="https://www.jianshu.com/p/bab0b454e39e" target="_blank">https://www.jianshu.com/p/bab0b454e39e</a></p>
+</blockquote>
+<h4 id="&#x603B;&#x7ED3;&#xFF1A;windowmanager&#x9996;&#x5148;&#x4F1A;&#x8C03;&#x7528;windowmanagerimpl&#x8FD9;&#x4E2A;&#x6865;&#x63A5;&#x7C7B;&#xFF0C;&#x5728;&#x5176;&#x4E2D;&#x5B9E;&#x9645;&#x8C03;&#x7528;&#x7684;&#x662F;windowmanagerglobal&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x4E2D;&#x4F1A;&#x6709;&#x56DB;&#x4E2A;&#x96C6;&#x5408;&#x5206;&#x522B;&#x4FDD;&#x5B58;&#x6240;&#x6709;windows&#x5BF9;&#x5E94;&#x7684;view&#x6240;&#x6709;&#x5BF9;&#x5E94;&#x7684;viewrootimpl&#xFF0C;&#x6240;&#x6709;windows&#x7684;&#x5E03;&#x5C40;&#x53C2;&#x6570;&#xFF0C;&#x548C;&#x6B63;&#x5728;&#x5220;&#x9664;&#x7684;view&#x5BF9;&#x8C61;&#x3002;&#x5176;&#x4E2D;&#x4E3B;&#x8981;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x9700;&#x8981;&#x901A;&#x8FC7;viewrootimpl&#x4E2D;&#x8C03;&#x7528;windowsession&#x8FD9;&#x4E2A;bind&#x63A5;&#x53E3;&#x548C;&#x7CFB;&#x7EDF;&#x7684;windowmanager&#x505A;&#x4EA4;&#x4E92;&#xFF0C;&#x5E76;&#x8C03;&#x7528;requestlayout&#x5237;&#x65B0;&#x5E03;&#x5C40;&#x3002;">&#x603B;&#x7ED3;&#xFF1A;WindowManager&#x9996;&#x5148;&#x4F1A;&#x8C03;&#x7528;WindowManagerImpl&#x8FD9;&#x4E2A;&#x6865;&#x63A5;&#x7C7B;&#xFF0C;&#x5728;&#x5176;&#x4E2D;&#x5B9E;&#x9645;&#x8C03;&#x7528;&#x7684;&#x662F;WindowManagerGlobal&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x4E2D;&#x4F1A;&#x6709;&#x56DB;&#x4E2A;&#x96C6;&#x5408;&#x5206;&#x522B;&#x4FDD;&#x5B58;&#x6240;&#x6709;Windows&#x5BF9;&#x5E94;&#x7684;View,&#x6240;&#x6709;&#x5BF9;&#x5E94;&#x7684;ViewRootImpl&#xFF0C;&#x6240;&#x6709;Windows&#x7684;&#x5E03;&#x5C40;&#x53C2;&#x6570;&#xFF0C;&#x548C;&#x6B63;&#x5728;&#x5220;&#x9664;&#x7684;View&#x5BF9;&#x8C61;&#x3002;&#x5176;&#x4E2D;&#x4E3B;&#x8981;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x9700;&#x8981;&#x901A;&#x8FC7;ViewRootImpl&#x4E2D;&#x8C03;&#x7528;WindowSession&#x8FD9;&#x4E2A;Bind&#x63A5;&#x53E3;&#x548C;&#x7CFB;&#x7EDF;&#x7684;WindowManager&#x505A;&#x4EA4;&#x4E92;&#xFF0C;&#x5E76;&#x8C03;&#x7528;requestLayout&#x5237;&#x65B0;&#x5E03;&#x5C40;&#x3002;</h4>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="RecycleView缓存机制.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: RecycleView缓存机制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"WMS源码","subtitle":" WMS源码分析","date":"2020-01-21T16:57:00.000Z","author":"hzy","//header-img":"img/post-bg-2015.jpg","catalog":true,"tags":["源码","WMS"],"level":"1.2.2.4","depth":3,"next":{"title":"自定义View及效果","level":"1.2.3","depth":2,"ref":"","articles":[{"title":"触摸事件","level":"1.2.3.1","depth":3,"path":"android/自定义View及效果/触摸事件.md","ref":"android/自定义View及效果/触摸事件.md","articles":[]},{"title":"自定义ItemDecoration","level":"1.2.3.2","depth":3,"path":"android/自定义View及效果/自定义ItemDecoration.md","ref":"android/自定义View及效果/自定义ItemDecoration.md","articles":[]},{"title":"ItemTouchHelper","level":"1.2.3.3","depth":3,"path":"android/自定义View及效果/ItemTouchHelper使用.md","ref":"android/自定义View及效果/ItemTouchHelper使用.md","articles":[]},{"title":"MaterilaDesign布局使用","level":"1.2.3.4","depth":3,"path":"android/自定义View及效果/MaterilaDesign布局使用.md","ref":"android/自定义View及效果/MaterilaDesign布局使用.md","articles":[]}]},"previous":{"title":"RecycleView缓存机制","level":"1.2.2.3","depth":3,"path":"android/源码/RecycleView缓存机制.md","ref":"android/源码/RecycleView缓存机制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/源码/WMS源码.md","mtime":"2020-02-28T07:09:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T09:28:16.191Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1001 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Retrofit源码 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="LeakCanary原理.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="BlockCanary.html">
+            
+                <a href="BlockCanary.html">
+            
+                    
+                    BlockCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="fresco.html">
+            
+                <a href="fresco.html">
+            
+                    
+                    Fresco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="Glide源码.html">
+            
+                <a href="Glide源码.html">
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="LeakCanary原理.html">
+            
+                <a href="LeakCanary原理.html">
+            
+                    
+                    LeakCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.5" data-path="Retrofit源码.html">
+            
+                <a href="Retrofit源码.html">
+            
+                    
+                    Retrofit源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../源码/Binder.html">
+            
+                <a href="../源码/Binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../源码/Dialog源码.html">
+            
+                <a href="../源码/Dialog源码.html">
+            
+                    
+                    Dialog源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../源码/RecycleView缓存机制.html">
+            
+                <a href="../源码/RecycleView缓存机制.html">
+            
+                    
+                    RecycleView缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../源码/WMS源码.html">
+            
+                <a href="../源码/WMS源码.html">
+            
+                    
+                    WMS源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    自定义View及效果
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../自定义View及效果/触摸事件.html">
+            
+                <a href="../自定义View及效果/触摸事件.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../自定义View及效果/自定义ItemDecoration.html">
+            
+                <a href="../自定义View及效果/自定义ItemDecoration.html">
+            
+                    
+                    自定义ItemDecoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                <a href="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                    
+                    ItemTouchHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                <a href="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                    
+                    MaterilaDesign布局使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Gradle
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../Gradle/Gradle编译流程梳理.html">
+            
+                <a href="../Gradle/Gradle编译流程梳理.html">
+            
+                    
+                    Gradle编译流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../Gradle/Transform使用.html">
+            
+                <a href="../Gradle/Transform使用.html">
+            
+                    
+                    Transform使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    kotlin实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../Kotlin/协程使用.html">
+            
+                <a href="../Kotlin/协程使用.html">
+            
+                    
+                    协程初步使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../java/多线程同步.html">
+            
+                <a href="../../java/多线程同步.html">
+            
+                    
+                    多线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../java/垃圾回收机制.html">
+            
+                <a href="../../java/垃圾回收机制.html">
+            
+                    
+                    垃圾回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../计算机网络/">
+            
+                <a href="../../计算机网络/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../计算机网络/编码加密.html">
+            
+                <a href="../../计算机网络/编码加密.html">
+            
+                    
+                    编码加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../计算机网络/登陆认证.html">
+            
+                <a href="../../计算机网络/登陆认证.html">
+            
+                    
+                    登陆认证流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../计算机网络/http协议.html">
+            
+                <a href="../../计算机网络/http协议.html">
+            
+                    
+                    http协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../操作系统/">
+            
+                <a href="../../操作系统/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../设计模式/建造者模式.html">
+            
+                <a href="../../设计模式/建造者模式.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Retrofit源码</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="retrofit&#x6E90;&#x7801;&#x89E3;&#x6790;">Retrofit&#x6E90;&#x7801;&#x89E3;&#x6790;</h3>
+<h4 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#xFF1A;">&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#xFF1A;</h4>
+<pre><code>public interface GitHub {
+    @GET(&quot;/repos/{owner}/{repo}/contributors&quot;)
+    Call&lt;List&lt;Contributor&gt;&gt; contributors(
+        @Path(&quot;owner&quot;) String owner,
+        @Path(&quot;repo&quot;) String repo);
+  }
+
+  public static void main(String... args) throws IOException {
+    Retrofit retrofit = new Retrofit.Builder()
+        .baseUrl(API_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build();
+    GitHub github = retrofit.create(GitHub.class);
+    Call&lt;List&lt;Contributor&gt;&gt; call = github.contributors(&quot;square&quot;, &quot;retrofit&quot;);
+    List&lt;Contributor&gt; contributors = call.execute().body();
+    for (Contributor contributor : contributors) {
+      System.out.println(contributor.login + &quot; (&quot; + contributor.contributions + &quot;)&quot;);
+    }
+  }
+</code></pre><h4 id="retrofitbuilderbuild&#x65B9;&#x6CD5;&#xFF1A;">Retrofit.Builder().build&#x65B9;&#x6CD5;&#xFF1A;</h4>
+<pre><code>public Retrofit build() {
+      if (baseUrl == null) {
+        throw new IllegalStateException(&quot;Base URL required.&quot;);
+      }
+
+    //&#x521B;&#x5EFA;&#x4E00;&#x4E2A;CallFactory&#x3001;Retrofit&#x73B0;&#x5728;&#x9ED8;&#x8BA4;&#x652F;&#x6301;okhttp3&#x52A0;&#x8F7D;&#xFF0C;&#x8BE5;&#x5DE5;&#x5382;&#x7528;&#x4E8E;&#x5C06;&#x6211;&#x4EEC;&#x7684;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x7EC4;&#x88C5;&#x6210;&#x4E00;&#x4E2A;OkHttp&#x8BF7;&#x6C42;&#x3002;
+      okhttp3.Call.Factory callFactory = this.callFactory;
+      if (callFactory == null) {
+        callFactory = new OkHttpClient();
+      }
+
+      Executor callbackExecutor = this.callbackExecutor;
+      if (callbackExecutor == null) {
+        //&#x4F20;&#x5165;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x4F5C;&#x4E3A;&#x56DE;&#x8C03;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E00;&#x822C;&#x8FD9;&#x4E2A;platform.defaultCallbackExecutor()&#x5728;Android&#x5E73;&#x53F0;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;handle&#x7528;&#x4E8E;&#x56DE;&#x8C03;&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;&#x3002;
+        callbackExecutor = platform.defaultCallbackExecutor();
+      }
+
+      // &#x4FDD;&#x62A4;&#x6027;&#x62F7;&#x8D1D;&#x5E76;&#x6DFB;&#x52A0;&#x6211;&#x4EEC;&#x4F7F;&#x7528;addCallAdapterFactory&#x65B9;&#x6CD5;&#x4F20;&#x5165;&#x7684;&#x5DE5;&#x5382;&#x7C7B;
+      List&lt;CallAdapter.Factory&gt; callAdapterFactories = new ArrayList&lt;&gt;(this.callAdapterFactories);
+      //&#x5982;&#x679C;callbackExecutor&#x4E3A;&#x7A7A;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x4F1A;&#x56DE;&#x8C03;&#x7ED9;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x6267;&#x884C;&#x7684;&#x662F;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x8BDD;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x9519;&#x3002;
+      callAdapterFactories.add(platform.defaultCallAdapterFactory(callbackExecutor));
+
+      // Make a defensive copy of the converters.
+      List&lt;Converter.Factory&gt; converterFactories =
+          new ArrayList&lt;&gt;(1 + this.converterFactories.size());
+
+      //&#x9996;&#x5148;&#x6DFB;&#x52A0;&#x9ED8;&#x8BA4;&#x7684;&#x8F6C;&#x6362;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x5C06;&#x8BF7;&#x6C42;&#x4F53;&#x6216;&#x54CD;&#x5E94;&#x4F53;&#x8F6C;&#x6362;&#x4E3A;String&#x8F93;&#x51FA;
+      converterFactories.add(new BuiltInConverters());
+      //&#x6DFB;&#x52A0;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x8BBE;&#x7F6E;&#x7684;&#x8F6C;&#x6362;&#x5668;&#xFF0C;&#x901A;&#x8FC7;addConverterFactory&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#xFF0C;&#x4E00;&#x822C;&#x662F;GsonConverterFactory&#xFF0C;&#x4E3A;&#x4E86;&#x5C06;json&#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x8C61;
+      converterFactories.addAll(this.converterFactories);
+
+      return new Retrofit(callFactory, baseUrl, unmodifiableList(converterFactories),
+          unmodifiableList(callAdapterFactories), callbackExecutor, validateEagerly);
+    }
+  }
+</code></pre><p>&#x5728;Builder&#x7684;build&#x65B9;&#x6CD5;&#x4E2D;&#x4E3B;&#x8981;&#x662F;</p>
+<h4 id="retrofit&#x7684;create&#x65B9;&#x6CD5;&#xFF1A;">Retrofit&#x7684;create&#x65B9;&#x6CD5;&#xFF1A;</h4>
+<pre><code> public &lt;T&gt; T create(final Class&lt;T&gt; service) {
+    Utils.validateServiceInterface(service);
+    //&#x5224;&#x65AD;&#x662F;&#x5426;&#x9700;&#x8981;&#x4E00;&#x6B21;&#x6027;&#x53CD;&#x5C04;&#x52A0;&#x8F7D;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x3001;&#x8BE5;&#x5C5E;&#x6027;&#x901A;&#x8FC7;Retrofit&#x7684;Builder&#x7684;
+validateEagerly&#x8BBE;&#x7F6E;
+    if (validateEagerly) {
+       //&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x904D;&#x5386;&#x4F20;&#x5165;&#x7684;&#x6A21;&#x677F;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x5C06;&#x5176;&#x4E00;&#x6B21;&#x6027;&#x5168;&#x6DFB;&#x52A0;&#x5230;&#x7F13;&#x5B58;&#x4E2D;
+      eagerlyValidateMethods(service);
+    }
+
+    //&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;
+    return (T) Proxy.newProxyInstance(service.getClassLoader(), new Class&lt;?&gt;[] { service },
+        new InvocationHandler() {
+          private final Platform platform = Platform.get();
+
+          @Override public Object invoke(Object proxy, Method method, @Nullable Object[] args)
+              throws Throwable {
+            //Object&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x4E0D;&#x62E6;&#x622A;
+            if (method.getDeclaringClass() == Object.class) {
+              return method.invoke(this, args);
+            }
+            //&#x4E0D;&#x4E00;&#x6B21;&#x6027;&#x62E6;&#x622A;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x3001;&#x8BE5;&#x65B9;&#x6CD5;&#x5728;Android &#x5E73;&#x53F0;&#x9ED8;&#x8BA4;&#x4E3A;false&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4E0D;&#x4F1A;&#x4E00;&#x6B21;&#x6027;&#x52A0;&#x8F7D;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x3002;
+            if (platform.isDefaultMethod(method)) {
+              return platform.invokeDefaultMethod(method, service, proxy, args);
+            }
+            ServiceMethod&lt;Object, Object&gt; serviceMethod =
+                (ServiceMethod&lt;Object, Object&gt;) loadServiceMethod(method);
+            OkHttpCall&lt;Object&gt; okHttpCall = new OkHttpCall&lt;&gt;(serviceMethod, args);
+            return serviceMethod.adapt(okHttpCall);
+          }
+        });
+  }
+</code></pre><p>&#x9996;&#x5148;&#x4F7F;&#x7528;Retrofit&#x65F6;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x8BF7;&#x6C42;&#x7C7B;&#xFF0C;&#x5728;&#x8C03;&#x7528;Retrofit&#x65F6;&#x4F1A;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x8FD9;&#x4E2A;&#x7C7B;&#xFF0C;&#x5373;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x90FD;&#x5C06;&#x8FDB;&#x5165; InvocationHandler&#x7684; invoke&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x83B7;&#x53D6;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x5148;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4E00;&#x6B21;&#x6027;&#x52A0;&#x8F7D;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x53CD;&#x5C04;&#x6027;&#x80FD;&#x4E0D;&#x597D;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5C06;&#x53CD;&#x5C04;&#x83B7;&#x5F97;&#x7684;&#x65B9;&#x6CD5;&#x50A8;&#x5B58;&#x8D77;&#x6765;&#x3002;&#x5728;create&#x4E2D;&#xFF0C;&#x6700;&#x7EC8;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x7531;loadServiceMethod&#x8FD4;&#x56DE;&#x7684;&#x3002;</p>
+<h4 id="retrofit&#x7684;loadservicemethod&#x65B9;&#x6CD5;">Retrofit&#x7684;loadServiceMethod&#x65B9;&#x6CD5;</h4>
+<pre><code>ServiceMethod&lt;?, ?&gt; loadServiceMethod(Method method) {  
+    //&#x7F13;&#x5B58;&#x83B7;&#x53D6;
+    ServiceMethod&lt;?, ?&gt; result = serviceMethodCache.get(method);
+    if (result != null) return result;
+
+    synchronized (serviceMethodCache) {
+      result = serviceMethodCache.get(method);
+      if (result == null) {
+        //&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x53CD;&#x5C04;&#x65B9;&#x6CD5;
+        result = new ServiceMethod.Builder&lt;&gt;(this, method).build();
+        serviceMethodCache.put(method, result);
+      }
+    }
+    return result;
+  }
+</code></pre><p>ServiceMethod&#x8BE5;&#x7C7B;&#x662F;&#x4E00;&#x4E2A;&#x5305;&#x88C5;&#x7C7B;&#xFF0C;&#x53EA;&#x662F;&#x5BF9;Method&#x7684;&#x4E00;&#x4E2A;&#x5305;&#x88C5;&#xFF0C;&#x5C06;Method&#x4E2D;&#x7684;&#x6CE8;&#x89E3;&#x4FDD;&#x5B58;&#x4E86;&#x4E0B;&#x6765;&#x5E76;&#x7528;&#x5B83;&#x6765;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;OkHttpCall&#x7528;&#x4E8E;&#x6784;&#x5EFA;&#x8BF7;&#x6C42;&#x3002;</p>
+<h4 id="servicemethodadapt&#x65B9;&#x6CD5;&#xFF1A;">ServiceMethod.adapt&#x65B9;&#x6CD5;&#xFF1A;</h4>
+<p>&#x56DE;&#x5230;Retrofit&#x7684;create&#x7684;&#x6700;&#x540E;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;callAdapter&#x7684;adapter&#x65B9;&#x6CD5;&#x6784;&#x5EFA;&#x7684;adapt&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code>T adapt(Call&lt;R&gt; call) {  return callAdapter.adapt(call);}
+</code></pre><p>&#x56DE;&#x5230;ServiceMethod.Builder&#x7684;build&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code> public ServiceMethod build() {
+       //&#x6784;&#x5EFA;callAdapter 
+      callAdapter = createCallAdapter();
+      responseType = callAdapter.responseType();
+      if (responseType == Response.class || responseType == okhttp3.Response.class)       {
+        throw methodError(&quot;&apos;&quot;
+            + Utils.getRawType(responseType).getName()
+            + &quot;&apos; is not a valid response body type. Did you mean ResponseBody?&quot;);
+      }
+      //&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;&#x8F6C;&#x5316;&#x5668;
+      responseConverter = createResponseConverter();
+     //&#x89E3;&#x6790;&#x6CE8;&#x89E3; &#x68C0;&#x6D4B;&#x629B;&#x51FA;&#x5F02;&#x5E38;
+      ...
+    }
+</code></pre><p>&#x8C03;&#x7528;&#x7684;callAdapter&#x4F7F;&#x7528;createCallAdapter&#x6784;&#x5EFA;&#x7684;</p>
+<pre><code> private CallAdapter&lt;T, R&gt; createCallAdapter() {
+      //&#x5224;&#x65AD;&#x6CE8;&#x89E3;&#x6761;&#x4EF6;&#x662F;&#x5426;&#x5408;&#x6CD5;
+      ...
+      try {
+        //&#x8FD4;&#x56DE;CallAdapter
+        return (CallAdapter&lt;T, R&gt;) retrofit.callAdapter(returnType, annotations);
+      } catch (RuntimeException e) { // Wide exception range because factories are user code.
+        throw methodError(e, &quot;Unable to create call adapter for %s&quot;, returnType);
+      }
+    }
+</code></pre><p>&#x6700;&#x7EC8;&#x8C03;&#x7528;&#x751F;&#x6210;CallAdapter&#x7684;&#x662F;Retrofit&#x7684;callAdapter&#x65B9;&#x6CD5;&#xFF1A;</p>
+<h4 id="retrofit&#x7684;calladapter&#x65B9;&#x6CD5;&#xFF1A;">Retrofit&#x7684;callAdapter&#x65B9;&#x6CD5;&#xFF1A;</h4>
+<pre><code>    public CallAdapter&lt;?, ?&gt; callAdapter(Type returnType, Annotation[] annotations) {
+        return nextCallAdapter(null, returnType, annotations);
+    }
+</code></pre><p>&#x8C03;&#x7528;&#x7684;&#x662F;nextCallAdpter&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code> public CallAdapter&lt;?, ?&gt; nextCallAdapter(@Nullable CallAdapter.Factory skipPast, Type returnType,
+      Annotation[] annotations) {
+      //&#x68C0;&#x67E5;&#x6CE8;&#x89E3;
+    checkNotNull(returnType, &quot;returnType == null&quot;);
+    checkNotNull(annotations, &quot;annotations == null&quot;);
+
+    int start = callAdapterFactories.indexOf(skipPast) + 1;
+    for (int i = start, count = callAdapterFactories.size(); i &lt; count; i++) {
+      //&#x904D;&#x5386;callAdapterFactories&#x5DE5;&#x5382;&#x76F4;&#x5230;&#x627E;&#x5230;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x51FA;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x7684;&#x5DE5;&#x5382;
+      CallAdapter&lt;?, ?&gt; adapter = callAdapterFactories.get(i).get(returnType, annotations, this);
+      if (adapter != null) {
+        return adapter;
+      }
+    }
+    //&#x627E;&#x4E0D;&#x5230;&#x53EF;&#x4EE5;&#x6700;&#x7EC8;&#x8F6C;&#x6362;&#x6210;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x7684;&#x5DE5;&#x5382;&#x8F93;&#x51FA;&#x65E5;&#x5FD7;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;
+    &#xB7;&#xB7;&#xB7;
+  }
+</code></pre><p>&#x904D;&#x5386;callAdapterFactories&#x8FD9;&#x4E2A;List&#xFF0C;&#x5728;Retrofit&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5BF9;&#x5176;&#x6DFB;&#x52A0;&#x4E86;&#x6211;&#x4EEC;&#x4F7F;&#x7528;addCallAdapterFactory&#x65B9;&#x6CD5;&#x4F20;&#x5165;&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x6DFB;&#x52A0;&#x4E86;&#x6709;&#x4E24;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;CallAdapterFactory
+&#xFF1A;ExecutorCallAdapterFactory&#x548C;DefaultCallAdapterFactory&#x7684;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x3002;&#x5728;Android&#x5E73;&#x53F0;&#x4E0A;&#x9ED8;&#x8BA4;&#x662F;ExecutorCallAdapterFactory&#xFF0C;&#x56DE;&#x5230;Retrofit&#x7684;create&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x6309;&#x7167;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;&#x5BF9;&#x5E94;&#x7684;&#x6267;&#x884C;&#x5E94;&#x8BE5;&#x662F;ExecutorCallAdapterFactory&#x8C03;&#x7528;get&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x7684;CallAdapter&#x5BF9;&#x8C61;&#x540E;&#x7684;adapt&#x65B9;&#x6CD5;&#x3002;</p>
+<h4 id="executorcalladapterfactory&#x7684;get&#x65B9;&#x6CD5;&#xFF1A;">ExecutorCallAdapterFactory&#x7684;get&#x65B9;&#x6CD5;&#xFF1A;</h4>
+<pre><code>public CallAdapter&lt;?, ?&gt; get(Type returnType, Annotation[] annotations, Retrofit retrofit) {
+        if (getRawType(returnType) != Call.class) {
+            return null;
+        } else {
+            final Type responseType = Utils.getCallResponseType(returnType);
+            return new CallAdapter&lt;Object, Call&lt;?&gt;&gt;() {
+                public Type responseType() {
+                    return responseType;
+                }
+
+                //adapt&#x65B9;&#x6CD5;
+                public Call&lt;Object&gt; adapt(Call&lt;Object&gt; call) {
+                    return new ExecutorCallAdapterFactory.ExecutorCallbackCall(ExecutorCallAdapterFactory.this.callbackExecutor, call);
+                }
+            };
+        }
+    }
+</code></pre><p>&#x5176;&#x4E2D;adapt&#x65B9;&#x6CD5;&#x4E2D;&#x8FD4;&#x56DE;&#x4E86;</p>
+<pre><code>ExecutorCallAdapterFactory.ExecutorCallbackCall(ExecutorCallAdapterFactory.this.callbackExecutor, call);
+</code></pre><p>&#x8FD9;&#x884C;&#x4EE3;&#x7801;&#x8FD4;&#x56DE;&#x4E86;&#x4E00;&#x4E2A;ExecutorCallbackCall&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5B9E;&#x9645;&#x64CD;&#x4F5C;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<pre><code>static final class ExecutorCallbackCall&lt;T&gt; implements Call&lt;T&gt; {
+        final Executor callbackExecutor;
+        final Call&lt;T&gt; delegate;
+
+        ExecutorCallbackCall(Executor callbackExecutor, Call&lt;T&gt; delegate) {
+            this.callbackExecutor = callbackExecutor;
+            this.delegate = delegate;
+        }
+
+        public void enqueue(final Callback&lt;T&gt; callback) {
+            Utils.checkNotNull(callback, &quot;callback == null&quot;);
+            this.delegate.enqueue(new Callback&lt;T&gt;() {
+                public void onResponse(Call&lt;T&gt; call, final Response&lt;T&gt; response) {
+                    ExecutorCallbackCall.this.callbackExecutor.execute(new Runnable() {
+                        public void run() {
+                            if (ExecutorCallbackCall.this.delegate.isCanceled()) {
+                                callback.onFailure(ExecutorCallbackCall.this, new IOException(&quot;Canceled&quot;));
+                            } else {
+                                callback.onResponse(ExecutorCallbackCall.this, response);
+                            }
+
+                        }
+                    });
+                }
+
+                public void onFailure(Call&lt;T&gt; call, final Throwable t) {
+                    ExecutorCallbackCall.this.callbackExecutor.execute(new Runnable() {
+                        public void run() {
+                            callback.onFailure(ExecutorCallbackCall.this, t);
+                        }
+                    });
+                }
+            });
+        }
+        ...
+    }
+</code></pre><p>&#x56E0;&#x6B64;&#x5728;&#x6700;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x6240;&#x5199;&#x7684;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;Call<t>&#x5B9E;&#x4F8B;&#x7684;enqueue&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x7684;&#x56DE;&#x8C03;&#x4F1A;&#x7531;&#x5728;Retrofit&#x4E2D;&#x521B;&#x5EFA;&#x7684;Executor&#x4E2D;&#x8C03;&#x7528;&#x3001;&#x4E5F;&#x5C31;&#x662F;MainThreadExecutor&#x8C03;&#x7528;handle&#x5C06;&#x56DE;&#x8C03;&#x56DE;&#x4F20;&#x5230;UI&#x7EBF;&#x7A0B;&#x3002;
+&#x53EF;&#x4EE5;&#x770B;&#x5230;ExecutorCallbackCal&#x7C7B;&#x53EA;&#x662F;&#x5BF9;Call&#x7684;&#x4E00;&#x4E2A;&#x88C5;&#x9970;&#x6A21;&#x5F0F;&#xFF0C;&#x5B9E;&#x9645;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x7684;&#x8FD8;&#x662F;Call&#x7C7B;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x662F;Okhttp&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x6240;&#x4EE5;Retrofit&#x4E5F;&#x53EA;&#x662F;&#x5BF9;OkHttp&#x505A;&#x4E86;&#x4E00;&#x5C42;&#x5C01;&#x88C5;&#x3002;</t></p>
+<h4 id="retrofit&#x4E0E;rxjava2&#xFF1A;">Retrofit&#x4E0E;Rxjava2&#xFF1A;</h4>
+<ul>
+<li><p>&#x5728;Retrofit&#x4E2D;&#x4F7F;&#x7528;Rxjava2&#xFF0C;&#x6700;&#x7EC8;&#x4F1A;&#x5C06;Call&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;Observable&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6700;&#x7EC8;&#x751F;&#x6210;&#x7684;Call&#x5BF9;&#x8C61;&#x662F;&#x7531;&#x4E00;&#x4E2A;CallAdapterFactory&#x751F;&#x6210;&#x7684;&#xFF0C;&#x800C;CallAdapterFactory&#x5728;Retrofit&#x7684;build&#x4E2D;&#xFF0C;&#x5728;&#x4F7F;&#x7528;Rxjava2&#x53BB;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F1A;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code>addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+</code></pre><p>&#x6839;&#x636E;&#x8C03;&#x7528;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x4F20;&#x5165;&#x7684;CallAdapterFactory&#x4F1A;&#x5148;&#x6DFB;&#x52A0;&#x5728;&#x524D;&#x9762;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x904D;&#x5386;Retrofit&#x7684;callAdapterFactories&#x8FD9;&#x4E2A;List&#x65F6;&#x4F1A;&#x5148;&#x8C03;&#x7528;&#x8BBE;&#x7F6E;&#x7684;RxJava2CallAdapterFactory&#xFF08;&#x4E5F;&#x53EA;&#x6709;&#x8FD9;&#x4E2A;&#x7C7B;&#x80FD;&#x5904;&#x7406;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;Observable&#xFF09;&#x3002;
+&#x8FDB;&#x5165;RxJava2CallAdapterFactory&#x7684;get&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>@Override
+public CallAdapter&lt;?, ?&gt; get(Type returnType, Annotation[] annotations, Retrofit retrofit) {
+         ...
+        //&#x6761;&#x4EF6;&#x5224;&#x65AD; &#x3001;Rxjava&#x7684;&#x53C2;&#x6570;&#x914D;&#x7F6E;&#x3001;&#x5982;&#x7EBF;&#x7A0B;&#x5207;&#x6362;&#x7B49;
+
+      return new RxJava2CallAdapter(Void.class, scheduler, isAsync, false, true, false, 
+     ...
+  }
+</code></pre><p>&#x6700;&#x7EC8;&#x6B63;&#x5E38;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;RxJava2CallAdapter&#x7C7B;&#xFF0C;&#x5728;RxJava2CallAdapter&#x7684;adapt&#x65B9;&#x6CD5;&#x4E2D;&#xFF1A;</p>
+<pre><code>@Override public Object adapt(Call&lt;R&gt; call) {
+  //&#x6839;&#x636E;&#x662F;&#x5426;&#x5F02;&#x6B65;&#x6267;&#x884C;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7684;Observable
+  Observable&lt;Response&lt;R&gt;&gt; responseObservable = isAsync
+      ? new CallEnqueueObservable&lt;&gt;(call)
+      : new CallExecuteObservable&lt;&gt;(call);
+
+  Observable&lt;?&gt; observable;
+  if (isResult) {
+    //&#x76F8;&#x5E94;Observable
+    observable = new ResultObservable&lt;&gt;(responseObservable);
+  } else if (isBody) {
+    //&#x8BF7;&#x6C42;Observable
+    observable = new BodyObservable&lt;&gt;(responseObservable);
+  } else {
+    observable = responseObservable;
+  }
+  //Observable&#x53C2;&#x6570;&#x914D;&#x7F6E;
+  return observable;
+  ...
+}
+</code></pre><p>//&#x5176;&#x4E2D;&#x4E0D;&#x540C;&#x7684;Observable&#x7C7B;&#x4E3A;CallEnqueueObservable&#x3001;CallExecuteObservable&#x3001;ResultObservable&#x3001;BodyObservable&#x3002;
+&#x6839;&#x636E;Rxjava2&#x7684;&#x4E2D;&#x7684;Observable&#x7C7B;&#xFF0C;&#x5728;&#x5177;&#x4F53;subscribe&#x65F6;&#x4F1A;&#x8C03;&#x7528;subscribeActual&#x65B9;&#x6CD5;
+&#x8FDB;&#x5165;CallEnqueueObservable&#x7684;subscribeActual&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>  @Override protected void subscribeActual(Observer&lt;? super Response&lt;T&gt;&gt; observer) {
+      //&#x7531;&#x4E8E;Call&#x662F;&#x4E00;&#x79CD;&#x4E00;&#x6B21;&#x6027;&#x7C7B;&#x578B;&#xFF0C;&#x56E0;&#x6B64;&#x8BF7;&#x4E3A;&#x6BCF;&#x4E2A;&#x65B0;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x514B;&#x9686;&#x5B83;&#x3002;
+      Call&lt;T&gt; call = originalCall.clone();
+      //&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;CallCallback&#xFF0C;&#x8BE5;&#x7C7B;&#x5B9E;&#x73B0;&#x4E86;Callback&lt;T&gt;&#x63A5;&#x53E3;&#xFF0C;&#x53C8;&#x5B9E;&#x73B0;&#x4E86;Rxjava2&#x7684;Disposable&#x63A5;&#x53E3;
+      CallCallback&lt;T&gt; callback = new CallCallback&lt;&gt;(call, observer);
+      //&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;observer&#x7C7B;&#x53D6;&#x6D88;&#x65F6;&#xFF0C;CallCallback&#x8FD9;&#x4E2A;Disposable&#x5B50;&#x7C7B;&#x4E5F;&#x4F1A;&#x8C03;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x53D6;&#x6D88;&#x65B9;&#x6CD5;&#x3002;
+      observer.onSubscribe(callback);
+      //&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x542F;&#x52A8;
+      call.enqueue(callback);
+  }
+</code></pre><p>&#x6700;&#x7EC8;&#x8FD8;&#x662F;&#x8C03;&#x7528;&#x4E86;Call<t>&#x7C7B;&#x7684;enqueue&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x56DE;&#x8C03;&#x4F1A;&#x56DE;&#x5230;Callback&#x7684;onResonse&#x65B9;&#x6CD5;&#x4E2D;&#xFF1A;</t></p>
+<pre><code>  @Override public void onResponse(Call&lt;T&gt; call, Response&lt;T&gt; response) {
+    if (call.isCanceled()) return;
+    try {
+      observer.onNext(response);
+      if (!call.isCanceled()) {
+        terminated = true;
+        observer.onComplete();
+      }
+    } catch (Throwable t) {
+      if (terminated) {
+        RxJavaPlugins.onError(t);
+      } else if (!call.isCanceled()) {
+        try {
+          observer.onError(t);
+        } catch (Throwable inner) {
+          Exceptions.throwIfFatal(inner);
+          RxJavaPlugins.onError(new CompositeException(t, inner));
+        }
+      }
+    }
+  }
+</code></pre><p>&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5C31;&#x5728;&#x8BE5;&#x4F1A;&#x8C03;&#x7528;&#x8C03;&#x7528;&#x4F20;&#x5165;&#x7684;Overable&#x7684;&#x5BF9;&#x5E94;&#x65B9;&#x6CD5;&#x3002;&#x8FD8;&#x6709;&#x4E00;&#x70B9;&#x6CE8;&#x610F;&#x7684;&#x662F; 
+  observer.onSubscribe(callback);&#x8BE5;&#x65B9;&#x6CD5;&#x5728;&#x6211;&#x4EEC;&#x64CD;&#x4F5C;observer&#x4E5F;&#x4F1A;&#x540C;&#x6B65;&#x8C03;&#x7528;&#x5230;Call&#x4E2D;Callback&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;CallCallback&#x4E2D;&#x8C03;&#x7528;Call<t>&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x8FBE;&#x5230;&#x8BA9;&#x8BF7;&#x6C42;&#x505C;&#x6B62;&#x7B49;&#x64CD;&#x4F5C;&#x3002;</t></p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="LeakCanary原理.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: LeakCanary">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"Retrofit源码","subtitle":" Retrofit源码解析","date":"2020-02-13T22:41:00.000Z","author":"hzy","//header-img":"img/post-bg-2015.jpg","catalog":true,"tags":["框架"],"level":"1.2.1.5","depth":3,"next":{"title":"源码解析","level":"1.2.2","depth":2,"ref":"","articles":[{"title":"Binder","level":"1.2.2.1","depth":3,"path":"android/源码/Binder.md","ref":"android/源码/Binder.md","articles":[]},{"title":"Dialog源码","level":"1.2.2.2","depth":3,"path":"android/源码/Dialog源码.md","ref":"android/源码/Dialog源码.md","articles":[]},{"title":"RecycleView缓存机制","level":"1.2.2.3","depth":3,"path":"android/源码/RecycleView缓存机制.md","ref":"android/源码/RecycleView缓存机制.md","articles":[]},{"title":"WMS源码","level":"1.2.2.4","depth":3,"path":"android/源码/WMS源码.md","ref":"android/源码/WMS源码.md","articles":[]}]},"previous":{"title":"LeakCanary","level":"1.2.1.4","depth":3,"path":"android/框架/LeakCanary原理.md","ref":"android/框架/LeakCanary原理.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/框架/Retrofit源码.md","mtime":"2020-02-26T12:45:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T09:28:16.191Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

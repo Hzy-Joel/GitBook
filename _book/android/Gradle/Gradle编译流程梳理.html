@@ -1,0 +1,804 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Gradle编译流程 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Transform使用.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    框架
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../框架/BlockCanary.html">
+            
+                <a href="../框架/BlockCanary.html">
+            
+                    
+                    BlockCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../框架/fresco.html">
+            
+                <a href="../框架/fresco.html">
+            
+                    
+                    Fresco
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../框架/Glide源码.html">
+            
+                <a href="../框架/Glide源码.html">
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../框架/LeakCanary原理.html">
+            
+                <a href="../框架/LeakCanary原理.html">
+            
+                    
+                    LeakCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../框架/Retrofit源码.html">
+            
+                <a href="../框架/Retrofit源码.html">
+            
+                    
+                    Retrofit源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../源码/Binder.html">
+            
+                <a href="../源码/Binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../源码/Dialog源码.html">
+            
+                <a href="../源码/Dialog源码.html">
+            
+                    
+                    Dialog源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../源码/RecycleView缓存机制.html">
+            
+                <a href="../源码/RecycleView缓存机制.html">
+            
+                    
+                    RecycleView缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../源码/WMS源码.html">
+            
+                <a href="../源码/WMS源码.html">
+            
+                    
+                    WMS源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    自定义View及效果
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../自定义View及效果/触摸事件.html">
+            
+                <a href="../自定义View及效果/触摸事件.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../自定义View及效果/自定义ItemDecoration.html">
+            
+                <a href="../自定义View及效果/自定义ItemDecoration.html">
+            
+                    
+                    自定义ItemDecoration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                <a href="../自定义View及效果/ItemTouchHelper使用.html">
+            
+                    
+                    ItemTouchHelper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                <a href="../自定义View及效果/MaterilaDesign布局使用.html">
+            
+                    
+                    MaterilaDesign布局使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Gradle
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.4.1" data-path="Gradle编译流程梳理.html">
+            
+                <a href="Gradle编译流程梳理.html">
+            
+                    
+                    Gradle编译流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="Transform使用.html">
+            
+                <a href="Transform使用.html">
+            
+                    
+                    Transform使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    kotlin实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../Kotlin/协程使用.html">
+            
+                <a href="../Kotlin/协程使用.html">
+            
+                    
+                    协程初步使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../java/多线程同步.html">
+            
+                <a href="../../java/多线程同步.html">
+            
+                    
+                    多线程同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../java/垃圾回收机制.html">
+            
+                <a href="../../java/垃圾回收机制.html">
+            
+                    
+                    垃圾回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../计算机网络/">
+            
+                <a href="../../计算机网络/">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../计算机网络/编码加密.html">
+            
+                <a href="../../计算机网络/编码加密.html">
+            
+                    
+                    编码加密算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../计算机网络/登陆认证.html">
+            
+                <a href="../../计算机网络/登陆认证.html">
+            
+                    
+                    登陆认证流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../计算机网络/http协议.html">
+            
+                <a href="../../计算机网络/http协议.html">
+            
+                    
+                    http协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../操作系统/">
+            
+                <a href="../../操作系统/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../设计模式/单例模式.html">
+            
+                <a href="../../设计模式/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../设计模式/建造者模式.html">
+            
+                <a href="../../设计模式/建造者模式.html">
+            
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Gradle编译流程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h4 id="&#x57FA;&#x7840;&#x6982;&#x5FF5;&#xFF1A;">&#x57FA;&#x7840;&#x6982;&#x5FF5;&#xFF1A;</h4>
+<ul>
+<li>Distribution:<ol>
+<li>&#x901A;&#x8FC7;src.zip -&#x6E90;&#x7801;&#x6253;&#x5305;&#xFF0C;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;</li>
+<li>&#x901A;&#x8FC7;bin.zip -&#x4E0D;&#x5305;&#x542B;&#x6587;&#x6863;&#x548C;sample&#x7684;&#x5B89;&#x88C5;&#x5305;</li>
+<li>&#x901A;&#x8FC7;all.zip -&#x5168;&#x90E8;&#x6253;&#x5305;&#x8FD0;&#x884C;&#x811A;&#x672C;</li>
+<li>&#x901A;&#x8FC7;Gradle Wrapper&#x5B89;&#x88C5;&#x4E00;&#x822C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5B89;&#x88C5;</li>
+</ol>
+</li>
+<li>Wrapper:&#x901A;&#x8FC7;Gradle
+Wrapper&#x547D;&#x4EE4;&#x7ED1;&#x5B9A;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7248;&#x672C;&#x7684;gradle-wrapper.jar&#x7B49;&#x7684;Gradle&#x6587;&#x4EF6;&#xFF0C;&#x8BE5;jar&#x7528;&#x4E8E;&#x4E0B;&#x8F7D;&#x771F;&#x6B63;&#x7684;Gradle&#x6E90;&#x7801;&#xFF0C;&#x56E0;&#x6B64;&#x4E0B;&#x8F7D;gradle&#x7BA1;&#x7406;&#x7684;&#x9879;&#x76EE;&#x65F6;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;./gradlew&#x7684;&#x547D;&#x4EE4;&#x5C31;&#x4F1A;&#x5148;&#x53BB;&#x4E0B;&#x8F7D;&#x771F;&#x6B63;&#x7684;Gradle&#x6E90;&#x7801;</li>
+<li>GradleUserHome: ~/.gradle/ &#x6587;&#x4EF6;&#x4E0B;&#x5B58;&#x653E;&#x4E0B;&#x8F7D;&#x7684;Gradle&#x6587;&#x4EF6;<ol>
+<li>init.d/ &#x5B58;&#x653E;&#x5168;&#x5C40;&#x521D;&#x59CB;&#x5316;&#x6587;&#x4EF6;&#xFF0C;&#x6BCF;&#x6B21;&#x542F;&#x7528;Gradle&#x4F1A;&#x5148;&#x8DD1;&#x5176;&#x4E2D;&#x7684;&#x811A;&#x672C;</li>
+<li>wrapper/ &#x5B58;&#x653E;&#x4E0B;&#x8F7D;&#x7F13;&#x5B58;&#x7684;&#x5404;&#x4E2A;&#x7248;&#x672C;&#x7684;Distribution</li>
+</ol>
+</li>
+<li>Demon:
+&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;Gradle&#x4F1A;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#xFF0C;Demon&#x4F1A;&#x7528;&#x4E8E;&#x6784;&#x5EFA;Gradle&#x7684;&#x4ED3;&#x5E93;&#x4E0B;&#x8F7D;&#x7B49;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x6784;&#x5EFA;&#x4EFB;&#x52A1;&#x4E4B;&#x540E;&#x7684;&#x7528;&#x6237;&#x6784;&#x5EFA;&#x8BF7;&#x6C42;&#x90FD;&#x53EF;&#x4EE5;&#x70ED;&#x542F;&#x52A8;&#x800C;&#x4E0D;&#x7528;&#x91CD;&#x65B0;&#x4E0B;&#x8F7D;&#x4F9D;&#x8D56;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x662F;&#x540C;&#x65F6;&#x542F;&#x7528;&#x4E0D;&#x540C;&#x7684;Gradle&#x7248;&#x672C;&#x7684;Demon&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x517C;&#x5BB9;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x4F7F;&#x7528;--no
+-demon&#x5C5E;&#x6027;&#x8868;&#x793A;&#x4E00;&#x6B21;&#x6027;&#x4EFB;&#x52A1;,Demon&#x4E0E;&#x5BA2;&#x6237;&#x673A;&#x4E4B;&#x95F4;&#x6C9F;&#x901A;&#x662F;&#x901A;&#x8FC7;Socket&#x8FDE;&#x63A5;&#x7684;&#x3002;</li>
+</ul>
+<h4 id="gradle&#x6784;&#x5EFA;&#xFF1A;">Gradle&#x6784;&#x5EFA;&#xFF1A;</h4>
+<ul>
+<li>Gradle LifeCycle:<ol>
+<li>Initialization:&#x8BFB;&#x53D6;&#x9879;&#x76EE;&#x72B6;&#x6001;&#xFF0C;&#x4E3A;&#x591A;&#x9879;&#x76EE;&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x914D;&#x7F6E;build.gradle</li>
+<li>Configuration:&#x6784;&#x5EFA;&#x914D;&#x7F6E;&#xFF0C;&#x5C06;build.gradle&#x4ECE;&#x5934;&#x6267;&#x884C;&#x5230;&#x5C3E;</li>
+<li>Execution:&#x6267;&#x884C;&#x9636;&#x6BB5;&#xFF0C;&#x6267;&#x884C;task&#xFF0C;task&#x662F;Gradle&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x6267;&#x884C;&#x5355;&#x4F4D;</li>
+</ol>
+</li>
+</ul>
+<h4 id="gradle&#x6784;&#x5EFA;&#x5355;&#x5143;&#xFF1A;&#xFF08;&#x5047;&#x5982;&#x5728;&#x4F7F;&#x7528;gradlew&#x547D;&#x4EE4;&#x65F6;&#x63D0;&#x793A;&#x6743;&#x9650;&#x4E0D;&#x8DB3;&#x6216;&#x6587;&#x4EF6;&#x65E0;&#x6CD5;&#x627E;&#x5230;&#xFF0C;&#x4F7F;&#x7528;chmod-777-gradlew&#x914D;&#x7F6E;&#x6743;&#x9650;&#xFF09;&#x4EE5;&#x4E0B;&#x51FD;&#x6570;&#x6309;&#x7167;&#x7F29;&#x8FDB;&#x5173;&#x7CFB;&#x5305;&#x542B;">gradle&#x6784;&#x5EFA;&#x5355;&#x5143;&#xFF1A;&#xFF08;&#x5047;&#x5982;&#x5728;&#x4F7F;&#x7528;gradlew&#x547D;&#x4EE4;&#x65F6;&#x63D0;&#x793A;&#x6743;&#x9650;&#x4E0D;&#x8DB3;&#x6216;&#x6587;&#x4EF6;&#x65E0;&#x6CD5;&#x627E;&#x5230;&#xFF0C;&#x4F7F;&#x7528;chmod 777 gradlew&#x914D;&#x7F6E;&#x6743;&#x9650;&#xFF09;&#x4EE5;&#x4E0B;&#x51FD;&#x6570;&#x6309;&#x7167;&#x7F29;&#x8FDB;&#x5173;&#x7CFB;&#x5305;&#x542B;</h4>
+<ul>
+<li>project:gradle&#x6784;&#x5EFA;&#x5DE5;&#x7A0B;&#x7684;&#x5355;&#x4F4D;&#xFF0C;&#x591A;&#x4E2A;project&#x53EF;&#x4EE5;&#x4E92;&#x76F8;&#x4F9D;&#x8D56;&#xFF0C;&#x591A;&#x4E2A;&#x6784;&#x5EFA;&#x5DE5;&#x7A0B;&#x4EE5;&#x6811;&#x72B6;&#x8FDE;&#x63A5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;project.parent&#x7D22;&#x5F15;&#x5230;&#x7236;&#x5DE5;&#x7A0B;&#x6216;&#x4F7F;&#x7528;project.childProjects&#x83B7;&#x53D6;&#x5230;&#x6240;&#x6709;&#x7684;&#x5B50;&#x5DE5;&#x7A0B;&#xFF0C;&#x5728;&#x5355;&#x6784;&#x5EFA;&#x5DE5;&#x7A0B;&#x4E2D;&#x5982;&#x679C;&#x4E0D;&#x58F0;&#x660E;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x51FD;&#x6570;&#x90FD;&#x4F1A;&#x9ED8;&#x8BA4;&#x5230;project&#x7C7B;&#x4E2D;&#x67E5;&#x627E;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4F8B;&#x5982;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;task&#x51FD;&#x6570;</li>
+<li>task:&#x6784;&#x5EFA;&#x6D41;&#x7A0B;&#x7684;&#x6700;&#x5C0F;&#x5355;&#x4F4D;&#xFF0C;&#x6784;&#x5EFA;&#x4EFB;&#x52A1;&#x7531;&#x591A;&#x4E2A;task&#x6784;&#x6210;&#xFF0C;&#x4F20;&#x5165;&#x95ED;&#x5305;&#x51FD;&#x6570;&#x4EE5;&#x5B9E;&#x73B0;task&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;,&#x95ED;&#x5305;&#x5185;&#x51FD;&#x6570;&#x4F1A;&#x5728;Configuration&#x65F6;&#x6267;&#x884C;&#xFF0C;&#x5176;&#x4E2D;task&#x4EFB;&#x52A1;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;task&#x52A8;&#x6001;&#x6267;&#x884C;&#x65F6;&#x521B;&#x5EFA;<ul>
+<li>doFirst&#x51FD;&#x6570;:&#x5C06;&#x95ED;&#x5305;&#x4EFB;&#x52A1;&#x6DFB;&#x52A0;&#x5230;task&#x7684;&#x524D;&#x9762;&#x4F46;&#x53EA;&#x6709;&#x5728;&#x6784;&#x5EFA;&#x6267;&#x884C;Execution&#x9636;&#x6BB5;&#x624D;&#x4F1A;&#x8C03;&#x7528;</li>
+<li>doLast&#x51FD;&#x6570;:&#x5C06;&#x95ED;&#x5305;&#x4EFB;&#x52A1;&#x6DFB;&#x52A0;&#x5230;task&#x7684;&#x6700;&#x540E;&#x4F46;&#x53EA;&#x6709;&#x5728;&#x6784;&#x5EFA;&#x6267;&#x884C;Execution&#x9636;&#x6BB5;&#x624D;&#x4F1A;&#x8C03;&#x7528;</li>
+<li>dependsOn&#x51FD;&#x6570;:&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x4E00;&#x4E2A;task&#xFF0C;&#x4F1A;&#x5EF6;&#x8FDF;&#x5230;&#x6307;&#x5B9A;task&#x6307;&#x5B9A;&#x7ED3;&#x675F;&#x540E;&#x518D;&#x6267;&#x884C;</li>
+<li>afterEvaluate:&#x94A9;&#x5B50;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x8FD0;&#x884C;task&#x65F6;&#x4F1A;&#x5148;&#x5BF9;build.gradle&#x6587;&#x4EF6;&#x904D;&#x5386;&#x4E00;&#x8FB9;&#xFF0C;&#x6267;&#x884C;configure&#x9636;&#x6BB5;&#x7ED3;&#x675F;&#x540E;&#x6267;&#x884C;&#x94A9;&#x5B50;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x518D;&#x6267;&#x884C;&#x771F;&#x6B63;&#x6307;&#x5B9A;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;</li>
+</ul>
+</li>
+<li>plugins:&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x7EE7;&#x627F;Plugins&#x63A5;&#x53E3;&#xFF0C;&#x91CD;&#x5199;apply&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;apply plugins:&quot;&#x7C7B;&#x540D;&quot;
+&#x5F15;&#x5165;&#x63D2;&#x4EF6;&#xFF0C;apply&#x662F;project&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x65E0;&#x4E3B;&#x51FD;&#x6570;&#x9ED8;&#x8BA4;&#x4F1A;&#x4ECE;project&#x4E2D;&#x67E5;&#x627E;&#xFF0C;&#x56E0;&#x6B64;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8C03;&#x7528;apply([plugin:&#x7C7B;&#x540D;])&#x8BED;&#x6CD5;&#x7CD6;&#x5316;
+apply plugin:&#x7C7B;&#x540D;</li>
+<li>script:&#x6784;&#x5EFA;&#x811A;&#x672C;&#x89C4;&#x5219;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6784;&#x5EFA;task&#x89C4;&#x5219;&#x653E;&#x5230;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x4F7F;&#x7528; apply
+plugin:&apos;<a href="http://server.com/script&apos;&#x7684;&#x65B9;&#x6CD5;&#x8FDC;&#x7A0B;&#x5BFC;&#x5165;" target="_blank">http://server.com/script&apos;&#x7684;&#x65B9;&#x6CD5;&#x8FDC;&#x7A0B;&#x5BFC;&#x5165;</a></li>
+<li>buildscript:&#x7F16;&#x8BD1;&#x811A;&#x672C;&#x89C4;&#x5219;&#xFF0C;&#x5C06;&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x5F15;&#x5165;&#x7684;classpath&#x6DFB;&#x52A0;&#x5230;&#x7F16;&#x8BD1;build.gradle&#x4E2D;--&gt;<strong>&#x5728;&#x6784;&#x5EFA;&#x4E2D;&#x4F7F;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x53D1;&#x5E03;&#x4ED3;&#x5E93;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x5728;&#x8FD9;&#x91CC;&#x5BFC;&#x5165;&#x81EA;&#x5DF1;&#x7684;&#x63D2;&#x4EF6;&#x7684;jar&#x5305;&#x5230;classpath&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;apply
+plugin:&#x63D2;&#x4EF6; &#x624D;&#x80FD;&#x627E;&#x5230;&#x63D2;&#x4EF6;&#x540D;</strong><ul>
+<li>&#x5B9E;&#x9645;apply&#x63D2;&#x4EF6;&#x5206;&#x6790;:apply plugin: &apos;com.android.application&apos; ,
+&#x9996;&#x5148;&#x4F1A;&#x4ECE;gradle&#x7248;&#x672C;&#x538B;&#x7F29;jar&#x5305;&#x4E2D;&#x67E5;&#x627E;com.android.application.properties&#x6587;&#x4EF6;&#xFF0C;&#x627E;&#x5230;implementation-class=&#x5B8C;&#x6574;&#x63D2;&#x4EF6;&#x7C7B;&#x8DEF;&#x5F84;&#xFF0C;&#x518D;&#x5C06;&#x6267;&#x884C;&#x8BE5;&#x63D2;&#x4EF6;&#x7C7B;&#x7684;apply&#x65B9;&#x6CD5;</li>
+</ul>
+</li>
+</ul>
+<h4 id="gradle&#x6784;&#x5EFA;&#x8BED;&#x6CD5;&#xFF1A;">gradle&#x6784;&#x5EFA;&#x8BED;&#x6CD5;&#xFF1A;</h4>
+<ul>
+<li>task&#x6784;&#x5EFA;&#xFF1A;<ul>
+<li>&#x4F7F;&#x7528;Project&#x7684;task&#x51FD;&#x6570;&#xFF1A;Task task(String name) throws InvalidUserDataException</li>
+<li>&#x4F7F;&#x7528;task&#x7684;&#x91CD;&#x8F7D;&#x51FD;&#x6570;&#xFF1A;Task task(Map<string, ?=""> args, String name) throwsInvalidUserDataException &#x5176;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7528;&#x4E8E;&#x4F20;&#x5165;Task&#x7684;&#x5C5E;&#x6027;,&#x5982;dependsOn&#x7528;&#x4E8E;&#x914D;&#x7F6E;task&#x7684;&#x4F9D;&#x8D56;&#x3001;group&#x914D;&#x7F6E;task&#x7684;&#x5206;&#x7EC4;&#xFF1A;<img src="https://hzy-joel.github.io/img/post/post_gradle_task_args.png" alt="Task&#x51FD;&#x6570;&#x4E2D;Map&#x914D;&#x7F6E;"></string,></li>
+<li>&#x4F7F;&#x7528;TaskContainer&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x4F7F;&#x7528;&#x5728;Project&#x4E2D;&#x7684;tasks&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h4 id="gradle&#x547D;&#x4EE4;&#xFF1A;">gradle&#x547D;&#x4EE4;&#xFF1A;</h4>
+<ul>
+<li>gradlew --stop &#x505C;&#x6B62;Demon&#x6784;&#x5EFA;&#x8FDB;&#x7A0B;</li>
+<li>gradlew help</li>
+</ul>
+<h4 id="buildsrc--kotlin-&#x7BA1;&#x7406;&#x4F9D;&#x8D56;">buildSrc + Kotlin &#x7BA1;&#x7406;&#x4F9D;&#x8D56;</h4>
+<ul>
+<li>&#x5728;app&#x540C;&#x7EA7;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;buildSrc&#x76EE;&#x5F55;</li>
+<li>&#x521B;&#x5EFA;build.gradle.kts&#x7F16;&#x8BD1;&#x811A;&#x672C;:<pre><code>  plugins {
+      `kotlin-dsl`
+  }
+  repositories {
+      jcenter()
+  }
+</code></pre></li>
+<li>&#x521B;&#x5EFA;src/main/java&#x76EE;&#x5F55;&#x4E0B;&#x81EA;&#x5B9A;&#x4E49;&#x5305;&#x540D;&#x76EE;&#x5F55;</li>
+<li>&#x521B;&#x5EFA;&#x7BA1;&#x7406;&#x5E38;&#x91CF;&#x7C7B;&#xFF1A;<pre><code>object Versions {
+  val support_lib = &quot;27.0.2&quot;
+  val retrofit = &quot;2.3.0&quot;
+  val rxjava = &quot;2.1.9&quot;
+}
+object Libs {
+  val support_annotations = &quot;com.android.support:support-annotations:${Versions.support_lib}&quot;
+  val support_appcompat_v7 = &quot;com.android.support:appcompat-v7:${Versions.support_lib}&quot;
+  val retrofit = &quot;com.squareup.retrofit2:retrofit:${Versions.retrofit}&quot;
+  val retrofit_rxjava_adapter = &quot;com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}&quot;
+  val rxjava = &quot;io.reactivex.rxjava2:rxjava:${Versions.rxjava}&quot;
+}
+</code></pre></li>
+<li>sync&#x4E00;&#x4E0B;Gradle&#x6587;&#x4EF6;&#xFF0C;&#x63A5;&#x7740;&#x5728;build.gradle&#x4E2D;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Libs.support_annotations&#x5F15;&#x7528;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x8D44;&#x6E90;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+<h4 id="buildsrc--kotlin-&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;">buildSrc + Kotlin &#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;</h4>
+<ul>
+<li>&#x4F9D;&#x7167;&#xFF08;buildSrc + Kotlin &#x7BA1;&#x7406;&#x4F9D;&#x8D56;&#xFF09;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x5728;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x63D2;&#x4EF6;&#x7C7B;</li>
+<li>&#x65B0;&#x5EFA;&#x5728;main&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;resources/META-INF/gradle-plugins&#x76EE;&#x5F55;&#x5B58;&#x653E;&#x63D2;&#x4EF6;&#x7C7B;&#x914D;&#x7F6E;&#xFF0C;&#x65B0;&#x5EFA;xx.properties&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x4E3A;&#xFF1A;<pre><code>implementation-class=&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;&#x7C7B;&#x7684;&#x5B8C;&#x6574;&#x8DEF;&#x5F84;
+</code></pre>&#x518D;build&#x4E00;&#x4E0B;&#x5DE5;&#x7A0B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x5916;&#x90E8;&#x901A;&#x8FC7;apply plugin:xx &#xFF08;kotlin DSL&#x7684;&#x8BDD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; plugins&#x65B9;&#x6CD5;&#xFF09;&#x7684;&#x65B9;&#x6CD5;&#x627E;&#x5230;&#x8BE5;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x518D;&#x627E;&#x5230;&#x5177;&#x4F53;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;&#x7C7B;
+&#x5728;&#x7EC4;&#x4EF6;&#x5316;&#x5DE5;&#x7A0B;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x5F15;&#x7528;&#x63D2;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x5730;&#x65B9;&#x4F9D;&#x8D56;&#x4E8E;&#x4ECE;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x6837;&#x5355;&#x72EC;&#x6267;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#x63D2;&#x4EF6;&#x4E2D;task&#x4F1A;&#x62A5;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="Transform使用.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Transform使用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"Gradle编译流程","subtitle":"Gradle初步使用","date":"2020-06-28T19:10:00.000Z","author":"hzy","//header-img":"img/post-bg-2015.jpg","catalog":true,"tags":["Gradle"],"level":"1.2.4.1","depth":3,"next":{"title":"Transform使用","level":"1.2.4.2","depth":3,"path":"android/Gradle/Transform使用.md","ref":"android/Gradle/Transform使用.md","articles":[]},"previous":{"title":"Gradle","level":"1.2.4","depth":2,"ref":"","articles":[{"title":"Gradle编译流程","level":"1.2.4.1","depth":3,"path":"android/Gradle/Gradle编译流程梳理.md","ref":"android/Gradle/Gradle编译流程梳理.md","articles":[]},{"title":"Transform使用","level":"1.2.4.2","depth":3,"path":"android/Gradle/Transform使用.md","ref":"android/Gradle/Transform使用.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"android/Gradle/Gradle编译流程梳理.md","mtime":"2020-08-16T16:13:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-30T09:28:16.191Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
